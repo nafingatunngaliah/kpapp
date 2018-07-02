@@ -124,9 +124,9 @@
                 </div>
                 <div class="btn-toolbar cta">
                   <a class="btn btn-large btn-color" href="#">
-              <i class="icon-rounded icon-plus"></i> Add Post </a>
+              <i class="icon-plane icon-white"></i> Try free version </a>
                   <a class="btn btn-large btn-inverse" href="#">
-              <i class="icon-square icon-wrench"></i> Manage Post </a>
+              <i class="icon-shopping-cart icon-white"></i> Buy license </a>
                 </div>
               </div>
             </div>
