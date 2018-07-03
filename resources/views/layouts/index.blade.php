@@ -8,6 +8,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- styles -->
+  <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!--alerts CSS -->
+    <link href="../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" >
   <link rel="stylesheet" href="{{ asset('serenity/css/bootstrap.css')}}" >
   <link rel="stylesheet" href="{{ asset('serenity/css/bootstrap-responsive.css')}}" >
@@ -44,7 +53,11 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown active">
-                  <a href="index.html">Home</a>
+                   @guest
+                      <a href="{{route('index')}}">Home</a>
+                      @else
+                        <a href="{{route('home')}}">Home</a>
+                      @endguest
                   <ul class="dropdown-menu">
                     <li><a href="overview.html">KANTOR INDUK</a></li>
                     <li><a href="scaffolding.html">APP BALI</a></li>
@@ -209,6 +222,22 @@
     </div>
   </footer>
 
+  <script src="{{asset('ample/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{{asset('ampleotstrap/dist/js/bootstrap.min.js')}}"></script>
+  <!-- Menu Plugin JavaScript -->
+  <script src="{{asset('ample/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+  <!--slimscroll JavaScript -->
+  <script src="{{asset('ample/jquery.slimscroll.js')}}"></script>
+  <!--Wave Effects -->
+  <script src="{{asset('ample/waves.js')}}"></script>
+  <!-- Sweet-Alert  -->
+  <script src="{{asset('ample/plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="{{asset('ample/custom.min.js')}}"></script>
+  <!--Style Switcher -->
+  <script src="{{asset('ample/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
   <!-- JavaScript Library Files -->
   <script src="{{ asset('serenity/js/jquery.min.js')}}"></script>
   <script src="{{ asset('serenity/js/jquery.easing.js')}}"></script>
@@ -226,5 +255,7 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="{{ asset('serenity/js/custom.js')}}"></script>
+
+
 </body>
 </html>
