@@ -25,12 +25,5 @@ class HomeController extends Controller
     {
         return view('user.home');
     }
-    public function viewPost()
-    {
-        return view('user.post.view');
-    }
-    public function addPost()
-    {
-        return view('user.post.add');
-    }
+    
 }
