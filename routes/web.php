@@ -19,5 +19,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Fitur Post
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');
-Route::get('/addpost', 'PostController@addPost')->name('addpost');
+Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
 Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
