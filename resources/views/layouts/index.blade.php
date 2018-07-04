@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flattern - Flat and trendy bootstrap site template</title>
+  <title>PLN APP SURABAYA - Area Pelaksana Pemeliharaan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -11,24 +11,24 @@
 
   <!-- flattern -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="{{asset('flattern/css/bootstrap.css')}}" rel="stylesheet" />
-  <link href="{{asset('flattern/css/bootstrap-responsive.css')}}" rel="stylesheet" />
-  <link href="{{asset('flattern/css/fancybox/jquery.fancybox.css')}}" rel="stylesheet">
-  <link href="{{asset('flattern/css/jcarousel.css')}}" rel="stylesheet" />
-  <link href="{{asset('flattern/css/flexslider.css')}}" rel="stylesheet" />
-  <link href="{{asset('flattern/css/slitslider.css')}}" rel="stylesheet" />
-  <link href="{{asset('flattern/css/style.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap-responsive.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/fancybox/jquery.fancybox.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" >
   <!-- Theme skin -->
-  <link id="t-colors" href="{{asset('flattern/skins/default.css')}}" rel="stylesheet" />
-  <!-- boxed bg -->
-  <link id="bodybg" href="{{asset('flattern/img/bodybg/bg1.css')}}" rel="stylesheet" type="text/css" />
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('flattern/ico/apple-touch-icon-114-precomposed.png')}}" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}" />
-  <link rel="apple-touch-icon-precomposed" href="{{asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}" />
-  <link rel="shortcut icon" href="{{asset('flattern/ico/favicon.png')}}" />
+  <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" >
+  <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" >
 
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="{{asset('flattern/img/PLN.jpg')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}">
+  <link rel="shortcut icon" href="ico/favicon.png" />
   <!-- end flattern -->
 
 </head>
@@ -41,9 +41,9 @@
         <div class="row">
           <div class="span12">
             <ul>
-              <li><strong>We are available for any custom works this month</strong></li>
-              <li>Main office: Springville center X264, Park Ave S.01</li>
-              <li>Call us <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891</li>
+              <li><strong>PT PLN (Persero) - TJBTB - Area Pelaksana Pemeliharaan Surabaya</strong></li><br>
+              <li>JL. Ketintang Baru No 9 Surabaya 60231</li>
+              <li>Call us <i class="icon-phone"></i> (031) 8285505 , 8285506</li>
             </ul>
           </div>
         </div>
@@ -62,8 +62,8 @@
           <div class="span12">
             <div class="headnav">
               <ul>
-                <li><a href="#mySignup" data-toggle="modal"><i class="icon-user"></i> Sign up</a></li>
-                <li><a href="#mySignin" data-toggle="modal">Sign in</a></li>
+                <li><a href="#mySignup" data-toggle="modal"><i class="icon-group"></i> Sign up</a></li>
+                <!-- <li><a href="#mySignin" data-toggle="modal">Sign in</a></li> -->
               </ul>
             </div>
             <!-- Signup Modal -->
@@ -108,25 +108,37 @@
             <div id="mySignin" class="modal styled hide fade" tabindex="-1" role="dialog" aria-labelledby="mySigninModalLabel" aria-hidden="true">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 id="mySigninModalLabel">Login to your <strong>account</strong></h4>
+                <h4 id="mySigninModalLabel">{{ __('Login') }} to your <strong>account</strong></h4>
               </div>
               <div class="modal-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                  @csrf
                   <div class="control-group">
-                    <label class="control-label" for="inputText">Username</label>
+                    <label class="control-label" for="inputText">Email</label>
                     <div class="controls">
-                      <input type="text" id="inputText" placeholder="Username">
+                      <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="inputSigninPassword">Password</label>
                     <div class="controls">
-                      <input type="password" id="inputSigninPassword" placeholder="Password">
+                      <input type="password" id="password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+
                     </div>
                   </div>
                   <div class="control-group">
                     <div class="controls">
-                      <button type="submit" class="btn">Sign in</button>
+                      <button type="submit" class="btn">{{ __('Login') }}</button>
                     </div>
                     <p class="aligncenter margintop20">
                       Forgot password? <a href="#myReset" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Reset</a>
@@ -167,8 +179,8 @@
         <div class="row">
           <div class="span4">
             <div class="logo">
-              <a href="index.html"><img src="img/logo.png" alt="" class="logo" /></a>
-              <h1>Flat and trendy bootstrap template</h1>
+              <a href="index.html"><img src="{{ asset('flattern/img/PLN.jpg') }}" width="35px" height="25px" alt="" class="logo" /></a>
+              <b><h1>PLN APP Surabaya</h1></b>
             </div>
           </div>
           <div class="span8">
@@ -177,60 +189,60 @@
                 <nav>
                   <ul class="nav topnav">
                     <li class="dropdown active">
-                      <a href="index.html">Home <i class="icon-angle-down"></i></a>
+                      @guest
+                      <a href="{{route('index')}}">HOME <i class="icon-angle-down"></i></a>
+                      @else
+                      <a href="{{route('home')}}">HOME <i class="icon-angle-down"></i></a>
+                      @endguest
                       <ul class="dropdown-menu">
-                        <li><a href="index-alt2.html">Homepage 2</a></li>
-                        <li><a href="index-alt3.html">Homepage 3</a></li>
+                        <li><a href="10.91.60.10">APP BALI</a></li>
+                        <li><a href="10.91.30.20">APP MALANG</a></li>
+                        <li><a href="10.91.50.10">APP MADIUN</a></li>
+                        <li><a href="10.91.40.20">APP PROBOLINGGO</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
+                      <a href="#">APLIKASI <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="table.html">Table</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="animations.html">56 Animations</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-                        <li class="dropdown"><a href="#">3 Sliders <i class="icon-angle-right"></i></a>
+                        
+                        <li class="dropdown"><a href="#">ENJINIRING <i class="icon-angle-right"></i></a>
                           <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="index.html">Nivo slider</a></li>
-                            <li><a href="index-alt2.html">Slit slider</a></li>
-                            <li><a href="index-alt3.html">Parallax slider</a></li>
+                            <li><a href="10.6.100.121">CBM</a></li>
+                            <li><a href="10.6.1.155/srintami-v3-tjbtb">SRINTAMI</a></li>
+                            <li><a href="10.6.212.21/~jalurapp_tjbtb">JALUR</a></li>
+                            <li><a href="10.91.1.20/working_permit">WP-ONLINE</a></li>
                           </ul>
                         </li>
+                        <li class="dropdown"><a href="#">SDM <i class="icon-angle-right"></i></a>
+                          <ul class="dropdown-menu sub-menu-level1">
+                            <li><a href="amor.pln.co.id">AMOR</a></li>
+                            <li><a href="10.1.8.107/utjbtb">AMS</a></li>
+                            <li><a href="erpappw1.pusat.corp.pln.co.id/irj/portal">ESS</a></li>
+                            <li><a href="budaya.pln.co.id">KOMANDO</a></li>
+                            <li><a href="10.1.18.41/~simkpnas">SIMKPNAS</a></li>
+                          </ul>
+                        </li>
+
                       </ul>
                     </li>
+@guest
+                     <li>
+                      <a href="#mySignin" data-toggle="modal"><i class="icon-user"></i>{{ __('Login') }}</a>
+                    </li>
+@else
+                    <li class="dropdown"><a class="dropdown" href="#" role="button">{{ Auth::user()->name }} <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
                     <li class="dropdown">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="404.html">404</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact </a>
-                    </li>
+                      <a class="dropdown" href="{{ route('logout') }}" onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                    </li>   
+                  </ul>  
+                </li>
+@endguest
                   </ul>
                 </nav>
               </div>
@@ -332,9 +344,9 @@
               <div class="cta-text">
                 <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span> this year!</h3>
               </div>
-              <div class="cta floatright">
+              <!-- <div class="cta floatright">
                 <a class="btn btn-large btn-theme btn-rounded" href="#">Request a quote</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -422,56 +434,57 @@
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="img/works/full/image-01-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{{asset
+                    ('flatter/img/works/full/image-01-full.jpg') }}">
             <span class="overlay-img"></span>
             <span class="overlay-img-thumb font-icon-plus"></span>
             </a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="{{asset ('flatter/img/works/thumbs/image-01.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="img/works/full/image-02-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{{asset('flatter/img/works/full/image-02-full.jpg')}}">
             <span class="overlay-img"></span>
             <span class="overlay-img-thumb font-icon-plus"></span>
             </a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="{{ asset ('flatter/img/works/thumbs/image-02.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-03-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{ asset ('flatter/img/works/full/image-03-full.jpg')}}">
             <span class="overlay-img"></span>
             <span class="overlay-img-thumb font-icon-plus"></span>
             </a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="{{ asset('img/works/thumbs/image-03.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-04-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset ('img/works/full/image-04-full.jpg')}}">
             <span class="overlay-img"></span>
             <span class="overlay-img-thumb font-icon-plus"></span>
             </a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="{{ asset('img/works/thumbs/image-04.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="img/works/full/image-05-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{{ asset('img/works/full/image-05-full.jpg')}}">
             <span class="overlay-img"></span>
             <span class="overlay-img-thumb font-icon-plus"></span>
             </a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="{{ asset ('img/works/thumbs/image-05.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
@@ -497,15 +510,7 @@
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="img/works/full/image-08-full.jpg">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-08.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
+                  
                   <!-- End Item Project -->
                 </ul>
               </section>
@@ -521,73 +526,32 @@
           </div>
         </div>
         <!-- end divider -->
-        <div class="row">
+       <!--  <div class="row">
           <div class="span12">
             <h4>Very satisfied <strong>clients</strong></h4>
             <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
               <li>
                 <a href="#">
-          <img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
+          <img src="{{ asset ('img/dummies/clients/client3.png')}}" class="client-logo" alt="" />
           </a>
               </li>
               <li>
                 <a href="#">
-          <img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
+          <img src="{{ asset ('img/dummies/clients/client4.png')}}" class="client-logo" alt="" />
           </a>
               </li>
               <li>
                 <a href="#">
-          <img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
+          <img src="{{ asset ('img/dummies/clients/client5.png')}}" class="client-logo" alt="" />
           </a>
               </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-          </a>
-              </li>
-              <li>
-                <a href="#">
-          <img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-          </a>
-              </li>
+         
+             
+              
+              
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <section id="bottom">
@@ -604,6 +568,7 @@
         </div>
       </div>
     </section>
+ @yield('content')   
     <footer>
       <div class="container">
         <div class="row">
@@ -692,21 +657,25 @@
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <!-- js flattern -->
-  <script src="{{asset('flattern/js/jquery.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{asset('flattern/js/bootstrap.js')}}"></script>
-  <script src="{{asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.fancybox.pack.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.fancybox-media.js')}}"></script>
-  <script src="{{asset('flattern/js/google-code-prettify/prettify.js')}}"></script>
-  <script src="{{asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script>
-  <script src="{{asset('flattern/js/portfolio/setting.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.flexslider.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.nivo.slider.js')}}"></script>
-  <script src="{{asset('flattern/js/modernizr.custom.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.ba-cond.min.js')}}"></script>
-  <script src="{{asset('flattern/js/jquery.slitslider.js')}}"></script>
-  <script src="{{asset('flattern/js/animate.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{ asset('flattern/js/bootstrap.js')}}"></script>
+  <script src="{{ asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.fancybox.pack.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.fancybox-media.js')}}"></script>
+  <script src="{{ asset('flattern/js/google-code-prettify/prettify.js')}}"></script>
+  <script src="{{ asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script>
+  <script src="{{ asset('flattern/js/portfolio/setting.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.flexslider.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script>
+  <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>
+  <script src="{{ asset('flattern/js/animate.js')}}"></script>
+
+    <!-- Template Custom JavaScript File -->
+  <script src="{{ asset('flattern/js/custom.js')}}"></script>
+
 
 </body>
 </html>
