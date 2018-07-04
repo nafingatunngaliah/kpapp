@@ -243,6 +243,7 @@
                     </a>
                     <!-- Thumb Image and Description -->
                     <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
+                    <a href="{{ url('post-edit', array($post->id)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal">Edit Post</a>
                     {{csrf_field()}}
                   </li>
                   <!-- End Item Project -->

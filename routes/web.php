@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');
 Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
 Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
+Route::get('/post-edit/{id}', 'PostController@editFormTambahPost')->name('post-edit');;
+Route::post('/post-update/{id}', 'PostController@updateFormTambahPost')->name('post-edit');;
+Route::get('/post-delete/{id}', 'PostController@deletePost');

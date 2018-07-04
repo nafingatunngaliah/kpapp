@@ -54,4 +54,22 @@ class PostController extends Controller
         return back()
             ->with('success','Post submitted successfully.');
     }
+
+    public function editFormTambahPost($id)
+    {
+        $post = Post::find($id);
+        //dd($sampah);
+        return view('user.post.edit', ['post' => $post]);
+    }
+
+    public function updateFormTambahPost(Request $request, $id)
+    {
+
+    }
+
+    public function deletePost($id)
+    {
+
+    }
+
 }
