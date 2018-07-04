@@ -10,24 +10,23 @@
   <!-- styles -->
 
   <!-- flattern -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap-responsive.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/fancybox/jquery.fancybox.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" >
-  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" >
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap-responsive.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/fancybox/jquery.fancybox.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" > 
   <!-- Theme skin -->
-  <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" >
-  <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" >
-
-  <!-- fav and touch icons -->
-  <link rel="shortcut icon" href="{{asset('flattern/img/PLN.jpg')}}">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}">
-  <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}">
+  <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" > 
+  <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" > 
+ 
+  <!-- fav and touch icons --> 
+  <link rel="shortcut icon" href="{{asset('flattern/img/PLN.jpg')}}"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}"> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}"> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}"> 
+  <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}"> 
   <link rel="shortcut icon" href="ico/favicon.png" />
   <!-- end flattern -->
 
@@ -63,12 +62,10 @@
             <div class="headnav">
 @guest
               <ul>
-<<<<<<< HEAD
-                <li><a href="#mySignin" data-toggle="modal">{{ __('Login') }}</a></li>
-=======
+
                 <li><a href="#mySignup" data-toggle="modal"><i class="icon-group"></i> Sign up</a></li>
                 <!-- <li><a href="#mySignin" data-toggle="modal">Sign in</a></li> -->
->>>>>>> gantitemplate
+
               </ul>
 @else
                 <li class="nav-item dropdown">
@@ -91,45 +88,27 @@
                 <h4 id="mySigninModalLabel">{{ __('Login') }} to your <strong>account</strong></h4>
               </div>
               <div class="modal-body">
-<<<<<<< HEAD
-                <form class="form-horizontal" method="POST" action="{{ route('login') }}" >
-=======
+
                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
->>>>>>> gantitemplate
+
                   @csrf
                   <div class="control-group">
                     <label class="control-label" for="inputText">Email</label>
                     <div class="controls">
-<<<<<<< HEAD
-                      <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
--
--                                @if ($errors->has('email'))
--                                    <span class="invalid-feedback">
--                                        <strong>{{ $errors->first('email') }}</strong>
--                                    </span>
--                                @endif
-=======
+
                       <input type="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
->>>>>>> gantitemplate
+
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="inputSigninPassword">Password</label>
                     <div class="controls">
-<<<<<<< HEAD
-                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
--
--                                @if ($errors->has('password'))
--                                    <span class="invalid-feedback">
--                                        <strong>{{ $errors->first('password') }}</strong>
--                                    </span>
--                                @endif
-=======
+
                       <input type="password" id="password"  class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -137,18 +116,14 @@
                                     </span>
                                 @endif
 
->>>>>>> gantitemplate
+
                     </div>
                   </div>
                   <div class="control-group">
                     <div class="controls">
-<<<<<<< HEAD
-                      <button type="submit" class="btn btn-primary">
--                                    {{ __('Login') }}
--                                </button>
-=======
+
                       <button type="submit" class="btn">{{ __('Login') }}</button>
->>>>>>> gantitemplate
+
                     </div>
                   </div>
                 </form>
@@ -638,23 +613,23 @@
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <!-- js flattern -->
-  <script src="{{ asset('flattern/js/jquery.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{ asset('flattern/js/bootstrap.js')}}"></script>
-  <script src="{{ asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.fancybox.pack.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.fancybox-media.js')}}"></script>
-  <script src="{{ asset('flattern/js/google-code-prettify/prettify.js')}}"></script>
-  <script src="{{ asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script>
-  <script src="{{ asset('flattern/js/portfolio/setting.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.flexslider.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script>
-  <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script>
-  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>
-  <script src="{{ asset('flattern/js/animate.js')}}"></script>
-
-    <!-- Template Custom JavaScript File -->
+  <script src="{{ asset('flattern/js/jquery.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.easing.1.3.js')}}"></script> 
+  <script src="{{ asset('flattern/js/bootstrap.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.fancybox.pack.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.fancybox-media.js')}}"></script> 
+  <script src="{{ asset('flattern/js/google-code-prettify/prettify.js')}}"></script> 
+  <script src="{{ asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script> 
+  <script src="{{ asset('flattern/js/portfolio/setting.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.flexslider.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script> 
+  <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script> 
+  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script> 
+  <script src="{{ asset('flattern/js/animate.js')}}"></script> 
+ 
+    <!-- Template Custom JavaScript File --> 
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
 
 
