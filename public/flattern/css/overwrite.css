@@ -1,49 +1,49 @@
 /* === Typography === */
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Open Sans', sans-serif;
-	color:#353535;
-	font-weight:300;
-	line-height:1.5em;
-	margin-top:0;
+  font-family: 'Open Sans', sans-serif;
+  color:#353535;
+  font-weight:300;
+  line-height:1.5em;
+  margin-top:0;
 }
 
 h1{
-	font-size:60px;
-	margin-bottom:24px;
+  font-size:60px;
+  margin-bottom:24px;
 }
 
 h2{
-	font-size:42px;
-	margin-bottom:22px;
+  font-size:42px;
+  margin-bottom:22px;
 }
 
 h3{
-	font-size:34px;
-	margin-bottom:22px;
+  font-size:34px;
+  margin-bottom:22px;
 }
 
 h4{
-	font-size:28px;
-	margin-bottom:20px;
+  font-size:28px;
+  margin-bottom:20px;
 }
 
 h5{
-	font-size:24px;
-	margin-bottom:20px;
+  font-size:24px;
+  margin-bottom:20px;
 }
 
 h6{
-	font-size:22px;
-	margin-bottom:20px;
+  font-size:22px;
+  margin-bottom:20px;
 }
 
 h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong {
-	font-weight:700;
+  font-weight:700;
 }
 
 .widget h4,.widget h5 {
-	font-weight:300;
-	margin-bottom:20px;
+  font-weight:300;
+  margin-bottom:20px;
 }
 
 
@@ -103,15 +103,15 @@ textarea {
 }
 
 label{
-	font-weight: bold;
-	color:#353535;
+  font-weight: bold;
+  color:#353535;
 }
 
 input,
 button,
 select,
 textarea {
-	font-family:'Open Sans', Arial, sans-serif;
+  font-family:'Open Sans', Arial, sans-serif;
   font-size: 13px;
 }
 
@@ -153,7 +153,7 @@ input[type="color"],
 
 
 input.input-block-level{
-	padding:20px;
+  padding:20px;
 }
 
 .input-append input,
@@ -472,7 +472,7 @@ dd {
 }
 
 .media-body{
-	position:relative;
+  position:relative;
 }
 
 .well {
@@ -510,7 +510,7 @@ dd {
 }
 
 .btn {
-	outline:0;
+  outline:0;
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
@@ -518,8 +518,8 @@ dd {
 
 
 a.btn,.btn:focus {
-	outline:0;
-	
+  outline:0;
+  
 }
 
 .btn-medium {
@@ -655,7 +655,7 @@ font-size: 10px;
 
 
 .btn-primary {
-	outline:0;
+  outline:0;
   background: #1C0113;
 }
 .btn-primary:hover {
@@ -961,7 +961,7 @@ font-size: 10px;
   text-decoration: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
-          box-shadow: none;		  
+          box-shadow: none;     
 }
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
@@ -1017,18 +1017,17 @@ font-size: 10px;
           background-clip: none;
 }
 .dropdown-menu li {
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
 }
 
 .dropdown-menu li  a {
   color: #ddd;
   font-size:12px;
-  /*padding:0px 5px 0px 0px;*/
+  padding:10px 15px 10px 15px;
   margin:0;
   text-shadow:none;
   border-bottom:1px solid #303030;
-   position: absolute;
 }
 
 .dropdown-menu li > a:hover,
@@ -1241,12 +1240,12 @@ font-size: 10px;
 }
 
 .thumbnail p{
-	padding:0 10px 0 10px;
+  padding:0 10px 0 10px;
 }
 
 .thumbnail h1, .thumbnail h2, .thumbnail h3, .thumbnail h4, .thumbnail h5, .thumbnail h6{
-	padding:0 10px 0 10px;
-	margin:10px 0 10px 0;
+  padding:0 10px 0 10px;
+  margin:10px 0 10px 0;
 }
 
 .label,
@@ -1275,58 +1274,58 @@ font-size: 10px;
 
 /* progress bar */
 .bar.bar90 {
-	width:90%;
+  width:90%;
 }
 .bar.bar85 {
-	width:85%;
+  width:85%;
 }
 .bar.bar80 {
-	width:80%;
+  width:80%;
 }
 .bar.bar75 {
-	width:75%;
+  width:75%;
 }
 .bar.bar70 {
-	width:70%;
+  width:70%;
 }
 .bar.bar65 {
-	width:65%;
+  width:65%;
 }
 .bar.bar60 {
-	width:60%;
+  width:60%;
 }
 .bar.bar55 {
-	width:55%;
+  width:55%;
 }
 .bar.bar50 {
-	width:50%;
+  width:50%;
 }
 .bar.bar45 {
-	width:45%;
+  width:45%;
 }
 .bar.bar40 {
-	width:40%;
+  width:40%;
 }
 .bar.bar40 {
-	width:40%;
+  width:40%;
 }
 .bar.bar35 {
-	width:35%;
+  width:35%;
 }
 .bar.bar30 {
-	width:30%;
+  width:30%;
 }
 .bar.bar25 {
-	width:25%;
+  width:25%;
 }
 .bar.bar20 {
-	width:20%;
+  width:20%;
 }
 .bar.bar15 {
-	width:15%;
+  width:15%;
 }
 .bar.bar10 {
-	width:10%;
+  width:10%;
 }
 
 
@@ -1337,7 +1336,7 @@ font-size: 10px;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
-		  margin-bottom:5px;
+      margin-bottom:5px;
 }
 
 .accordion-heading{
@@ -1364,7 +1363,7 @@ font-size: 10px;
 }
 
 .accordion-inner{
-	margin-top:1px;
+  margin-top:1px;
   background:#fff;
   border: 1px solid #e9e9e9;
   border-bottom:1px solid #e9e9e9;

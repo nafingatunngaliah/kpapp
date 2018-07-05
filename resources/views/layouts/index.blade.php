@@ -8,26 +8,26 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <!-- styles -->
-
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- flattern -->
-  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap-responsive.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/fancybox/jquery.fancybox.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" > 
-  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/bootstrap-responsive.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/fancybox/jquery.fancybox.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" >  
   <!-- Theme skin -->
-  <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" > 
-  <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" > 
+  <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" >  
+  <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" >  
+  
+  <!-- fav and touch icons -->  
+  <link rel="shortcut icon" href="{{asset('flattern/img/PLN.jpg')}}">  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">  
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}">  
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}">  
+  <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}">  
  
-  <!-- fav and touch icons --> 
-  <link rel="shortcut icon" href="{{asset('flattern/img/PLN.jpg')}}"> 
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}"> 
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('flattern/ico/apple-touch-icon-144-precomposed.png')}}"> 
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}"> 
-  <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}"> 
-  <link rel="shortcut icon" href="ico/favicon.png" />
   <!-- end flattern -->
 
 </head>
@@ -157,13 +157,40 @@
               </div>
             </div>
             <!-- end signin modal -->
+            <!-- Reset Modal -->
+            <div id="myReset" class="modal styled hide fade" tabindex="-1" role="dialog" aria-labelledby="myResetModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 id="myResetModalLabel">Reset your <strong>password</strong></h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="control-group">
+                    <label class="control-label" for="inputResetEmail">Email</label>
+                    <div class="controls">
+                      <input type="text" id="inputResetEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <button type="submit" class="btn">Reset password</button>
+                    </div>
+                    <p class="aligncenter margintop20">
+                      We will send instructions on how to reset your password to your inbox
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- end reset modal -->
           </div>
         </div>
         <div class="row">
           <div class="span4">
             <div class="logo">
-              <a href="index.html"><img src="{{ asset('flattern/img/PLN.jpg') }}" width="35px" height="25px" alt="" class="logo" /></a>
-              <b><h1>PLN APP Surabaya</h1></b>
+              <a href="index.html"><img src="{{ asset('flattern/img/pln.png') }}" alt="" class="logo" /></a>
+              
+              <h1>Area Pelaksana Pemeliharaan</h1>
             </div>
           </div>
           <div class="span8">
@@ -319,7 +346,7 @@
       <!-- /slider-wrapper -->
       <!-- end slider -->
     </section>
-    <section class="callaction">
+    <!-- <section class="callaction">
       <div class="container">
         <div class="row">
           <div class="span12">
@@ -327,16 +354,85 @@
               <div class="cta-text">
                 <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span> this year!</h3>
               </div>
-              <!-- <div class="cta floatright">
+              <div class="cta floatright">
                 <a class="btn btn-large btn-theme btn-rounded" href="#">Request a quote</a>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section id="content">
       <div class="container">
+        
+        <!-- divider -->
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+        <!-- Portfolio Projects -->
+        <div class="row">
+          <div class="span12">
+            @yield('content')
+            <h4 class="heading">Some of recent <strong>works</strong></h4>
+            <div class="row">
+              <section id="projects">
+                <ul id="thumbs" class="portfolio">
+                  
+                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{{asset
+                    ('flatter/img/works/full/image-01-full.jpg') }}">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span></a>
+                   <img src="{{asset ('flatter/img/works/thumbs/image-01.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                  </li>
+                  <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
+                   <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{{asset('flatter/img/works/full/image-02-full.jpg')}}">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span>
+                    </a>
+                  <img src="{{ asset ('flatter/img/works/thumbs/image-02.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                  </li> 
+                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{ asset ('flatter/img/works/full/image-03-full.jpg')}}">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span>
+                    </a>
+                    <img src="{{ asset('img/works/thumbs/image-03.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                  </li> 
+                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset ('img/works/full/image-04-full.jpg')}}">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span>
+                    </a>
+                    <img src="{{ asset('img/works/thumbs/image-04.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                  </li>
+                  <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{{ asset('img/works/full/image-05-full.jpg')}}">
+                    <span class="overlay-img"></span>
+                    <span class="overlay-img-thumb font-icon-plus"></span>
+                    </a>
+                    <img src="{{ asset ('img/works/thumbs/image-05.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- End Portfolio Projects -->
+        <!-- divider -->
+
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+
         <div class="row">
           <div class="span12">
             <div class="row">
@@ -399,117 +495,16 @@
             </div>
           </div>
         </div>
-        <!-- divider -->
-        <div class="row">
+         <!-- divider -->
+
+        <!-- <div class="row">
           <div class="span12">
             <div class="solidline">
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- end divider -->
-        <!-- Portfolio Projects -->
-        <div class="row">
-          <div class="span12">
-            <h4 class="heading">Some of recent <strong>works</strong></h4>
-            <div class="row">
-              <section id="projects">
-                <ul id="thumbs" class="portfolio">
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{{asset
-                    ('flatter/img/works/full/image-01-full.jpg') }}">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="{{asset ('flatter/img/works/thumbs/image-01.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{{asset('flatter/img/works/full/image-02-full.jpg')}}">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="{{ asset ('flatter/img/works/thumbs/image-02.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{ asset ('flatter/img/works/full/image-03-full.jpg')}}">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="{{ asset('img/works/thumbs/image-03.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset ('img/works/full/image-04-full.jpg')}}">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="{{ asset('img/works/thumbs/image-04.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{{ asset('img/works/full/image-05-full.jpg')}}">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="{{ asset ('img/works/thumbs/image-05.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-5" data-type="icon">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="img/works/full/image-06-full.jpg">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-07-full.jpg">
-            <span class="overlay-img"></span>
-            <span class="overlay-img-thumb font-icon-plus"></span>
-            </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  
-                  <!-- End Item Project -->
-                </ul>
-              </section>
-            </div>
-          </div>
-        </div>
-        <!-- End Portfolio Projects -->
-        <!-- divider -->
-        <div class="row">
-          <div class="span12">
-            <div class="solidline">
-            </div>
-          </div>
-        </div>
-        <!-- end divider -->
-       <!--  <div class="row">
+        <!-- <div class="row">
           <div class="span12">
             <h4>Very satisfied <strong>clients</strong></h4>
             <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
@@ -527,11 +522,7 @@
                 <a href="#">
           <img src="{{ asset ('img/dummies/clients/client5.png')}}" class="client-logo" alt="" />
           </a>
-              </li>
-         
-             
-              
-              
+              </li> 
             </ul>
           </div>
         </div> -->
@@ -551,7 +542,7 @@
         </div>
       </div>
     </section>
- @yield('content')   
+ 
     <footer>
       <div class="container">
         <div class="row">
@@ -639,26 +630,24 @@
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
-  <!-- js flattern -->
-  <script src="{{ asset('flattern/js/jquery.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.easing.1.3.js')}}"></script> 
-  <script src="{{ asset('flattern/js/bootstrap.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.fancybox.pack.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.fancybox-media.js')}}"></script> 
-  <script src="{{ asset('flattern/js/google-code-prettify/prettify.js')}}"></script> 
-  <script src="{{ asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script> 
-  <script src="{{ asset('flattern/js/portfolio/setting.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.flexslider.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script> 
-  <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script> 
-  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script> 
-  <script src="{{ asset('flattern/js/animate.js')}}"></script> 
- 
-    <!-- Template Custom JavaScript File --> 
+  <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.easing.1.3.js')}}"></script>  
+  <script src="{{ asset('flattern/js/bootstrap.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jcarousel/jquery.jcarousel.min.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.fancybox.pack.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.fancybox-media.js')}}"></script>  
+  <script src="{{ asset('flattern/js/google-code-prettify/prettify.js')}}"></script>  
+  <script src="{{ asset('flattern/js/portfolio/jquery.quicksand.js')}}"></script>  
+  <script src="{{ asset('flattern/js/portfolio/setting.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.flexslider.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script>  
+  <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>  
+  <script src="{{ asset('flattern/js/animate.js')}}"></script>  
+  
+    <!-- Template Custom JavaScript File -->  
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
-
 
 </body>
 </html>
