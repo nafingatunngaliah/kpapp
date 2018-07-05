@@ -13,12 +13,10 @@ class PostController extends Controller
     public function viewPost()
     {
         $post = Post::orderBy('id','asc')->get();
-        // //dd($post);
-        // return view('user.post.view', ['post'=>$post]);
         return view('user.post.view', ['post' => $post]);
     }
 
-    // menambah post
+    // add post
     public function getFormTambahPost()
     {
         $post = Post::get();
@@ -26,15 +24,6 @@ class PostController extends Controller
     }
     public function setFormTambahPost(Request $request)
     {
-        
-        // $post = new Post();
-        // $post->judul_post = $request->input('judul_post');
-        // $post->image_post = $request->input('image_post');
-        // $post->isi_post = $request->input('isi_post');
-        // dd($post);
-        // $post->save();
-
-        // return redirect()->back();
         $this->validate($request, [
             'judul_post' => 'required',
             'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -54,22 +43,40 @@ class PostController extends Controller
         return back()
             ->with('success','Post submitted successfully.');
     }
+    //end - add post
 
+    //update post
     public function editFormTambahPost($id)
     {
         $post = Post::find($id);
-        //dd($sampah);
-        return view('user.post.edit', ['post' => $post]);
+        return view('user.post.edit', compact('post'));
     }
 
     public function updateFormTambahPost(Request $request, $id)
     {
+        $this->validate($request, [
+            'judul_post' => 'required',
+            'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'isi_post' => 'required',
+        ]);
 
+        $post = Post::find($id);
+        $post->judul_post = $request->input('judul_post');
+        $post['image_post'] = time().'.'.$request->image_post->getClientOriginalExtension();
+        $request->image_post->move(public_path('image_post'), $post['image_post']);
+        $post->isi_post = $request->input('isi_post');
+        $post->save();
+        //dd($post);
+        return redirect()->back();
     }
 
+    //end - update post
+
+    //delete post
     public function deletePost($id)
     {
-
+        Post::destroy($id);
+        return back();
     }
 
 }

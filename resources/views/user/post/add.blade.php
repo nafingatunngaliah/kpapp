@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <!-- ample upload file -->
-  <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
+  
   <!-- flattern -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="{{asset('flattern/css/bootstrap.css')}}" rel="stylesheet" />
@@ -18,6 +17,8 @@
   <link href="{{asset('flattern/css/flexslider.css')}}" rel="stylesheet" />
   <link href="{{asset('flattern/css/slitslider.css')}}" rel="stylesheet" />
   <link href="{{asset('flattern/css/style.css')}}" rel="stylesheet" />
+  <!-- ample upload file -->
+  <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
   <!-- Theme skin -->
   <link id="t-colors" href="{{asset('flattern/skins/default.css')}}" rel="stylesheet" />
   <!-- boxed bg -->
@@ -218,21 +219,22 @@
               <div class="row">
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Foto Post</label>
-                  <input type="file" id="input-file-now" class="dropify" required="" name="image_post"/> 
+                  <input type="file" id="input-file-now" class="dropify" name="image_post"/> 
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Judul Post</label>
-                  <input type="text" class="form-control" id="name" placeholder="Judul Post" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required="" name="judul_post"/>
+                  <input type="text" class="form-control" id="name" placeholder="Judul Post" data-rule="minlen:4" data-msg="Please enter title" required="" name="judul_post"/>
                   <div class="validation"></div>
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Isi Post</label>
                   <textarea class="form-control" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Isi Post" required="" name="isi_post"></textarea>
                   <div class="validation"></div>
-                  <p class="text-center">
-                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit</button>
-                  </p>
+                  
                 </div>
+                <p class="text-center">
+                  <button class="btn btn-large btn-theme margintop10" type="submit">Submit</button>
+                </p>
               </div>
             </form>
           </div>
@@ -329,6 +331,7 @@
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <!-- javascript
     ================================================== -->
+
   
   <!-- js flattern -->
   <script src="{{asset('flattern/js/jquery.js')}}"></script>
