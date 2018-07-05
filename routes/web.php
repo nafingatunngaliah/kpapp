@@ -21,12 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');
 Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
 Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
-Route::get('/post-edit/{id}', 'PostController@editFormTambahPost')->name('post-edit');
-Route::post('/post-update/{id}', 'PostController@updateFormTambahPost')->name('post-update');
-Route::get('/post-delete/{id}', 'PostController@deletePost');
+Route::get('/post-edit/{id_post}', 'PostController@editFormTambahPost')->name('post-edit');
+Route::post('/post-update/{id_post}', 'PostController@updateFormTambahPost')->name('post-update');
+Route::get('/post-delete/{id_post}', 'PostController@deletePost');
 
 // Fitur Comment Post
-Route::get('/post-detail', 'CommentController@viewComment')->name('post-detail');
+Route::get('/post-detail/{id_post}', 'CommentController@viewComment')->name('post-detail');
 // Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
 // Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
 // Route::get('/post-edit/{id}', 'PostController@editFormTambahPost')->name('post-edit');

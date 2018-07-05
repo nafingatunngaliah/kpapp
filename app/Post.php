@@ -7,18 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $table = 'post';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_post';
     public $timestamps = true;
     public $incrementing = true;
     protected $fillable = [
-    	'judul_post',
+    	'id',
+        'judul_post',
         'image_post',
 	    'isi_post', 
     ]; 
 
 
-    // public function sampah()
-    // {
-    //     return $this->belongsToMany('App\Transaksi');
-    // }
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'id');
+    }
 }

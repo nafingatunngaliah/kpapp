@@ -202,20 +202,14 @@
       </div>
     </header>
     <!-- end header -->
+
     <section id="inner-headline">
       <div class="container">
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Post left sidebar</h2>
+              <h2>Detail Post</h2>
             </div>
-          </div>
-          <div class="span8">
-            <ul class="breadcrumb">
-              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
-              <li><a href="#">Blog</a><i class="icon-angle-right"></i></li>
-              <li class="active">Blog post left sidebar</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -223,103 +217,31 @@
     <section id="content">
       <div class="container">
         <div class="row">
-          <div class="span4">
-            <aside class="left-sidebar">
-              <div class="widget">
-                <form class="form-search">
-                  <input placeholder="Type something" type="text" class="input-medium search-query">
-                  <button type="submit" class="btn btn-square btn-theme">Search</button>
-                </form>
-              </div>
-              <div class="widget">
-                <h5 class="widgetheading">Categories</h5>
-                <ul class="cat">
-                  <li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
-                  <li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
-                  <li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
-                  <li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
-                  <li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
-                </ul>
-              </div>
-              <div class="widget">
-                <h5 class="widgetheading">Latest posts</h5>
-                <ul class="recent">
-                  <li>
-                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-                    <h6><a href="#">Lorem ipsum dolor sit</a></h6>
-                    <p>
-                      Mazim alienum appellantur eu cu ullum officiis pro pri
-                    </p>
-                  </li>
-                  <li>
-                    <img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" />
-                    <h6><a href="#">Maiorum ponderum eum</a></h6>
-                    <p>
-                      Mazim alienum appellantur eu cu ullum officiis pro pri
-                    </p>
-                  </li>
-                  <li>
-                    <img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" />
-                    <h6><a href="#">Et mei iusto dolorum</a></h6>
-                    <p>
-                      Mazim alienum appellantur eu cu ullum officiis pro pri
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div class="widget">
-                <h5 class="widgetheading">Popular tags</h5>
-                <ul class="tags">
-                  <li><a href="#">Web design</a></li>
-                  <li><a href="#">Trends</a></li>
-                  <li><a href="#">Technology</a></li>
-                  <li><a href="#">Internet</a></li>
-                  <li><a href="#">Tutorial</a></li>
-                  <li><a href="#">Development</a></li>
-                </ul>
-              </div>
-            </aside>
-          </div>
           <div class="span8">
             <article>
-              <div class="row">
+              <div class="row" action="{{url('post-detail',array($post->id_post))}}>
                 <div class="span8">
                   <div class="post-image">
                     <div class="post-heading">
-                      <h3><a href="#">Example single post title here</a></h3>
+                      <h3><a href="#">{{ $post->judul_post }}</a></h3>
                     </div>
-                    <img src="img/dummies/blog/img1.jpg" alt="" />
+                    <img src="{{asset('image_post/'. $post->image_post)}}" alt="" />
                   </div>
                   <p>
-                    Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-                    ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur. Mazim alienum appellantur eu cum, cu ullum officiis pro, pri at eius erat accusamus. Eos id
-                    hinc fierent indoctum, ad accusam consetetur voluptatibus sit. His at quod impedit. Eu zril quando perfecto mel, sed eu eros debet.
+                    {{ $post->isi_post }}
                   </p>
-                  <blockquote>
-                    <i class="icon-quote-left"></i> Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque...
-                  </blockquote>
-                  <p>
-                    Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur. Mazim alienum appellantur eu cum, cu ullum officiis pro, pri
-                    at eius erat accusamus.
-                  </p>
+                 
                   <div class="bottom-article">
                     <ul class="meta-post">
-                      <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                      <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                      <li><i class="icon-tags"></i><a href="#">Web design</a></li>
+
+                      <li><i class="icon-user"></i><a href="#"> {{ $post->users->name }}</a></li>
+                      <li><i class="icon-tags"></i><a href="#">{{ $post->created_at }}</a></li>
                     </ul>
                   </div>
+                  
                 </div>
               </div>
             </article>
-            <!-- author info -->
-            <div class="about-author">
-              <a href="#" class="thumbnail align-left"><img src="img/avatar.png" alt="" /></a>
-              <h5><strong><a href="#">John doe</a></strong></h5>
-              <p>
-                Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper ad qui, est rebum nulla argumentum ei.
-              </p>
-            </div>
             <div class="comment-area">
               <h4>4 Comments</h4>
               <div class="media">
@@ -397,7 +319,6 @@
         </div>
       </div>
     </section>
-
     <footer>
       <div class="container">
         <div class="row">

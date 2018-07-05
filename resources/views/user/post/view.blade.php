@@ -92,31 +92,31 @@
                     <label class="control-label" for="inputText">Email</label>
                     <div class="controls">
                       <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
--
--                                @if ($errors->has('email'))
--                                    <span class="invalid-feedback">
--                                        <strong>{{ $errors->first('email') }}</strong>
--                                    </span>
--                                @endif
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="inputSigninPassword">Password</label>
                     <div class="controls">
                       <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
--
--                                @if ($errors->has('password'))
--                                    <span class="invalid-feedback">
--                                        <strong>{{ $errors->first('password') }}</strong>
--                                    </span>
--                                @endif
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                     </div>
                   </div>
                   <div class="control-group">
                     <div class="controls">
                       <button type="submit" class="btn btn-primary">
--                                    {{ __('Login') }}
--                                </button>
+                                    {{ __('Login') }}
+                                </button>
                     </div>
                   </div>
                 </form>
@@ -243,8 +243,9 @@
                     </a>
                     <!-- Thumb Image and Description -->
                     <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
-                    <a href="{{ url('post-edit', array($post->id)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal">Edit Post</a>
-                    <a href="{{ url('post-delete', array($post->id)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal" left="0px">Delete Post</a>
+                    <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal">Edit Post</a>
+                    <a href="{{ url('post-detail', array($post->id_post)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal" left="0px">Delail Post</a>
+                    <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-large e_pulse" data-toggle="modal" left="0px">Delete Post</a>
                     {{csrf_field()}}
                   </li>
                   <!-- End Item Project -->

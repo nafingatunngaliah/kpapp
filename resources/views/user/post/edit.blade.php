@@ -211,7 +211,7 @@
           <div class="span12">
             <h4>Write your story and share on<strong> post</strong></h4>
 
-            <form method="post" action="{{url('post-update',array($post->id))}}" role="form" class="contactForm" enctype="multipart/form-data">
+            <form method="post" action="{{url('post-update',array($post->id_post))}}" role="form" class="contactForm" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
