@@ -955,6 +955,7 @@ form#commentform textarea {
 
 .item-thumbs a+img {
   width: 100%;
+  height: 180px;
 }
 
 .item-thumbs .hover-wrap {

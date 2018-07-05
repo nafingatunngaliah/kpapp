@@ -7,6 +7,7 @@ use App\Post;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Image;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
@@ -32,6 +33,9 @@ class PostController extends Controller
 
 
         $input['image_post'] = time().'.'.$request->image_post->getClientOriginalExtension();
+        $image_resize = Image::make($post['image_post']->getRealPath());              
+        $image_resize->resize(300, 300);
+        
         $request->image_post->move(public_path('image_post'), $input['image_post']);
 
 
@@ -63,6 +67,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->judul_post = $request->input('judul_post');
         $post['image_post'] = time().'.'.$request->image_post->getClientOriginalExtension();
+        Image::make($post['image_post'])->resize(350,350);
         $request->image_post->move(public_path('image_post'), $post['image_post']);
         $post->isi_post = $request->input('isi_post');
         $post->save();
