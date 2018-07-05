@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <!-- ample upload file -->
-  <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
+  
   <!-- flattern -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="{{asset('flattern/css/bootstrap.css')}}" rel="stylesheet" />
@@ -20,6 +19,8 @@
   <link href="{{asset('flattern/css/style.css')}}" rel="stylesheet" />
   <!-- Theme skin -->
   <link id="t-colors" href="{{asset('flattern/skins/default.css')}}" rel="stylesheet" />
+  <!-- ample upload file -->
+  <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
   <!-- boxed bg -->
   <link id="bodybg" href="{{asset('flattern/img/bodybg/bg1.css')}}" rel="stylesheet" type="text/css" />
   <!-- Fav and touch icons -->
@@ -210,7 +211,7 @@
           <div class="span12">
             <h4>Write your story and share on<strong> post</strong></h4>
 
-            <form method="post" role="form" class="contactForm" action="{{ url('post-update', array($post->id)) }}" enctype="multipart/form-data">
+            <form method="post" action="{{url('post-update',array($post->id))}}" role="form" class="contactForm" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
@@ -218,21 +219,22 @@
               <div class="row">
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Foto Post</label>
-                  <input type="file" id="input-file-now" class="dropify" required="" name="image_post" value="{{ $post->image_post }}"/> 
+                  <input type="file" id="input-file-now" class="dropify" required="" name="image_post" data-default-file="{{asset('image_post/'. $post->image_post)}}" /> 
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Judul Post</label>
-                  <input type="text" class="form-control" id="name" placeholder="Judul Post" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required="" name="judul_post" value="{{ $post->judul_post }}"/>
+                  <input type="text" class="form-control" id="name" placeholder="Judul Post" data-rule="minlen:4" data-msg="Please enter title" required="" name="judul_post" value="{{ $post->judul_post }}"/>
                   <div class="validation"></div>
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Isi Post</label>
-                  <textarea class="form-control" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Isi Post" required="" name="isi_post" value="{{ $post->isi_post }}"></textarea>
+                  <textarea class="form-control" rows="12" data-msg="Please write something for us" placeholder="Write post here...." required="" name="isi_post" >{{ $post->isi_post }}</textarea>
                   <div class="validation"></div>
-                  <p class="text-center">
-                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit</button>
-                  </p>
                 </div>
+                <p class="text-center">
+                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit</button>
+                    
+                  </p>
               </div>
             </form>
           </div>
