@@ -1,6 +1,7 @@
 @extends('layouts.index')
-
+<!-- @extends('index') -->
 @section('content2')
+
 <section class="callaction">
       <div class="container">
         <div class="row">
@@ -19,4 +20,3 @@
     </section>
 
   @endsection
-  <!-- @extends('index') -->
