@@ -19,4 +19,4 @@
     </section>
 
   @endsection
-  @extends('index')
+  <!-- @extends('index') -->
