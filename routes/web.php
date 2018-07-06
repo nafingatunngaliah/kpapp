@@ -26,9 +26,6 @@ Route::post('/post-update/{id_post}', 'PostController@updateFormTambahPost')->na
 Route::get('/post-delete/{id_post}', 'PostController@deletePost');
 
 // Fitur Comment Post
-Route::get('/post-detail/{id_post}', 'CommentController@viewComment')->name('post-detail');
-// Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
-// Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
-// Route::get('/post-edit/{id}', 'PostController@editFormTambahPost')->name('post-edit');
-// Route::post('/post-update/{id}', 'PostController@updateFormTambahPost')->name('post-update');
-// Route::get('/post-delete/{id}', 'PostController@deletePost');
+Route::get('/post-detail/{id_post}', 'CommentController@viewDetailPost')->name('post-detail');
+Route::post('/post-detail/{id_post}', 'CommentController@addComment')->name('post-detail/{id_post}');
+

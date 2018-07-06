@@ -12,9 +12,8 @@ class Comment extends Model
     public $incrementing = true;
     protected $fillable = [
     	'id_post',
-        'id',
+        'komentator',
 	    'komentar',
-	    'balasan',  
     ]; 
 
     public function post()
@@ -22,8 +21,5 @@ class Comment extends Model
         return $this->belongsTo('App\Post', 'id_post');
     }
 
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'id');
-    }
+
 }
