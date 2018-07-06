@@ -18,7 +18,7 @@
                   @foreach($post as $post)
                   <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $post->judul_post }}" href="{{asset('image_post/'. $post->image_post)}}">                  
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $post->judul_post }}" href="{{asset('image_post/'. $post->image_post)}}" >         
                       <span class="overlay-img"></span>
                       <span class="overlay-img-thumb font-icon-plus"></span>
                     </a>

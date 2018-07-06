@@ -3,14 +3,14 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Image;
+
 
 
 class PostController extends Controller
@@ -35,16 +35,18 @@ class PostController extends Controller
             'isi_post' => 'required',
         ]);
         $input['id'] = Auth::User()->id;
-        $input['image_post'] = time().'.'.$request->image_post->getClientOriginalExtension();
-        // $image_resize = Image::make($post['image_post']->getRealPath());              
-        // $image_resize->resize(300, 300);
-        
-        $request->image_post->move(public_path('image_post'), $input['image_post']);
         $input['judul_post'] = $request->judul_post;
         $input['isi_post'] = $request->isi_post;
+        
+
+        if ($request->hasFile('image_post')) {
+            $image_post = $request->file('image_post');
+            $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
+            Image::make($image_post)->resize(1850, 1250)->save( public_path('/image_post/' . $image_post_name ));
+            $input['image_post'] = $image_post_name;
+           // $input->save();
+        }
         Post::create($input);
-
-
         return back()
             ->with('success','Post submitted successfully.');
     }
@@ -64,15 +66,20 @@ class PostController extends Controller
             'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'isi_post' => 'required',
         ]);
-
         $post = Post::find($id_post);
         $post->judul_post = $request->input('judul_post');
-        $post['image_post'] = time().'.'.$request->image_post->getClientOriginalExtension();
-        // Image::make($post['image_post'])->resize(350,350);
-        $request->image_post->move(public_path('image_post'), $post['image_post']);
         $post->isi_post = $request->input('isi_post');
+        if ($request->hasFile('image_post')) {    
+            $image_post = $request->file('image_post');
+            $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
+            Image::make($image_post)->resize(1850, 1250)->save( public_path('/image_post/' . $image_post_name ));
+            $post->image_post = $image_post_name;
+        }
         $post->save();
+        
         //dd($post);
+
+        //Post::updated($post);
         return redirect()->back();
     }
 
