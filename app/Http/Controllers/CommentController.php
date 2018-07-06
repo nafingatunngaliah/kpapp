@@ -14,7 +14,7 @@ class CommentController extends Controller
     public function viewDetailPost($id_post)
     {
         $post = Post::find($id_post);
-        $komen = Comment::get();
+        $komen = Comment::where('id_post','=',$id_post)->get();
         return view('user.comment.view', ['post' => $post, 'komen' => $komen]);
     }
 
