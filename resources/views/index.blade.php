@@ -112,7 +112,7 @@
                     <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $post->judul_post }}" href="{{asset('image_post/'. $post->image_post)}}">
                     <span class="overlay-img"></span>
                     <span class="overlay-img-thumb font-icon-plus"></span></a>
-                   <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
+                   <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px"><a class="btn btn-small btn-theme btn-rounded" href="{{route ('viewpost')}}"><i class="icon-comment"></i>comment</a>
                    {{csrf_field()}}
                   </li>
                   @endif

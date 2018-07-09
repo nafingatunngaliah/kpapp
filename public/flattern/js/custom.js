@@ -106,16 +106,21 @@ jQuery(document).ready(function($) {
   // fancybox
   $(".fancybox").fancybox({
     padding: 0,
-    autoResize: true,
+    // autoResize: true,
+    autoResize: false,
     beforeShow: function() {
       this.title = $(this.element).attr('title');
       this.title = '<h4>' + this.title + '</h4>' + '<p>' + $(this.element).parent().find('img').attr('alt') + '</p>';
+      $(."read-more").click(function(){
+      window.location.href="www.google.com";
+    })
     },
     helpers: {
       title: {
         type: 'inside'
       },
     }
+
   });
 
 
