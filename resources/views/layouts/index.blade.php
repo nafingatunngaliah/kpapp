@@ -32,6 +32,9 @@
   <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
 
   <!-- end flattern -->
+  <link href="{{ asset('codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
+
+
 
 </head>
 
@@ -393,6 +396,7 @@
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
 <!-- js upload file -->
   <script src="{{asset('ample/plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/tinymce/tinymce.min.js')}}"></script>
     <script>
         $(document).ready(function () {
             // Basic
@@ -431,6 +435,12 @@
         });
     </script>
 
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+    </script>
+    <script src="{{ asset('codesnippet/lib/highlight/highlight.pack.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

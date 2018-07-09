@@ -38,7 +38,7 @@
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Post Description</label>
-                  <textarea class="form-control" rows="12" data-msg="Please write something for us" placeholder="Write post here...." required="" name="isi_post" >{{ $post->isi_post }}</textarea>
+                  <textarea id="mymce" name="isi_post" value="{{ $post->isi_post }}">{{ $post->isi_post }}</textarea>
                   <div class="validation"></div>
                 </div>
                 <p class="text-center">

@@ -42,7 +42,7 @@ class PostController extends Controller
         if ($request->hasFile('image_post')) {
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1850, 1250)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(950, 550)->save( public_path('/image_post/' . $image_post_name ));
             $input['image_post'] = $image_post_name;
            // $input->save();
         }
