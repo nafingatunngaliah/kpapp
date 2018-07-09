@@ -39,7 +39,7 @@
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Post Description </label>
-                  <textarea class="form-control" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Isi Post" required="" name="isi_post"></textarea>
+                  <textarea class="form-control" id="summary-ckeditor" name="isi_post"></textarea>
                   <div class="validation"></div>
                   
                 </div>
