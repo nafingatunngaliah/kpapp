@@ -111,9 +111,7 @@ jQuery(document).ready(function($) {
     beforeShow: function() {
       this.title = $(this.element).attr('title');
       this.title = '<h4>' + this.title + '</h4>' + '<p>' + $(this.element).parent().find('img').attr('alt') + '</p>';
-      $(."read-more").click(function(){
-      window.location.href="www.google.com";
-    })
+      
     },
     helpers: {
       title: {

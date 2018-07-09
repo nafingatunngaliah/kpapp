@@ -759,7 +759,7 @@ section.callaction {
 ==================================== */
 
 #inner-headline {
-  background: #FCE300;
+  background: linear-gradient(to right, #00ccff 0%, #006666 61%);
   position: relative;
   margin: 0;
   padding: 0;
