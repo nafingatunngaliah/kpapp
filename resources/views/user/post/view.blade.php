@@ -43,7 +43,7 @@
                       
                     
                     <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
-                    <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: 3%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
+                    <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
                     </ul>
                     @else
                     
@@ -57,10 +57,14 @@
             @endforeach
             @endif
             <div id="pagination">
-              <span class="all">Page 1 of 3</span>
-              <span class="current">1</span>
+              
+              @foreach($post as $posts)
+              <span class="all">Page 1 of</span>
+              <span class="current"> {!! $posts->render() !!}</span>
               <a href="#" class="inactive">2</a>
               <a href="#" class="inactive">3</a>
+              @endforeach
+              
             </div>
           </div>
           

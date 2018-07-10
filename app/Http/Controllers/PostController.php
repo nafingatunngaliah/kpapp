@@ -12,14 +12,24 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 
-
 class PostController extends Controller
 {
     public function viewPost()
     {
         $post = Post::orderBy('id_post','asc')->get();
+        // $post->paginate(3);
         return view('user.post.view', ['post' => $post]);
+        if($post->count()>4){
+            $posts = Post::paginate(4);
+            return view('user.post.view',['post' => $posts]);
+        }
     }
+    // public function getIndex(){
+    //     $posts = DB :: table("post")
+    //     -&gt;where('id_post')
+    //     -&gt;first();
+    //     return view ('user.post.view', ['post' =&gt;$posts]);
+    // }
 
     // add post
     public function getFormTambahPost()
