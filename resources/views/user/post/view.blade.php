@@ -24,39 +24,32 @@
         <div class="row">
           <div class="span8">
           @if($post->count())
-            @foreach($post as $post)
+            @foreach($post as $p)
             <article>
               <div class="row">
                 <div class="span8">
                   <div class="post-image">
                     <div class="post-heading">
-                      <h3><a href="{{ url('post-detail', array($post->id_post)) }}">{{ $post->judul_post }}</a></h3>
+                      <h3><a href="{{ url('post-detail', array($p->id_post)) }}">{{ $p->judul_post }}</a></h3>
                     </div>
-                    <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
+                    <img class="card-img-top" src="{{asset('image_post/'. $p->image_post)}}" alt="{{ $p->isi_post }}" width="100%" height="180px">
                   </div>
                   <div>
                     <p>
-                      {!! str_limit($post->isi_post,400) !!}
+                      {!! str_limit($p->isi_post,400) !!}
                     </p>
                   </div>
 
                   <div class="bottom-article">
                     @auth
                     <ul class="meta-post">
-<<<<<<< HEAD
-                      
-                    
-                    <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
-                    <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
-=======
-                      <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
-                      <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: 3%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
->>>>>>> bismillaheditor
+                    <a href="{{ url('post-edit', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
+                    <a href="{{ url('post-delete', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
                     </ul>
                     @else
                     
                     @endauth
-                    <a href="{{ url('post-detail', array($post->id_post)) }}" class="pull-right">Continue Reading <i class="icon-angle-right"></i></a>
+                    <a href="{{ url('post-detail', array($p->id_post)) }}" class="pull-right">Continue Reading <i class="icon-angle-right"></i></a>
                     {{csrf_field()}}
                   </div>
                 </div>
@@ -65,14 +58,8 @@
             @endforeach
             @endif
             <div id="pagination">
-              
-              @foreach($post as $posts)
               <span class="all">Page 1 of</span>
-              <span class="current"> {!! $posts->render() !!}</span>
-              <a href="#" class="inactive">2</a>
-              <a href="#" class="inactive">3</a>
-              @endforeach
-              
+              {!! $post->render() !!}
             </div>
           </div>
           <div class="span4">

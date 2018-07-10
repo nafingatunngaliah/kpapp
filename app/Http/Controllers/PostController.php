@@ -9,6 +9,7 @@ use App\Post;
 use App\User;
 use Auth;
 use App\Http\Requests;
+use Illuminate\Database\Query\Builder;
 use App\Http\Controllers\Controller;
 
 
@@ -16,20 +17,9 @@ class PostController extends Controller
 {
     public function viewPost()
     {
-        $post = Post::orderBy('id_post','asc')->get();
-        // $post->paginate(3);
-        return view('user.post.view', ['post' => $post]);
-        if($post->count()>4){
-            $posts = Post::paginate(4);
-            return view('user.post.view',['post' => $posts]);
-        }
+        $post =Post::orderBy('created_at', 'desc')->paginate(3);
+        return view ('user.post.view', compact('post' ));
     }
-    // public function getIndex(){
-    //     $posts = DB :: table("post")
-    //     -&gt;where('id_post')
-    //     -&gt;first();
-    //     return view ('user.post.view', ['post' =&gt;$posts]);
-    // }
 
     // add post
     public function getFormTambahPost()
@@ -52,7 +42,7 @@ class PostController extends Controller
         if ($request->hasFile('image_post')) {
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(950, 550)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(1050, 950)->save( public_path('/image_post/' . $image_post_name ));
             $input['image_post'] = $image_post_name;
            // $input->save();
         }
