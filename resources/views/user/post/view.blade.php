@@ -32,18 +32,26 @@
                     <div class="post-heading">
                       <h3><a href="{{ url('post-detail', array($post->id_post)) }}">{{ $post->judul_post }}</a></h3>
                     </div>
-                    <img src="{{asset('image_post/'. $post->image_post)}}" alt="" />
+                    <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
                   </div>
-                  <p>
-                    {{ $post->isi_post }}
-                  </p>
+                  <div>
+                    <p>
+                      {!! str_limit($post->isi_post,400) !!}
+                    </p>
+                  </div>
+
                   <div class="bottom-article">
                     @auth
                     <ul class="meta-post">
+<<<<<<< HEAD
                       
                     
                     <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
                     <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
+=======
+                      <a href="{{ url('post-edit', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
+                      <a href="{{ url('post-delete', array($post->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: 3%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
+>>>>>>> bismillaheditor
                     </ul>
                     @else
                     
@@ -66,6 +74,39 @@
               @endforeach
               
             </div>
+          </div>
+          <div class="span4">
+            <aside class="right-sidebar">
+              <div class="widget">
+                <form class="form-search">
+                  <input placeholder="Type something" type="text" class="input-medium search-query">
+                  <button type="submit" class="btn btn-square btn-theme">Search</button>
+                </form>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Latest posts</h5>
+                <ul class="recent">
+                  <li>
+                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
+                    <h6><a href="#">Lorem ipsum dolor sit</a></h6>
+                    <p>
+                      Mazim alienum appellantur eu cu ullum officiis pro pri
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Popular tags</h5>
+                <ul class="tags">
+                  <li><a href="#">Web design</a></li>
+                  <li><a href="#">Trends</a></li>
+                  <li><a href="#">Technology</a></li>
+                  <li><a href="#">Internet</a></li>
+                  <li><a href="#">Tutorial</a></li>
+                  <li><a href="#">Development</a></li>
+                </ul>
+              </div>
+            </aside>
           </div>
           
         </div>

@@ -100,7 +100,22 @@
         <!-- Portfolio Projects -->
         <div class="row">
           <div class="span12">
-          	@yield('content2')
+          	<div class="callaction">
+              <div class="container">
+                <div class="row">
+                  <div class="span12">
+                    <div class="big-cta">
+                      <div class="cta-text">
+                        <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span></h3>
+                      </div>
+                      <div class="cta floatright">
+                        <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}"><i class="icon-book"></i> View Post </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           	<h4 class="heading">Some of recent <strong>works</strong></h4>
             <div class="row">
               <section id="projects">
@@ -112,41 +127,12 @@
                     <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $post->judul_post }}" href="{{asset('image_post/'. $post->image_post)}}">
                     <span class="overlay-img"></span>
                     <span class="overlay-img-thumb font-icon-plus"></span></a>
-                   <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px"><a class="btn btn-small btn-theme btn-rounded" href="{{route ('viewpost')}}"><i class="icon-comment"></i>comment</a>
+                    <img class="card-img-top" src="{{asset('image_post/'. $post->image_post)}}" alt="{{ $post->isi_post }}" width="100%" height="180px">
                    {{csrf_field()}}
                   </li>
                   @endif
                   @endforeach
-                  
-                
-                  <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
-                   <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{{asset('flatter/img/works/full/image-02-full.jpg')}}">
-                    <span class="overlay-img"></span>
-                    <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                  <img src="{{ asset ('flatter/img/works/thumbs/image-02.jpg') }}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li> 
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{ asset ('flatter/img/works/full/image-03-full.jpg')}}">
-                    <span class="overlay-img"></span>
-                    <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <img src="{{ asset('img/works/thumbs/image-03.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li> 
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset ('img/works/full/image-04-full.jpg')}}">
-                    <span class="overlay-img"></span>
-                    <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <img src="{{ asset('img/works/thumbs/image-04.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{{ asset('img/works/full/image-05-full.jpg')}}">
-                    <span class="overlay-img"></span>
-                    <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <img src="{{ asset ('img/works/thumbs/image-05.jpg')}}" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
+
                 </ul>
               </section>
             </div>

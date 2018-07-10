@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
        $post = Post::orderBy('id','asc')->get();
-        return view('user.home',['post' => $post]);
+        return view('index',['post' => $post]);
     }
     
 }
