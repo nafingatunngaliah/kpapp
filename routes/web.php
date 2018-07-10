@@ -16,7 +16,8 @@ Route::get('/', 'IndexController@index')->name('index');
 Auth::routes();
 //Fitur Slider and Home
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/home/{id_slide}', 'HomeController@setSlider')->name('slide-update');
+Route::get('/home/slide-edit/{id_slide}', 'HomeController@editSlider');
+Route::post('/home/slide-update/{id_slide}', 'HomeController@setSlider')->name('slide-update');
 
 // Fitur Post
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');

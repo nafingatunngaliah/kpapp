@@ -296,6 +296,7 @@
     @yield('liatpost')
     @yield('addpost') 
     @yield('editpost')
+    @yield('slider-new')
     <section id="bottom">
       <div class="container">
         <div class="row">

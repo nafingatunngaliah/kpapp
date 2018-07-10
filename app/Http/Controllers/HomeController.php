@@ -34,6 +34,12 @@ class HomeController extends Controller
         return view('index',['post' => $post, 'slide' => $slide]);
     }
 
+    public function editSlider($id_slide)
+    {
+        $slide = Slide::find($id_slide);
+        return view('edit-slider', compact('slide'));
+    }
+
     public function setSlider(Request $request, $id_slide)
     {
         $this->validate($request, [
@@ -48,10 +54,10 @@ class HomeController extends Controller
             $image_slide = $request->file('image_slide');
             $image_slide_name = time() . '.' .$image_slide->getClientOriginalExtension();
             Image::make($image_slide)->resize(1850, 1250)->save( public_path('/image_slide/' . $image_slide_name ));
-            $post->image_slide = $image_slide_name;
+            $slide->image_slide = $image_slide_name;
         }
-        dd($slide);
-        //$slide->save();
+        //dd($slide);
+        $slide->save();
         
         //dd($slide);
 

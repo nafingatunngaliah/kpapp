@@ -54,8 +54,6 @@
     <!-- end form add post -->
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
-  <!-- javascript
-    ================================================== -->
   
   
 @endsection

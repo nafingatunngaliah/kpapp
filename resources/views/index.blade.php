@@ -9,7 +9,16 @@
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-1">
+                @auth
+                <a href="{{ url('/home/slide-edit', array($s->id_slide)) }}">
+                  <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
+                </a>
+                @else
                 <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
+                @endauth
+                
+                  <!-- <a href="{{ url('slide-update', array($s->id_slide)) }}"><i class="icon-edit icon-edit icon-32" data-target="#modalslide" data-toggle="modal"></i></a> -->
+                
               </div>
               <h2><strong>{{ $s->judul_slide }}</strong></h2>
               <blockquote>
@@ -25,6 +34,7 @@
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-2">
                 <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
+                
               </div>
               <h2><strong>{{ $s->judul_slide }}</strong></h2>
               <blockquote>
@@ -40,6 +50,7 @@
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-3">
                 <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
+                
               </div>
               <h2><strong>{{ $s->judul_slide }}</strong></h2>
               <blockquote>
@@ -83,10 +94,6 @@
         </div>
         <!-- /sl-slider -->
         <nav id="nav-dots" class="nav-dots">
-          @auth
-          <i class="icon-edit icon-edit icon-32" href="#modalslide" data-toggle="modal" ></i>
-          @else
-          @endauth
           <span class="nav-dot-current"></span>
           <span></span>
           <span></span>
@@ -108,26 +115,34 @@
                   @csrf
                   <div class="control-group">
                     <label class="control-label" for="inputText">Nomor Slide</label>
-                    <select class="form-control select2" style="width: 100%;" name="id_slide"  required="">
-                    <option selected="selected">Nomor Slide</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+                    <div class="controls">
+                      <select class="form-control select2" style="width: 100%;" name="id_slide"  required="">
+                        <option selected="selected">Nomor Slide</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="inputText">Judul</label>
-                    <input type="text" class="form-control" id="name" placeholder="Judul Slide" name="judul_slide" />
+                    <div class="controls">
+                      <input type="text" class="form-control" id="name" placeholder="Judul Slide" name="judul_slide" />
+                    </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label" for="inputText">Isi</label>
-                    <input type="text" class="form-control" id="name" placeholder="Isi Slide" name="isi_slide" />
+                    <div class="controls">
+                      <input type="text" class="form-control" id="name" placeholder="Isi Slide" name="isi_slide" />
+                    </div>
                   </div>
                    <div class="control-group">
-                    <label class="control-label" for="inputText">Image</label> 
-                    <input type="file" id="input-file-now" class="dropify" required="" name="image_slide" />
+                    <label class="control-label" for="inputText">Image</label>
+                    <div class="controls"> 
+                      <input type="file" id="input-file-now" class="dropify" required="" name="image_slide" />
+                    </div>
                   </div>
                   <div class="control-group">
                     <div class="controls">
