@@ -38,7 +38,7 @@
                 </div>
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Post Description</label>
-                  <textarea id="mymce" name="isi_post" value="{{ $post->isi_post }}">{{ $post->isi_post }}</textarea>
+                  <textarea class="form-control" id="summary-ckeditor" name="isi_post">{{ $post->isi_post }}</textarea>
                   <div class="validation"></div>
                 </div>
                 <p class="text-center">

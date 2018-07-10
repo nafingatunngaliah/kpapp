@@ -26,7 +26,7 @@
                     <img src="{{asset('image_post/'. $post->image_post)}}" alt="" />
                   </div>
                   <p>
-                    {{ $post->isi_post }}
+                    {!! $post->isi_post !!}
                   </p>
                   <div class="bottom-article">
                     <ul class="meta-post">
