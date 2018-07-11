@@ -2,8 +2,12 @@
 
 @section ('slider')
 <section id="featured">
-      <!-- start slider -->
+      <!-- start slider --><div class="marquee">
+      		<p><strong>PT PLN APP Surabaya</strong>&nbsp;| JL. Ketintang Baru No 9 Surabaya 60231</p>
+      		
+      	</div>
       <div id="slider" class="sl-slider-wrapper demo-2">
+      	
         <div class="sl-slider">
           @foreach($slide as $s)
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
@@ -156,11 +160,12 @@
             </div>
             <!-- end signin modal -->
     </section>
+   
 @endsection
 @section('content')
      <section id="content">
       <div class="container">
-        
+        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="80%" height="700px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/>
         <!-- divider -->
         <div class="row">
           <div class="span12">
@@ -291,3 +296,4 @@
 
 
 @endsection
+ 

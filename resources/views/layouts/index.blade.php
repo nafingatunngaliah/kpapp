@@ -341,12 +341,9 @@
           </div>
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear">
-              </div>
+              <!-- <h5 class="widgetheading">Flickr photostream</h5> -->
+             <div id="google-map" style="width:100%;height:50%"></div>
+              
             </div>
           </div>
           <div class="span3">
@@ -456,6 +453,43 @@
                 }
             })
         });
+  
+        /* Google map
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+
+
+        function initialize() {
+          var mapOptions = {
+              zoom: 10,
+              center: new google.maps.LatLng(37.769725, -122.462154),
+              scrollwheel: false
+          };
+        
+          map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+          google.maps.event.addDomListener(map, 'idle', function() {
+            calculateCenter();
+          });
+        
+          google.maps.event.addDomListener(window, 'resize', function() {
+            map.setCenter(center);
+          });
+        }
+
+      function calculateCenter() {
+          center = map.getCenter();
+      }
+
+      function loadGoogleMap(){
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+          document.body.appendChild(script);
+      }loadGoogleMap();
+    
     </script>
 
     <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
