@@ -32,7 +32,7 @@
                     <div class="post-heading">
                       <h3><a href="{{ url('post-detail', array($p->id_post)) }}">{{ $p->judul_post }}</a></h3>
                     </div>
-                    <img class="card-img-top" src="{{asset('image_post/'. $p->image_post)}}" alt="{{ $p->isi_post }}" width="100%" height="180px">
+                    <img class="card-img-top" src="{{asset('image_post/'. $p->image_post)}}" alt="{{ $p->isi_post }}" width="100%" height="180px" style="width: 60%; height: auto; margin-left: 120px;">
                   </div>
                   <div>
                     <p>
@@ -43,8 +43,9 @@
                   <div class="bottom-article">
                     @auth
                     <ul class="meta-post">
-                    <a href="{{ url('post-edit', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
-                    <a href="{{ url('post-delete', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
+                      <li><i class="icon-calendar"></i><a href="#"> {{ $p->kategori_post }}</a></li>
+                      <a href="{{ url('post-edit', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
+                      <a href="{{ url('post-delete', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
                     </ul>
                     @else
                     
@@ -71,16 +72,30 @@
                 </form>
               </div>
               <div class="widget">
+                <h5 class="widgetheading">Categories</h5>
+                @if($post->count())
+                @foreach($post as $p)
+                <ul class="cat">
+                  <li><i class="icon-angle-right"></i><a href="#">{{ $p->kategori_post }}</a><span> (20)</span></li>
+                </ul>
+                @endforeach
+                @endif
+              </div>
+              <div class="widget">
                 <h5 class="widgetheading">Latest posts</h5>
+                @if($post->count())
+                @foreach($post2 as $p2)
                 <ul class="recent">
                   <li>
-                    <img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-                    <h6><a href="#">Lorem ipsum dolor sit</a></h6>
-                    <p>
-                      Mazim alienum appellantur eu cu ullum officiis pro pri
+                    <img src="{{asset('image_post/'. $p2->image_post)}}" class="pull-left" alt="" style="max-width: 30%; height: auto; margin: 0px 10px 0px 0px"/>
+                    <h6 style="line-height: 0.7em"><a href="{{ url('post-detail', array($p->id_post)) }}" ><strong>{{ $p2->judul_post }}</strong></a></h6>
+                    <p style="line-height: 0.7em">
+                      {!! str_limit($p2->isi_post,100) !!}
                     </p>
                   </li>
                 </ul>
+                @endforeach
+                @endif
               </div>
               <div class="widget">
                 <h5 class="widgetheading">Popular tags</h5>

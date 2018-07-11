@@ -32,8 +32,10 @@
   <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
 
   <!-- end flattern -->
+  <!-- editor -->
   <link href="{{ asset('codesnippet/lib/highlight/styles/default.css') }}" rel="stylesheet">
-
+  <!-- Calendar CSS -->
+  <link href="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.css')}}" rel="stylesheet" />
 
 
 </head>
@@ -297,6 +299,7 @@
     @yield('addpost') 
     @yield('editpost')
     @yield('slider-new')
+<<<<<<< HEAD
     <section id="bottom">
       <div class="container">
         <div class="row">
@@ -394,6 +397,9 @@
         </div>
       </div>
     </footer>
+=======
+    
+>>>>>>> master
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
@@ -410,7 +416,13 @@
   <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script>  
   <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script>  
   <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>  
-  <script src="{{ asset('flattern/js/animate.js')}}"></script>  
+  <script src="{{ asset('flattern/js/animate.js')}}"></script>
+  <!-- Calendar JavaScript -->
+    <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/moment/moment.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
   
     <!-- Template Custom JavaScript File -->  
   <script src="{{ asset('flattern/js/custom.js')}}"></script>

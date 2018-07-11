@@ -12,6 +12,7 @@ class Post extends Model
     public $incrementing = true;
     protected $fillable = [
     	'id',
+        'kategori_post',
         'judul_post',
         'image_post',
 	    'isi_post', 

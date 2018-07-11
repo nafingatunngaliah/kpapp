@@ -17,8 +17,9 @@ class PostController extends Controller
 {
     public function viewPost()
     {
-        $post =Post::orderBy('created_at', 'desc')->paginate(3);
-        return view ('user.post.view', compact('post' ));
+        $post =Post::orderBy('judul_post', 'desc')->paginate(3);
+        $post2 =Post::orderBy('created_at', 'desc')->paginate(8);
+        return view ('user.post.view', ['post' => $post, 'post2' => $post2]);
     }
 
     // add post
@@ -30,11 +31,13 @@ class PostController extends Controller
     public function setFormTambahPost(Request $request)
     {
         $this->validate($request, [
+            'kategori_post' => 'required',
             'judul_post' => 'required',
             'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'isi_post' => 'required',
         ]);
         $input['id'] = Auth::User()->id;
+        $input['kategori_post'] = $request->kategori_post;
         $input['judul_post'] = $request->judul_post;
         $input['isi_post'] = $request->isi_post;
         
@@ -42,7 +45,7 @@ class PostController extends Controller
         if ($request->hasFile('image_post')) {
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1050, 950)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(1850, 1350)->save( public_path('/image_post/' . $image_post_name ));
             $input['image_post'] = $image_post_name;
            // $input->save();
         }
@@ -62,17 +65,19 @@ class PostController extends Controller
     public function updateFormTambahPost(Request $request, $id_post)
     {
         $this->validate($request, [
+            'kategori_post' => 'required',
             'judul_post' => 'required',
             'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'isi_post' => 'required',
         ]);
         $post = Post::find($id_post);
+        $post->kategori_post = $request->input('kategori_post');
         $post->judul_post = $request->input('judul_post');
         $post->isi_post = $request->input('isi_post');
         if ($request->hasFile('image_post')) {    
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1850, 1250)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(1850, 1350)->save( public_path('/image_post/' . $image_post_name ));
             $post->image_post = $image_post_name;
         }
         $post->save();

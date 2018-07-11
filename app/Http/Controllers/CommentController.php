@@ -8,6 +8,7 @@ use App\Post;
 use App\User;
 use App\Http\Controllers\Controller;
 use Image;
+use Auth;
 
 class CommentController extends Controller
 {
@@ -20,6 +21,7 @@ class CommentController extends Controller
 
     public function addComment(Request $request, $id_post)
     {
+        $komen['id'] = Auth::User()->id;
         $komen['id_post']= $id_post;
         $komen['komentator'] = $request->komentator;
         $komen['komentar'] = $request->komentar;

@@ -29,16 +29,30 @@
 
               <div class="row">
                 <div class="span12 margintop10 form-group">
-                  <label class="control-label" for="inputText"> Photo's Post </label>
+                  <label class="control-label" for="inputText"> Foto Post </label>
                   <input type="file" id="input-file-now" class="dropify" name="image_post"/> 
                 </div>
                 <div class="span12 margintop10 form-group">
-                  <label class="control-label" for="inputText">  Title</label>
+                  <label class="control-label" for="inputText">  Kategori Post</label>
+                  <!-- <input type="text" class="form-control" id="name" placeholder="Kategori Post" data-rule="minlen:4" data-msg="Please enter title" required="" name="kategori_post"/> -->
+                  <select class="form-control select2" style="width: 100%;" name="kategori_post" required="">
+                    <option selected="selected">Pilih Kategori</option>
+                    <option value="Kegiatan">Kegiatan</option>
+                    <option value="Inspirasi">Inspirasi</option>
+                    <option value="Awareness">Awareness</option>
+                    <option value="Pekerjaan">Pekerjaan</option>
+                    <option value="Kabar Kelistrikan">Kabar Kelistrikan</option>
+                    <option value="Bonus">Bonus</option>
+                  </select>
+                  <div class="validation"></div>
+                </div>
+                <div class="span12 margintop10 form-group">
+                  <label class="control-label" for="inputText">  Judul Post</label>
                   <input type="text" class="form-control" id="name" placeholder="Judul Post" data-rule="minlen:4" data-msg="Please enter title" required="" name="judul_post"/>
                   <div class="validation"></div>
                 </div>
                 <div class="span12 margintop10 form-group">
-                  <label class="control-label" for="inputText">  Post Description </label>
+                  <label class="control-label" for="inputText">  Isi Post</label>
                   <textarea class="form-control" id="summary-ckeditor" name="isi_post"></textarea>
                   <div class="validation"></div>
                   
