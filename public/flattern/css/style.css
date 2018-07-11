@@ -699,10 +699,16 @@ section.callaction {
 }
 
 #content img {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
+  margin-left: 120px;
 }
 
+.pull-left {
+  max-width: 70%;
+  height: auto;
+  margin-left: 120px;
+}
 /* --- Call to action --- */
 
 .cta-text {

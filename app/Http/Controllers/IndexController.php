@@ -14,11 +14,10 @@ class IndexController extends Controller
 {
     public function index()
     {
-    	$post = Post::orderBy('id','asc')->get();
+        $post = Post::orderBy('id','asc')->get();
+        $post2 = Post::orderBy('id','asc')->get();
         $slide = Slide::get();
-        //dd($slide);
-        return view('index',['post' => $post, 'slide' => $slide]);
-
+        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2]);
     }
 
     public function editSlider($id_slide)

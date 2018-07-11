@@ -16,6 +16,7 @@ class CreatePostTable extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id_post');
             $table->int('id');
+            $table->string('kategori_post');
             $table->string('judul_post');
             $table->string('image_post');
             $table->text('isi_post');

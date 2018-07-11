@@ -11,10 +11,15 @@ class Comment extends Model
     public $timestamps = true;
     public $incrementing = true;
     protected $fillable = [
-    	'id_post',
-        'komentator',
+    	'id',
+        'id_post',
 	    'komentar',
     ]; 
+
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'id');
+    }
 
     public function post()
     {

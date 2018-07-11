@@ -15,15 +15,15 @@
     <section id="content">
       <div class="container">
         <div class="row">
-          <div class="span8">
+          <div class="span8" style="margin-left: 120px">
             <article>
               <div class="row" action="{{url('post-detail',array($post->id_post))}}">
-                <div class="span8">
+                <div class="span8" style="width:1000px">
                   <div class="post-image">
                     <div class="post-heading">
                       <h3><a href="#">{{ $post->judul_post }}</a></h3>
                     </div>
-                    <img src="{{asset('image_post/'. $post->image_post)}}" alt="" />
+                    <img src="{{asset('image_post/'. $post->image_post)}}" alt="" style="max-width: 70%; height: auto; margin-left: 120px;"/>
                   </div>
                   <p>
                     {!! $post->isi_post !!}
@@ -41,10 +41,10 @@
             @foreach($komen as $komen)
             <div class="comment-area">
               <div class="media">
-                <a href="#" class="thumbnail pull-left"><img src="{{asset('flattern/img/avatar.png')}}" alt="" /></a>
+                <a href="#" class="thumbnail pull-left" style="margin-left: 0px"><img src="{{asset('flattern/img/avatar.png')}}" alt="" style="margin:10px"/></a>
                 <div class="media-body">
                   <div class="media-content">
-                    <h6><span>{{ $komen->created_at }}</span> {{ $komen->komentator }}</h6>
+                    <h6><span>{{ $komen->created_at }}</span> {{ $post->users->name }}</h6>
                     <p>
                       {{ $komen->komentar }}
                     </p>
@@ -52,15 +52,13 @@
                   </div>
                 </div>
               </div>
+
             @endforeach
           @endif
               <h4>Leave your comment</h4>
               <form method="post" role="form" class="contactForm" action="{{url('post-detail/'.$post->id_post)}}" enctype="multipart/form-data"> 
                 {{ csrf_field() }}
                 <div class="row">
-                  <div class="span4">
-                    <input type="text" placeholder="* Enter your full name" required="" name="komentator"/>
-                  </div>
                   <div class="span8 margintop10">
                     <p>
                       <textarea rows="12" class="input-block-level" placeholder="*Your comment here" required="" name="komentar"></textarea>
