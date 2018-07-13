@@ -866,11 +866,7 @@ ul.breadcrumb li a:hover {
   display:block;
 }
 
-/* Google Map */
-#google-map {
-  height: 400px;
-  margin-bottom: 40px;
-}
+
 
 /* --- comment form ---- */
 
@@ -1130,7 +1126,14 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
     animation-play-state: paused
 }
 
-
+/*Google map*/
+#map {
+  width:100%;
+  height:300px;
+  background-color:#000;
+  position:relative;
+  z-index:1;
+}
 
 /* --- pullquotes --- */
 

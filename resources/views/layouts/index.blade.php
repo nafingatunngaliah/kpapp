@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="{{ asset('flattern/css/jcarousel.css')}}" >  
   <link rel="stylesheet" href="{{ asset('flattern/css/flexslider.css')}}" >  
   <link rel="stylesheet" href="{{ asset('flattern/css/slitslider.css')}}" >  
-  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" >  
+  <link rel="stylesheet" href="{{ asset('flattern/css/style.css')}}" > 
+  <link rel="stylesheet" href="{{ asset('flattern/css/cslider.css')}}" > 
   <!-- Theme skin -->
   <link id="t-colors" rel="stylesheet" href="{{ asset('flattern/skins/default.css')}}" >  
   <link id="bodybg" rel="stylesheet" href="{{ asset('flattern/bodybg/bg1.css')}}" >  
@@ -294,15 +295,19 @@
     </header>
     <!-- end header -->
     @yield('slider')
+    @yield('other-slider')
     @yield('content')
     @yield('liatpost')
     @yield('addpost') 
     @yield('editpost')
     @yield('slider-new')
-<<<<<<< HEAD
+
+
     <section id="bottom">
       <div class="container">
         <div class="row">
+           <h5 class="widgetheading">Our Location</h5>
+              <div id="map"></div>
           <div class="span12">
             <div class="aligncenter">
               <div id="twitter-wrapper">
@@ -320,46 +325,43 @@
         <div class="row">
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
+              <h5 class="widgetheading">Categories</h5>
+              @if($post->count())
+              @foreach($post2 as $p)
               <ul class="link-list">
-                <li><a href="#">About our company</a></li>
-                <li><a href="#">Our services</a></li>
-                <li><a href="#">Meet our team</a></li>
-                <li><a href="#">Explore our portfolio</a></li>
-                <li><a href="#">Get in touch with us</a></li>
+                <li><a href="#">{{ $p->kategori_post }}</a></li>
               </ul>
+              @endforeach
+              @endif 
             </div>
           </div>
-          <div class="span3">
+          <div class="span6">
             <div class="widget">
-              <h5 class="widgetheading">Important stuff</h5>
-              <ul class="link-list">
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Career center</a></li>
-                <li><a href="#">Flattern forum</a></li>
-              </ul>
+              <h5 class="widgetheading">Our Location</h5>
+              <div id="map"></div>
             </div>
           </div>
-          <div class="span3">
+          <!-- <div class="span3">
             <div class="widget">
-              <!-- <h5 class="widgetheading">Flickr photostream</h5> -->
-             <div id="google-map" style="width:100%;height:50%"></div>
-              
+              <h5 class="widgetheading">Flickr photostream</h5>
+              <div class="flickr_badge">
+                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+              </div>
+              <div class="clear">
+              </div>
             </div>
-          </div>
+          </div> -->
           <div class="span3">
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
-                <strong>Flattern studio, Pte Ltd</strong><br>
-                 Springville center X264, Park Ave S.01<br>
-                 Semarang 16425 Indonesia
+                <strong>PT PLN (Persero) - TJBTB - Area Pelaksana Pemeliharaan Surabaya</strong><br>
+                 JL. Ketintang Baru No 9 Surabaya 60231<br>
+                 
               </address>
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
+                <i class="icon-phone"></i> (031) 8285505 , 8285506 <br>
+                <i class="icon-envelope-alt"></i> http://www.pln.co.id
               </p>
             </div>
           </div>
@@ -371,7 +373,7 @@
             <div class="span6">
               <div class="copyright">
                 <p>
-                  <span>&copy; Flattern - All right reserved.</span>
+                  <span>&copy; PT PLN -JBTB- APP Surabaya. 2018 - All right reserved.</span>
                 </p>
                 <div class="credits">
                   <!--
@@ -397,9 +399,7 @@
         </div>
       </div>
     </footer>
-=======
-    
->>>>>>> master
+
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
@@ -415,7 +415,8 @@
   <script src="{{ asset('flattern/js/jquery.nivo.slider.js')}}"></script>  
   <script src="{{ asset('flattern/js/modernizr.custom.js')}}"></script>  
   <script src="{{ asset('flattern/js/jquery.ba-cond.min.js')}}"></script>  
-  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>  
+  <script src="{{ asset('flattern/js/jquery.slitslider.js')}}"></script>
+  <script src="{{ asset('flattern/js/jquery.cslider.js')}}"></script>  
   <script src="{{ asset('flattern/js/animate.js')}}"></script>
   <!-- Calendar JavaScript -->
     <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
@@ -465,45 +466,15 @@
                 }
             })
         });
-  
-        /* Google map
-        ------------------------------------------------*/
-        var map = '';
-        var center;
-
-
-
-        function initialize() {
-          var mapOptions = {
-              zoom: 10,
-              center: new google.maps.LatLng(37.769725, -122.462154),
-              scrollwheel: false
-          };
-        
-          map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
-
-          google.maps.event.addDomListener(map, 'idle', function() {
-            calculateCenter();
-          });
-        
-          google.maps.event.addDomListener(window, 'resize', function() {
-            map.setCenter(center);
-          });
-        }
-
-      function calculateCenter() {
-          center = map.getCenter();
-      }
-
-      function loadGoogleMap(){
-          var script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
-          document.body.appendChild(script);
-      }loadGoogleMap();
     
     </script>
 
+    <!-- google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
+    <script src="../plugins/bower_components/gmaps/gmaps.min.js"></script>
+    <script src="../plugins/bower_components/gmaps/jquery.gmaps.js"></script>
+
+   <!--  CKEditor -->
     <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script>
     CKEDITOR.replace( 'summary-ckeditor' );
