@@ -2,12 +2,8 @@
 
 @section ('slider')
 <section id="featured">
-      <!-- start slider --><div class="marquee">
-      		<p><strong>PT PLN APP Surabaya</strong>&nbsp;| JL. Ketintang Baru No 9 Surabaya 60231</p>
-      		
-      	</div>
+      <!-- start slider -->
       <div id="slider" class="sl-slider-wrapper demo-2">
-      	
         <div class="sl-slider">
           @foreach($slide as $s)
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
@@ -160,12 +156,11 @@
             </div>
             <!-- end signin modal -->
     </section>
-   
 @endsection
 @section('content')
      <section id="content">
       <div class="container">
-        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="80%" height="700px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/>
+        
         <!-- divider -->
         <div class="row">
           <div class="span12">
@@ -291,35 +286,33 @@
         </div>
 
         <div class="row">
-          <div class="solidline">
-            <div class="span7" style="margin-top: 20px; border-radius: 10px">
-              <div class="col-md-9">
-                <div class="white-box">
-                  <div id="calendar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="span4" style="width: 400px; float: right; margin-top: 105px;">
-              <div class="pricing-box-alt special">
-                <div class="pricing-heading" style="padding: 5px 0 1px 0;">
-                  <h3>Good <strong>Choice</strong></h3>
-                </div>
-                <div class="pricing-terms" style="padding: 0px 0 0px;">
-                  <h6>&#36;25.00 / Month</h6>
-                </div>
-                <div class="pricing-content">
-                  <ul>
-                    <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> 100 applications</li>
-                  </ul>
-                </div>
-                <div class="pricing-action" style="padding: 5px 0 5px 0;">
-                  <a href="{{url('manage-ultah')}}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Manage</a>
-                </div>
-              </div>
+          <div class="span12">
+            <div class="solidline">
+
             </div>
           </div>
         </div>
+<!-- Kalender -->
+        <div class="row" style="margin-left: 200px; margin-right: : 200px;">
+          <div class="panel panel-primary">
 
+        <div class="panel-heading">
+
+            MY Calender    
+
+        </div>
+
+        <div class="panel-body" >
+
+            {!! $calendar->calendar() !!}
+
+            {!! $calendar->script() !!}
+
+        </div>
+
+    </div>
+        </div>
+<!-- end--kalender -->
         <div class="row">
           <div class="span12">
             <div class="solidline">
@@ -498,4 +491,3 @@
 
 
 @endsection
- 

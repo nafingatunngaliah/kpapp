@@ -1,5 +1,5 @@
 
-!function($) {
+function($) {
     "use strict";
 
     var CalendarApp = function() {
@@ -65,6 +65,7 @@
             var form = $("<form></form>");
             form.append("<div class='row'></div>");
             form.find(".row")
+                .append("@foreach($events as $e)")
                 .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Event Name</label><input class='form-control' placeholder='Insert Event Name' type='text' name='title'/></div></div>")
                 .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Category</label><select class='form-control' name='category'></select></div></div>")
                 .find("select[name='category']")
@@ -75,6 +76,7 @@
                 .append("<option value='bg-pink'>Pink</option>")
                 .append("<option value='bg-info'>Info</option>")
                 .append("<option value='bg-warning'>Warning</option></div></div>");
+                .append("@endforeach")
             $this.$modal.find('.delete-event').hide().end().find('.save-event').show().end().find('.modal-body').empty().prepend(form).end().find('.save-event').unbind('click').click(function () {
                 form.submit();
             });
@@ -130,44 +132,7 @@
         var form = '';
         var today = new Date($.now());
 
-        var defaultEvents =  [{
-                title: 'Released Ample Admin!',
-                start: new Date($.now() + 506800000),
-                className: 'bg-info'
-            }, {
-                title: 'This is today check date',
-                start: today,
-                end: today,
-                className: 'bg-danger'
-            }, {
-                title: 'This is your birthday',
-                start: new Date($.now() + 848000000),
-                className: 'bg-info'
-            },{
-                title: 'your meeting with john',
-                start: new Date($.now() - 1099000000),
-                end:  new Date($.now() - 919000000),
-                className: 'bg-warning'
-            },{
-                title: 'your meeting with john',
-                start: new Date($.now() - 1199000000),
-                end: new Date($.now() - 1199000000),
-                className: 'bg-purple'
-            },{
-                title: 'your meeting with john',
-                start: new Date($.now() - 399000000),
-                end: new Date($.now() - 219000000),
-                className: 'bg-info'
-            },  
-              {
-                title: 'Hanns birthday',
-                start: new Date($.now() + 868000000),
-                className: 'bg-danger'
-            },{
-                title: 'Like it?',
-                start: new Date($.now() + 348000000),
-                className: 'bg-success'
-            }];
+        
 
         var $this = this;
         $this.$calendarObj = $this.$calendar.fullCalendar({
