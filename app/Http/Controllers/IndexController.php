@@ -16,7 +16,7 @@ class IndexController extends Controller
     {
         $post = Post::orderBy('id','asc')->get();
         $post2 = Post::orderBy('id','asc')->get();
-        $slide = Slide::get();   
+        $slide = Slide::get();
         return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2]);
     }
 
@@ -50,5 +50,4 @@ class IndexController extends Controller
         //Post::updated($post);
         return redirect()->back();
     }
-    
 }

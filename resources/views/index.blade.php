@@ -224,7 +224,7 @@
         <!-- Portfolio Projects -->
         <div class="row">
           <div class="span12" style="margin-left: 30px;">
-            <div class="callaction">
+          	<div class="callaction">
               <div class="container">
                 <div class="row">
                   <div class="span12">
@@ -240,7 +240,7 @@
                 </div>
               </div>
             </div>
-            
+          	
             <div class="row">
               <section id="projects">
                 <ul id="thumbs" class="portfolio">
@@ -348,35 +348,49 @@
         </div>
 
         <div class="row">
-          <div class="solidline">
-            <div class="span7" style="margin-top: 20px; border-radius: 10px">
-              <div class="col-md-9">
-                <div class="white-box">
-                  <div id="calendar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="span4" style="width: 400px; float: right; margin-top: 105px;">
-              <div class="pricing-box-alt special">
-                <div class="pricing-heading" style="padding: 5px 0 1px 0;">
-                  <h3>Good <strong>Choice</strong></h3>
-                </div>
-                <div class="pricing-terms" style="padding: 0px 0 0px;">
-                  <h6>&#36;25.00 / Month</h6>
-                </div>
-                <div class="pricing-content">
-                  <ul>
-                    <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> 100 applications</li>
-                  </ul>
-                </div>
-                <div class="pricing-action" style="padding: 5px 0 5px 0;">
-                  <a href="{{url('manage-ultah')}}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Manage</a>
-                </div>
-              </div>
+          <div class="span12">
+            <div class="solidline">
+
             </div>
           </div>
         </div>
-
+<!-- Kalender -->
+        <div class="row" style="margin-left: 200px; margin-right: : 200px;">
+          <div class="span8" >
+              <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Calendar Page</h4> </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="white-box">
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- BEGIN MODAL -->
+                <div class="modal fade none-border" id="my-event">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Add Event</strong></h4>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+<!-- end--kalender -->
         <div class="row">
           <div class="span12">
             <div class="solidline">
