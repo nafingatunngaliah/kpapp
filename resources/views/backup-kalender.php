@@ -286,35 +286,33 @@
         </div>
 
         <div class="row">
-          <div class="solidline">
-            <div class="span7" style="margin-top: 20px; border-radius: 10px">
-              <div class="col-md-9">
-                <div class="white-box">
-                  <div id="calendar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="span4" style="width: 400px; float: right; margin-top: 105px;">
-              <div class="pricing-box-alt special">
-                <div class="pricing-heading" style="padding: 5px 0 1px 0;">
-                  <h3>Good <strong>Choice</strong></h3>
-                </div>
-                <div class="pricing-terms" style="padding: 0px 0 0px;">
-                  <h6>&#36;25.00 / Month</h6>
-                </div>
-                <div class="pricing-content">
-                  <ul>
-                    <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> 100 applications</li>
-                  </ul>
-                </div>
-                <div class="pricing-action" style="padding: 5px 0 5px 0;">
-                  <a href="{{url('manage-ultah')}}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Manage</a>
-                </div>
-              </div>
+          <div class="span12">
+            <div class="solidline">
+
             </div>
           </div>
         </div>
+<!-- Kalender -->
+        <div class="row" style="margin-left: 200px; margin-right: : 200px;">
+          <div class="panel panel-primary">
 
+        <div class="panel-heading">
+
+            MY Calender    
+
+        </div>
+
+        <div class="panel-body" >
+
+            {!! $calendar->calendar() !!}
+
+            {!! $calendar->script() !!}
+
+        </div>
+
+    </div>
+        </div>
+<!-- end--kalender -->
         <div class="row">
           <div class="span12">
             <div class="solidline">

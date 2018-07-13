@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Birthday extends Model
+class Ultah extends Model
 {
    	protected $table = 'birthday';
     protected $primaryKey = 'id_bd';
