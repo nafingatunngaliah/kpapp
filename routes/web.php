@@ -19,6 +19,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/slide-edit/{id_slide}', 'HomeController@editSlider');
 Route::post('/home/slide-update/{id_slide}', 'HomeController@setSlider')->name('slide-update');
 
+// Fitur Ulang Tahun
+Route::get('/manage-ultah', 'UltahController@index')->name('manage-ultah');
+Route::get('/ultah-tambah', 'UltahController@getFormTambah')->name('ultah-tambah');
+Route::post('/ultah-tambah', 'UltahController@setFormTambah')->name('ultah-tambah');
+Route::get('/ultah-edit/{id_post}', 'UltahController@editFormTambah')->name('ultah-edit');
+Route::post('/ultah-update/{id_bd}', 'UltahController@updateFormTambah')->name('ultah-update');
+Route::get('/ultah-delete/{id_bd}', 'UltahController@delete');
+
 // Fitur Post
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');
 Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
