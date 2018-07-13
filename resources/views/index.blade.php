@@ -107,6 +107,17 @@
       </div>
       <!-- /slider-wrapper -->
       <!-- end slider -->
+      <!-- divider -->
+
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+      
+
       <!-- Sign in Modal -->
             <div id="modalslide" class="modal styled hide fade" tabindex="-1" role="dialog" aria-labelledby="mySigninModalLabel" aria-hidden="true">
               <div class="modal-header">
@@ -162,10 +173,46 @@
     </section>
    
 @endsection
+
+@section('other-slider')
+<section id="featured">
+      <!-- start slider -->
+      <div id="da-slider" class="da-slider">
+        <img src="{{asset ('flattern/img/slides/parallax/tower3.jpg')}}" style="background-repeat: 0% 0%;">
+         @foreach($slide as $sl)
+        <div class="da-slide">
+          <h2>{{ $sl->judul_slide }}</h2>
+          <p>{{ $sl->isi_slide }} </p>
+          <a href="#" class="da-link">Read more</a>
+          <div class="da-img">
+            <img src="{{asset ('flattern/img/slides/parallax/4.png')}} " alt="image01" />
+          </div>
+        </div>
+       @endforeach
+        <!-- <div class="da-slide">
+          <h2>yeyeyey</h2>
+          <p>
+           lalalala 
+          </p>
+          <a href="#" class="da-link">Read more</a>
+          <div class="da-img">
+            <img src="{{asset ('flattern/img/slides/parallax/4.png')}}" alt="image01" />
+          </div>
+        </div> -->
+     
+        <nav class="da-arrows">
+          <span class="da-arrows-prev"></span>
+          <span class="da-arrows-next"></span>
+        </nav>
+      </div>
+      <!-- end slider -->
+    </section>
+@endsection
+
 @section('content')
      <section id="content">
       <div class="container">
-        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="80%" height="700px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/>
+        
         <!-- divider -->
         <div class="row">
           <div class="span12">
@@ -212,6 +259,7 @@
 
                 </ul>
               </section>
+
             </div>
           </div>
         </div>
@@ -221,8 +269,16 @@
         <div class="row">
           <div class="span12">
             <div class="solidline">
-
             </div>
+          </div>
+        </div>
+        <!-- end divider -->
+           <!-- divider -->
+
+        <div class="row">
+          <div class="span12">
+             <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="80%" height="700px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/>
+            
           </div>
         </div>
         <!-- end divider -->
@@ -230,6 +286,7 @@
         <div class="row">
           <div class="span12">
             <div class="row">
+             
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
@@ -392,108 +449,7 @@
         </div>
       </div>
     </section>
-
-    <section id="bottom">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="aligncenter">
-              <div id="twitter-wrapper">
-                <div id="twitter">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Categories</h5>
-              @if($post->count())
-              @foreach($post2 as $p)
-              <ul class="link-list">
-                <li><a href="#">{{ $p->kategori_post }}</a></li>
-              </ul>
-              @endforeach
-              @endif 
-            </div>
-          </div>
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Important stuff</h5>
-              <ul class="link-list">
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Career center</a></li>
-                <li><a href="#">Flattern forum</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear">
-              </div>
-            </div>
-          </div> -->
-          <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Get in touch with us</h5>
-              <address>
-                <strong>Flattern studio, Pte Ltd</strong><br>
-                 Springville center X264, Park Ave S.01<br>
-                 Semarang 16425 Indonesia
-              </address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="sub-footer">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <div class="copyright">
-                <p>
-                  <span>&copy; Flattern - All right reserved.</span>
-                </p>
-                <div class="credits">
-                  <!--
-                    All the links in the footer should remain intact.
-                    You can delete the links only if you purchased the pro version.
-                    Licensing information: https://bootstrapmade.com/license/
-                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flattern
-                  -->
-                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-              </div>
-            </div>
-            <div class="span6">
-              <ul class="social-network">
-                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-square"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-square"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-square"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest icon-square"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Google plus"><i class="icon-google-plus icon-square"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    
 
 
 
