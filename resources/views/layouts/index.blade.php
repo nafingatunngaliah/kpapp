@@ -302,6 +302,7 @@
     @yield('editpost')
     @yield('slider-new')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 
@@ -318,6 +319,10 @@
 
 
 >>>>>>> master
+=======
+
+
+>>>>>>> 7b495b2302fa29ad74f86999189198e565e30220
     <section id="bottom">
       <div class="container">
         <div class="row">
@@ -417,6 +422,7 @@
     </footer>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
@@ -429,6 +435,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> master
+=======
+>>>>>>> 7b495b2302fa29ad74f86999189198e565e30220
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
