@@ -238,7 +238,7 @@ img.img-polaroid {
 /* --- header -- */
 
 header {
-  background: #fff;
+  background: #00A2B9;
   margin: 0;
   padding: 0;
   position: relative;
@@ -1081,7 +1081,7 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
  position: relative;
  background: #006699;
  color: white;
- border: 1px solid #00ccff;
+ border: 1px solid #035B71;
  white-space: nowrap;
 }
 .marquee p {
