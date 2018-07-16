@@ -177,29 +177,32 @@
 @section('other-slider')
 <section id="featured">
       <!-- start slider -->
-      <div id="da-slider" class="da-slider">
-        <img src="{{asset ('flattern/img/slides/parallax/tower3.jpg')}}" style="background-repeat: 0% 0%;">
-         @foreach($slide as $sl)
-        <div class="da-slide">
-          <h2>{{ $sl->judul_slide }}</h2>
-          <p>{{ $sl->isi_slide }} </p>
-          <a href="#" class="da-link">Read more</a>
-          <div class="da-img">
-            <img src="{{asset ('flattern/img/slides/parallax/4.png')}} " alt="image01" />
+      <div id="da-slider" class="da-slider"> 
+        <img src="{{asset ('flattern/img/slides/parallax/towerss.png')}}">
+         @foreach($target as $t)
+          <div class="da-slide">
+           
+            @auth
+              <a href="{{ url('/post-tambah') }}"> 
+                <h2>{{ $t->judul_post }}</h2></a>
+                 <p>{!! str_limit ($t->isi_post,100) !!} </p>
+                <div class="da-img">
+             <img src="{{asset('image_post/'. $t->image_post)}}" alt="{{ $t->image_post }}"> 
+            <!-- <img src="{{asset ('flattern/img/slides/parallax/target1.png')}} " alt="image01" /> -->
           </div>
-        </div>
-       @endforeach
-        <!-- <div class="da-slide">
-          <h2>yeyeyey</h2>
-          <p>
-           lalalala 
-          </p>
-          <a href="#" class="da-link">Read more</a>
-          <div class="da-img">
-            <img src="{{asset ('flattern/img/slides/parallax/4.png')}}" alt="image01" />
-          </div>
-        </div> -->
-     
+            @else
+                
+                <h2>{{ $t->judul_post }}</h2>
+                <p>{{ $t->isi_post }} </p>
+                <div class="da-img">
+                <img src="{{asset('image_post/'. $t->image_post)}}" alt="{{ $t->image_post }}">
+               <!--  <img src="{{asset ('flattern/img/slides/parallax/target1.png')}} " alt="image01" /> -->
+                @endauth
+          <!-- <a href="#" class="da-link">Read more</a> -->
+                 </div>
+          
+        </div>  @endforeach
+
         <nav class="da-arrows">
           <span class="da-arrows-prev"></span>
           <span class="da-arrows-next"></span>

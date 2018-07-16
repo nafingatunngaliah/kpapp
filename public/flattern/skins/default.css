@@ -77,7 +77,7 @@ input:focus {
 }
 #header-hidden-link a.toggle-link,
 #header-hidden-link a.top-link {
-	background:#006666 ;
+	background:#035B71 ;
 }
 
 
@@ -87,7 +87,7 @@ input:focus {
 .jcarousel-skin-tango .jcarousel-next-horizontal:hover, 
 .jcarousel-skin-tango .jcarousel-next-horizontal:focus
  {
-	background:#F03C02;
+	background:#035B71;
 }
 
 ul.clients li:hover {
@@ -178,7 +178,7 @@ ul.clients li:hover {
 }
 
 .da-dots span{
-	background: #F03C02;
+	background: #035B71;
 }
 
 /* flexslider */

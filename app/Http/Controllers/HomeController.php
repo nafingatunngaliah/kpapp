@@ -31,8 +31,15 @@ class HomeController extends Controller
     {
         $post = Post::orderBy('id','asc')->get();
         $post2 = Post::orderBy('id','asc')->get();
+        $target = Post::orderBy('id','asc')->get();
         $slide = Slide::get();   
-        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2]);
+        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'target' => $target]);
+    }
+
+    public function getTarget()
+    {
+        $target = DB::table('post')->select('judul_post','isi_post','image_post')->where('kategori_post','Target')->get();
+        return view('index', compact('post'));
     }
 
     public function editSlider($id_slide)
