@@ -38,6 +38,11 @@
   <!-- Calendar CSS -->
   <link href="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.css')}}" rel="stylesheet" />
 
+  <!-- Color picker plugins css -->
+  <link href="{{asset('ample/plugins/bower_components/jquery-asColorPicker-master/css/asColorPicker.css')}}" rel="stylesheet">
+  <!-- Date picker plugins css -->
+  <link href="{{asset('ample/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -301,29 +306,9 @@
     @yield('addpost') 
     @yield('editpost')
     @yield('slider-new')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
     @yield('manage-ultah')
 
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> master
-=======
-
-
->>>>>>> 7b495b2302fa29ad74f86999189198e565e30220
-    <section id="bottom">
+<!--     <section id="bottom">
       <div class="container">
         <div class="row">
            <h5 class="widgetheading">Our Location</h5>
@@ -338,23 +323,13 @@
           </div>
         </div>
       </div>
-    </section>
-<<<<<<< Updated upstream
- 
+    </section> -->
+
     <footer>
       <div class="container">
         <div class="row">
           <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Categories</h5>
-              @if($post->count())
-              @foreach($post2 as $p)
-              <ul class="link-list">
-                <li><a href="#">{{ $p->kategori_post }}</a></li>
-              </ul>
-              @endforeach
-              @endif 
-            </div>
+            
           </div>
           <div class="span6">
             <div class="widget">
@@ -421,22 +396,6 @@
       </div>
     </footer>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-=======
-    @yield('manage-ultah')
->>>>>>> bismillahKalender
-    
->>>>>>> master
->>>>>>> master
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> master
-=======
->>>>>>> 7b495b2302fa29ad74f86999189198e565e30220
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
@@ -518,6 +477,89 @@
     </script>
     <script src="{{ asset('codesnippet/lib/highlight/highlight.pack.js') }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <!-- date picker -->
+    <!-- Clock Plugin JavaScript -->
+    <script src="{{asset('ample/plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.js')}}"></script>
+    <!-- Color Picker Plugin JavaScript -->
+    <script src="{{asset('ample/plugins/bower_components/jquery-asColorPicker-master/libs/jquery-asColor.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/jquery-asColorPicker-master/libs/jquery-asGradient.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js')}}"></script>
+    <!-- Date Picker Plugin JavaScript -->
+    <script src="{{asset('ample/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <!-- Date range Plugin JavaScript -->
+    <script src="{{asset('ample/plugins/bower_components/timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script>
+        // Clock pickers
+        $('#single-input').clockpicker({
+            placement: 'bottom'
+            , align: 'left'
+            , autoclose: true
+            , 'default': 'now'
+        });
+        $('.clockpicker').clockpicker({
+            donetext: 'Done'
+        , }).find('input').change(function () {
+            console.log(this.value);
+        });
+        $('#check-minutes').click(function (e) {
+            // Have to stop propagation here
+            e.stopPropagation();
+            input.clockpicker('show').clockpicker('toggleView', 'minutes');
+        });
+        if (/mobile/i.test(navigator.userAgent)) {
+            $('input').prop('readOnly', true);
+        }
+        // Colorpicker
+        $(".colorpicker").asColorPicker();
+        $(".complex-colorpicker").asColorPicker({
+            mode: 'complex'
+        });
+        $(".gradient-colorpicker").asColorPicker({
+            mode: 'gradient'
+        });
+        // Date Picker
+        jQuery('.mydatepicker, #datepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true
+            , todayHighlight: true
+        });
+        jQuery('#date-range').datepicker({
+            toggleActive: true
+        });
+        jQuery('#datepicker-inline').datepicker({
+            todayHighlight: true
+        });
+        // Daterange picker
+        $('.input-daterange-datepicker').daterangepicker({
+            buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+        });
+        $('.input-daterange-timepicker').daterangepicker({
+            timePicker: true
+            , format: 'MM/DD/YYYY h:mm A'
+            , timePickerIncrement: 30
+            , timePicker12Hour: true
+            , timePickerSeconds: false
+            , buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+        });
+        $('.input-limit-datepicker').daterangepicker({
+            format: 'MM/DD/YYYY'
+            , minDate: '06/01/2015'
+            , maxDate: '06/30/2015'
+            , buttonClasses: ['btn', 'btn-sm']
+            , applyClass: 'btn-danger'
+            , cancelClass: 'btn-inverse'
+            , dateLimit: {
+                days: 6
+            }
+        });
+    </script>
 
 </body>
 </html>
