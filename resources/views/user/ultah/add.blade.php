@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('manage-ultah')
 
-<div id="wrapper">
+  <div id="wrapper">
       <section id="inner-headline">
       <div class="container">
         <div class="row">
@@ -32,19 +32,20 @@
                   	<input type="text" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4" data-msg="Please enter title" required="" name="nama"/>
                   	<div class="validation"></div>
                 </div>
-
+                <div class="span12 margintop10 form-group">
+                    <label class="control-label" for="inputText">  Deskripsi<small> *boleh dikosongkan</small></label>
+                    <input type="text" class="form-control" id="name" placeholder="Deskripsi" data-rule="minlen:4" data-msg="Please enter title"  name="deskripsi"/>
+                </div>
                 <div class="span12 margintop10 form-group">
                   	<label class="control-label" for="inputText">  Tanggal</label>
                   	<div class="input-group">
+                        <i class="icon-calender"></i></span>
                         <input type="text" class="form-control" id="datepicker-autoclose" placeholder="mm/dd/yyyy" name="tgl_bd"> <span class="input-group-addon">
-                        <i class="icon-calender"></i></span> 
+                         
                     </div>
                   	<div class="validation"></div>
                 </div>   
-                <div class="span12 margintop10 form-group">
-                  	<label class="control-label" for="inputText">  Deskripsi<small> *boleh dikosongkan</small></label>
-                  	<input type="text" class="form-control" id="name" placeholder="Deskripsi" data-rule="minlen:4" data-msg="Please enter title"  name="deskripsi"/>
-                </div>
+                
                 <p class="text-center">
                   <button class="btn btn-large btn-theme margintop10" type="submit">Submit</button>
                 </p>

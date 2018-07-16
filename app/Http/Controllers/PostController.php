@@ -19,7 +19,13 @@ class PostController extends Controller
     {
         $post =Post::orderBy('judul_post', 'desc')->paginate(3);
         $post2 =Post::orderBy('created_at', 'desc')->paginate(8);
-        return view ('user.post.view', ['post' => $post, 'post2' => $post2]);
+        $kategori = DB::table('post')
+                     ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
+                     ->groupBy('kategori_post')
+                     ->orderBy('jumlah')
+                     ->get();
+        //dd($kategori);
+        return view ('user.post.view', ['post' => $post, 'post2' => $post2, 'kategori' => $kategori]);
     }
 
     // add post

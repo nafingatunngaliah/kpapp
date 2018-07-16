@@ -230,7 +230,7 @@
                   <div class="span12">
                     <div class="big-cta">
                       <div class="cta-text">
-                        <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span></h3>
+                        
                       </div>
                       <div class="cta floatright">
                         <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}"><i class="icon-book"></i> View Post </a>
@@ -357,7 +357,7 @@
 <!-- Kalender -->
         <div class="row">
           <div class="solidline">
-            <div class="span7" style="margin-top: 20px; border-radius: 10px">
+            <div class="span6" style="margin-top: 20px; border-radius: 10px">
               <div class="col-md-9">
                 <div class="white-box">
                   <div id="calendar"></div>
@@ -367,19 +367,24 @@
             <div class="span4" style="width: 400px; float: right; margin-top: 105px;">
               <div class="pricing-box-alt special">
                 <div class="pricing-heading" style="padding: 5px 0 1px 0;">
-                  <h3>Good <strong>Choice</strong></h3>
+                  <h3>Happy Birthday <strong>to ...</strong></h3>
                 </div>
                 <div class="pricing-terms" style="padding: 0px 0 0px;">
-                  <h6>&#36;25.00 / Month</h6>
+                  <h6></h6>
                 </div>
                 <div class="pricing-content">
                   <ul>
-                    <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> 100 applications</li>
+                    @foreach($ultah as $u)
+                    <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> {{ $u->nama }} </li>
+                    @endforeach
                   </ul>
                 </div>
+                @Auth
                 <div class="pricing-action" style="padding: 5px 0 5px 0;">
                   <a href="{{url('manage-ultah')}}" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Manage</a>
                 </div>
+                @else
+                @endauth
               </div>
             </div>
           </div>
@@ -457,9 +462,22 @@
         </div>
       </div>
     </section>
-    
+   @endsection
+
+   @section('kategori')
+    <div class="widget">
+      <h5 class="widgetheading">Categories</h5>
+      @if($post->count())
+      @foreach($kategori as $k)
+        <ul class="link-list">
+          <li><a href="#">{{ $k->kategori_post }}</a></li>
+        </ul>
+      @endforeach
+      @endif 
+    </div>
+
+  @endsection
 
 
 
-@endsection
  

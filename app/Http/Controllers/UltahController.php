@@ -30,45 +30,38 @@ class UltahController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'tgl_bd' => 'required',
-            'deskripsi' => 'required',
-            
         ]);
         $input['nama'] = $request->nama;
-        $input['tgl_bd'] = $request->tgl_bd;
         $input['deskripsi'] = $request->deskripsi;
-        dd($input);
-        //Ultah::create($input);
+        $input['tgl_bd'] =  date('Y-m-d', strtotime(str_replace('-', '/', $request->tgl_bd)));
+        //$input['tgl_bd'] = $request->tgl_bd;
+        
+        //dd($input);
+        Ultah::create($input);
         return back()
             ->with('success','Ultah submitted successfully.');
     }
     //end - add post
 
     //update post
-    public function editFormTambah($id_post)
+    public function editFormTambah($id_bd)
     {
-        $post = Post::find($id_post);
-        return view('user.post.edit', compact('post'));
+        $ultah = Ultah::find($id_bd);
+        return view('user.ultah.edit', compact('ultah'));
     }
 
-    public function updateFormTambahPost(Request $request, $id_post)
+    public function updateFormTambah(Request $request, $id_bd)
     {
         $this->validate($request, [
-            'kategori_post' => 'required',
-            'judul_post' => 'required',
-            'image_post' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'isi_post' => 'required',
+            'nama' => 'required',
+            'tgl_bd' => 'required',
         ]);
-        $post = Post::find($id_post);
-        $post->kategori_post = $request->input('kategori_post');
-        $post->judul_post = $request->input('judul_post');
-        $post->isi_post = $request->input('isi_post');
-        if ($request->hasFile('image_post')) {    
-            $image_post = $request->file('image_post');
-            $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1850, 1350)->save( public_path('/image_post/' . $image_post_name ));
-            $post->image_post = $image_post_name;
-        }
-        $post->save();
+        $ultah = Ultah::find($id_bd);
+        $ultah->nama = $request->input('nama');
+        $ultah->deskripsi = $request->input('deskripsi');
+        $ultah->tgl_bd = date('Y-m-d', strtotime(str_replace('-', '/', $request->input('tgl_bd')))); 
+        //dd($ultah);
+        $ultah->save();
         
         //dd($post);
 
@@ -79,9 +72,9 @@ class UltahController extends Controller
     //end - update post
 
     //delete post
-    public function deletePost($id_post)
+    public function delete($id_bd)
     {
-        Post::destroy($id_post);
+        Ultah::destroy($id_bd);
         return back();
     }
 }

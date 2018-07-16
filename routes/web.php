@@ -23,7 +23,7 @@ Route::post('/home/slide-update/{id_slide}', 'HomeController@setSlider')->name('
 Route::get('/manage-ultah', 'UltahController@index')->name('manage-ultah');
 Route::get('/ultah-tambah', 'UltahController@getFormTambah')->name('ultah-tambah');
 Route::post('/ultah-tambah', 'UltahController@setFormTambah')->name('ultah-tambah');
-Route::get('/ultah-edit/{id_post}', 'UltahController@editFormTambah')->name('ultah-edit');
+Route::get('/ultah-edit/{id_bd}', 'UltahController@editFormTambah')->name('ultah-edit');
 Route::post('/ultah-update/{id_bd}', 'UltahController@updateFormTambah')->name('ultah-update');
 Route::get('/ultah-delete/{id_bd}', 'UltahController@delete');
 

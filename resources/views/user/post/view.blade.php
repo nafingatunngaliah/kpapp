@@ -74,9 +74,9 @@
               <div class="widget">
                 <h5 class="widgetheading">Categories</h5>
                 @if($post->count())
-                @foreach($post as $p)
+                @foreach($kategori as $k)
                 <ul class="cat">
-                  <li><i class="icon-angle-right"></i><a href="#">{{ $p->kategori_post }}</a><span> (20)</span></li>
+                  <li><i class="icon-angle-right"></i><a href="#">{{ $k->kategori_post }}</a><span> ({{ $k->jumlah }})</span></li>
                 </ul>
                 @endforeach
                 @endif
