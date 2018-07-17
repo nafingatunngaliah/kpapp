@@ -1127,12 +1127,21 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
 }
 
 /*Google map*/
-#map {
+/*#map {
   width:100%;
   height:300px;
   background-color:#000;
   position:relative;
   z-index:1;
+}*/
+/* Google Map */
+#google-map {
+  height: 250px;
+  width: 100%;
+  /*margin-bottom: 40px;*/
+  background-color:#fff transparent;
+  opacity: 1;
+ 
 }
 
 /* --- pullquotes --- */
