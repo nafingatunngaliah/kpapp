@@ -121,123 +121,31 @@ jQuery(document).ready(function($) {
 
   });
 
-var $window = $(window),
-  mapObject, marker, yPos, coords, TimelineLite;
+
 /*maps*/
-var App = {
-  
-  start: function() {
-    
-    
-    // call google map
-    App.map();
-    
-  },
-map: function() {
-    
-    var btn_zoom_in = document.getElementById('zoomin');
-    if (btn_zoom_in !== null) {
-      google.maps.event.addDomListener(btn_zoom_in, 'click', function() {
-        mapObject.setZoom(mapObject.getZoom() + 1 );
+
+ // Google Map
+  if( $('#google-map').length ) {
+    var get_latitude = $('#google-map').data('latitude');
+    var get_longitude = $('#google-map').data('longitude');
+
+    function initialize_google_map() {
+      var myLatlng = new google.maps.LatLng(get_latitude, get_longitude);
+      var mapOptions = {
+        zoom: 17,
+        scrollwheel: false,
+        center: myLatlng
+      };
+      var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
       });
     }
+    google.maps.event.addDomListener(window, 'load', initialize_google_map);
+  }
 
-    var btn_zoom_out = document.getElementById('zoomout');
-    if (btn_zoom_out !== null) {
-      google.maps.event.addDomListener(btn_zoom_out, 'click', function() {
-        mapObject.setZoom(mapObject.getZoom() - 1 );
-      });
-    }
-    
-    var mapContainer = document.getElementById('map');
-    
-    if (mapContainer !== null) {
-      App.create_map(mapContainer);
-      App.create_marker();
-      App.create_info();
-    }
-  },
   
-  
-  create_map: function(mapContainer) {
-
-    var mapOptions = {
-      center: new google.maps.LatLng(-7.2783231,112.7968071), //37.36456, -121.92852
-      zoom: 17,
-      navigationControl: false,
-      mapTypeControl: false,
-      scrollwheel: false,
-      disableDefaultUI: true,
-      disableDoubleClickZoom: true
-    };
-    
-    mapObject = new google.maps.Map(mapContainer, mapOptions);
-
-    var mapStyle = [
-      {
-        "stylers": [
-          { "saturation": -100 },
-          { "gamma": 1.40 },
-          { "lightness": 25 }
-        ]
-      },{featureType: "poi",elementType: "labels",stylers: [{visibility:"off"}]}
-    ];
-    
-    mapObject.setOptions({styles: mapStyle});
-  },
-  
-  create_marker: function() {
-    
-    var pinImage = new google.maps.MarkerImage('img/marker.png'),
-    myPin = new google.maps.LatLng(-7.2804676,112.7923379);
-    
-    marker = new google.maps.Marker({
-      position: myPin,
-      map: mapObject,
-      title: 'Hello World!',
-      icon: pinImage
-    });
-    
-  },
-  
-  create_info: function() {
-    
-    var boxText = document.createElement("div");
-    boxText.style.cssText = "color:#fff;";
-    /*jshint multistr: true*/
-    boxText.innerHTML = "\
-      <div class='marker-label'>\
-        Civil Engineering Building,<br>\
-        1st floor.<br>\
-        Keputih, Sukolilo, Surabaya<br>\
-        Telp : +62 31-5997152<br>\
-        Fax : +62 31-5947284<br>\
-        Email : ce@its.ac.id<br>\
-        </div>\
-      ";
-
-    var infoOptions = {
-      content: boxText,
-      disableAutoPan: true,
-      maxWidth: 0,
-      pixelOffset: new google.maps.Size(-25, -235),
-      zIndex: null,
-      boxStyle: { 
-        background: "url('img/marker-label.png') no-repeat",
-        width: "400px",
-        height: "215px"
-      },
-      infoBoxClearance: new google.maps.Size(1, 1),
-      isHidden: false,
-      pane: "mapPane",
-      enableEventPropagation: true
-    };
-    
-    var ib = new InfoBox(infoOptions);
-    ib.open(mapObject, marker);
-    
-  },
-};
 
 
 

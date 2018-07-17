@@ -334,12 +334,11 @@
 
           <div class="span3">
             @yield('kategori')
-            
           </div>
           <div class="span6">
             <div class="widget">
-              <h5 class="widgetheading">Our Location</h5>
-              <div id="map"></div>
+              <h5 class="widgetheading" style="text-align: center">Our Location</h5>
+              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white;opacity: 1"></div>
             </div>
           </div>
           <!-- <div class="span3">
@@ -358,7 +357,6 @@
               <address>
                 <strong>PT PLN (Persero) - Area Pelaksana Pemeliharaan Surabaya</strong><br>
                  JL. Ketintang Baru No 9 Surabaya 60231<br>
-                 
               </address>
               <p>
                 <i class="icon-phone"></i> (031) 8285505 , 8285506 <br>
@@ -374,7 +372,7 @@
             <div class="span6">
               <div class="copyright">
                 <p>
-                  <span>&copy; PT PLN -JBTB- APP Surabaya. 2018 - All right reserved.</span>
+                  <span>&copy; PT PLN - APP Surabaya. 2018 - All right reserved.</span>
                 </p>
                 <div class="credits">
                   <!--
@@ -383,7 +381,7 @@
                     Licensing information: https://bootstrapmade.com/license/
                     Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flattern
                   -->
-                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  Powered by <a href="https://bootstrapmade.com/">Intern Student's of Informatics ITS</a>
                 </div>
               </div>
             </div>
@@ -426,7 +424,8 @@
     <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
     <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
     <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
-  
+  <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_QRkSebrTMlwTo872afIbMoQ8cSbLyDI"></script>
     <!-- Template Custom JavaScript File -->  
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
 <!-- js upload file -->
