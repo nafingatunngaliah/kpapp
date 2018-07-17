@@ -94,6 +94,8 @@ class PostController extends Controller
         return redirect()->back();
     }
 
+    
+
     //end - update post
 
     //delete post

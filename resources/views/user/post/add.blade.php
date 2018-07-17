@@ -43,6 +43,7 @@
                     <option value="Pekerjaan">Pekerjaan</option>
                     <option value="Kabar Kelistrikan">Kabar Kelistrikan</option>
                     <option value="Bonus">Bonus</option>
+                    <option value="Target">Target</option>
                   </select>
                   <div class="validation"></div>
                 </div>

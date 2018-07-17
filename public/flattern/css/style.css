@@ -1079,9 +1079,9 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
  height: 50px;  
  overflow: hidden;
  position: relative;
- background: #006699;
+ background: linear-gradient(to right, #035B71 , #00A2B9);
  color: white;
- border: 1px solid #00ccff;
+ /*border: 1px solid #035B71;*/
  white-space: nowrap;
 }
 .marquee p {

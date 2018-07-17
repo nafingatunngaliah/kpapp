@@ -57,7 +57,7 @@
         <div class="row">
           <div class="span12">
             <ul>
-              <li><strong>PT PLN (Persero) - TJBTB - Area Pelaksana Pemeliharaan Surabaya</strong></li><br>
+              <li><strong>PT PLN (Persero) - Area Pelaksana Pemeliharaan Surabaya</strong></li><br>
               <li>JL. Ketintang Baru No 9 Surabaya 60231</li>
               <li>Call us <i class="icon-phone"></i> (031) 8285505 , 8285506</li>
             </ul>
@@ -309,15 +309,48 @@
     @yield('addpost') 
     @yield('editpost')
     @yield('slider-new')
+<<<<<<< HEAD
     @yield('manage-ultah')
 
+=======
+
+    <section id="bottom">
+      <div class="container">
+        <div class="row">
+           
+          <div class="span12">
+            <div class="aligncenter">
+              <div id="twitter-wrapper">
+                <div id="twitter">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+>>>>>>> lia
     <footer>
       <div class="container">
         <div class="row">
 
           <div class="span3">
+<<<<<<< HEAD
             @yield('kategori')
             
+=======
+            <div class="widget">
+              <h5 class="widgetheading">Categories</h5>
+              @if($post->count())
+              @foreach($post as $p)
+              <ul class="link-list">
+                <li><a href="#">{{ $p->kategori_post }}</a></li>
+              </ul>
+              @endforeach
+              @endif 
+            </div>
+>>>>>>> lia
           </div>
           <div class="span6">
             <div class="widget">
@@ -339,7 +372,7 @@
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
-                <strong>PT PLN (Persero) - TJBTB - Area Pelaksana Pemeliharaan Surabaya</strong><br>
+                <strong>PT PLN (Persero) - Area Pelaksana Pemeliharaan Surabaya</strong><br>
                  JL. Ketintang Baru No 9 Surabaya 60231<br>
                  
               </address>
@@ -384,6 +417,11 @@
       </div>
     </footer>
 
+<<<<<<< HEAD
+=======
+    @yield('manage-ultah')
+
+>>>>>>> lia
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
