@@ -36,15 +36,15 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
-	config.filebrowserBrowseUrl = 'public/ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
-
-    config.filebrowserImageBrowseUrl = 'public/ckeditor/kcfinder/browse.php?opener=ckeditor&type=images';
-
-    config.filebrowserFlashBrowseUrl = 'public/ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash';
-
-    config.filebrowserUploadUrl = 'public/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files';
-
-    config.filebrowserImageUploadUrl = 'public/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images';
-
-    config.filebrowserFlashUploadUrl = 'public/ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash';
+	config.filebrowserBrowseUrl = './ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
+ 
+    config.filebrowserImageBrowseUrl = './ckeditor/kcfinder/browse.php?opener=ckeditor&type=images';
+ 
+    config.filebrowserFlashBrowseUrl = './ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash';
+ 
+    config.filebrowserUploadUrl = './ckeditor/kcfinder/upload.php?opener=ckeditor&type=files';
+ 
+    config.filebrowserImageUploadUrl = './ckeditor/kcfinder/upload.php?opener=ckeditor&type=images';
+ 
+    config.filebrowserFlashUploadUrl = './ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash';
 };

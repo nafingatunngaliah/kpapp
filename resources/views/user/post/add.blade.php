@@ -55,6 +55,7 @@
                 <div class="span12 margintop10 form-group">
                   <label class="control-label" for="inputText">  Isi Post</label>
                   <textarea class="form-control" id="summary-ckeditor" name="isi_post"></textarea>
+                  <!-- <textarea class="form-control" id="ckeditor"></textarea> -->
                   <div class="validation"></div>
                   
                 </div>

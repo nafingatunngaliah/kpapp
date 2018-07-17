@@ -473,14 +473,20 @@
 
     <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
-    <script src="../plugins/bower_components/gmaps/gmaps.min.js"></script>
-    <script src="../plugins/bower_components/gmaps/jquery.gmaps.js"></script>
+    <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
 
    <!--  CKEditor -->
-    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+
+   <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
+  <script>
+  CKEDITOR.replace( 'summary-ckeditor' );
+  </script>
+
+    <!-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script>
     CKEDITOR.replace( 'summary-ckeditor' );
-    </script>
+    </script> -->
     <script src="{{ asset('codesnippet/lib/highlight/highlight.pack.js') }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 

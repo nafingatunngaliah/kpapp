@@ -37,4 +37,16 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	config.extraPlugins = 'uploadimage';
+
+	config.filebrowserBrowseUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
+
+    config.filebrowserImageBrowseUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/browse.php?opener=ckeditor&type=images';
+
+    config.filebrowserFlashBrowseUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash';
+
+    config.filebrowserUploadUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/upload.php?opener=ckeditor&type=files';
+
+    config.filebrowserImageUploadUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/upload.php?opener=ckeditor&type=images';
+
+    config.filebrowserFlashUploadUrl = 'public/vendor/unisharp/laravel-ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash';
 };
