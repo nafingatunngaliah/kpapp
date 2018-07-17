@@ -31,37 +31,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post = Post::orderBy('id','asc')->get();
+        $post = Post::orderBy('id','asc')->paginate(4);
         $post2 = Post::orderBy('id','asc')->get();
-<<<<<<< HEAD
+
         $slide = Slide::get();
         $ultah = Ultah::whereRaw("DATE_FORMAT(tgl_bd, '%m-%d') = DATE_FORMAT(now(),'%m-%d')")
-        ->orWhereRaw("DATE_FORMAT(tgl_bd,'%m-%d') = '02-29' and DATE_FORMAT(tgl_bd, '%m') = '02' AND 
+                ->orWhereRaw("DATE_FORMAT(tgl_bd,'%m-%d') = '02-29' and DATE_FORMAT(tgl_bd, '%m') = '02' AND 
         LAST_DAY(NOW()) = DATE(NOW())")
-        ->selectRaw('nama, tgl_bd')
-        ->get();
-
-
+                ->selectRaw('nama, tgl_bd')
+                ->get();
         $kategori = DB::table('post')
                      ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
                      ->groupBy('kategori_post')
                      ->orderBy('jumlah')
                      ->get();
-
-        //dd($ultah);
-        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'ultah' => $ultah, 'kategori' => $kategori]);
-
-=======
-        $target = Post::orderBy('id','asc')->get();
-        $slide = Slide::get();   
-        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'target' => $target]);
-    }
-
-    public function getTarget()
-    {
         $target = DB::table('post')->select('judul_post','isi_post','image_post')->where('kategori_post','Target')->get();
-        return view('index', compact('post'));
->>>>>>> lia
+        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'ultah' => $ultah, 'kategori' => $kategori, 'target' => $target]);
     }
 
     public function editSlider($id_slide)

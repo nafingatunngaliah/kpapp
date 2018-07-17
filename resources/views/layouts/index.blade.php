@@ -309,10 +309,8 @@
     @yield('addpost') 
     @yield('editpost')
     @yield('slider-new')
-<<<<<<< HEAD
     @yield('manage-ultah')
 
-=======
 
     <section id="bottom">
       <div class="container">
@@ -330,27 +328,13 @@
       </div>
     </section>
  
->>>>>>> lia
     <footer>
       <div class="container">
         <div class="row">
 
           <div class="span3">
-<<<<<<< HEAD
             @yield('kategori')
             
-=======
-            <div class="widget">
-              <h5 class="widgetheading">Categories</h5>
-              @if($post->count())
-              @foreach($post as $p)
-              <ul class="link-list">
-                <li><a href="#">{{ $p->kategori_post }}</a></li>
-              </ul>
-              @endforeach
-              @endif 
-            </div>
->>>>>>> lia
           </div>
           <div class="span6">
             <div class="widget">
@@ -417,11 +401,7 @@
       </div>
     </footer>
 
-<<<<<<< HEAD
-=======
-    @yield('manage-ultah')
 
->>>>>>> lia
   </div>
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
   <script src="{{ asset('flattern/js/jquery.js')}}"></script>  
