@@ -95,13 +95,6 @@
   </div>
 <!-- end slider awal -->
       
-  <div class="row">
-    <div class="span12">
-      <div class="solidline">
-      </div>
-    </div>
-  </div>
-      
 <!-- Sign in Modal -->
   <div id="modalslide" class="modal styled hide fade" tabindex="-1" role="dialog" aria-labelledby="mySigninModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -157,10 +150,27 @@
 
 
 @section('other-slider')
-<section id="featured">
+<div class="callaction">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="big-cta">
+          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Target dari <strong>APP Surabaya</strong></h4>
+          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+            <div class="bar bar-info bar35"></div>
+            <div class="bar bar-success bar30"></div>
+            <div class="bar bar-warning bar20"></div>
+            <div class="bar bar-danger bar15"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="featured" style="width: 100%;">
   <!-- start slider -->
     <div id="da-slider" class="da-slider"> 
-      <img src="">
+      <img src="{{asset('flattern/img/slides/parallax/bg1.jpg')}}">
       @foreach($target as $t)
         <div class="da-slide">
         @auth
@@ -192,27 +202,25 @@
 
 
 
+
+
 @section('content')
-<!-- garis pembatas -->
 <section id="content">
   <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div class="solidline"></div>
-      </div>
-    </div>
-<!-- end garis pembatas -->
-
 <!-- Post -->
-    <div class="row">
+    <div class="row" style="margin-bottom: 5px; margin-top: 50px">
       <div class="span12" style="margin-left: 30px;">
       	<div class="callaction">
           <div class="container">
             <div class="row">
               <div class="span12">
                 <div class="big-cta">
-                  <div class="cta floatright">
-                    <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}"><i class="icon-book"></i> View Post </a>
+                  <h4 class="heading" style="text-align: center; margin-bottom: 10px;">Terkini dari <strong>APP Surabaya</strong></h4>
+                  <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+                    <div class="bar bar-info bar35"></div>
+                    <div class="bar bar-success bar30"></div>
+                    <div class="bar bar-warning bar20"></div>
+                    <div class="bar bar-danger bar15"></div>
                   </div>
                 </div>
               </div>
@@ -221,8 +229,8 @@
         </div>
           	
         <div class="row">
-          <section id="span12">
-            <ul id="mycarousel" class="portfolio" >
+          <section id="projects">
+            <ul id="thumbs" class="portfolio" >
             @foreach($post as $p)
               @if(isset($p))
                 <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
@@ -237,38 +245,37 @@
             </ul>
           </section>
         </div>
+        <div class="cta floatright" style="margin-bottom: 50px">
+          <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}">Selengkapnya...  <i class="icon-chevron-right"></i></a>
+        </div>
       </div>
     </div>
 <!--End Post -->
-<!-- garis pembatas -->        
-    <div class="row">
-      <div class="span12">
-        <div class="solidline"></div>
-      </div>
-    </div>
-<!-- end garis pembatas -->
-
-
-<!-- Ebook -->
-    <div class="row" style="margin-left:110px">
-      <div class="span10">
-        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="80%" height="700px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/> 
-      </div>
-    </div>
-<!-- end - ebook -->
 
 
 <!-- Kalender -->
     <div class="row">
       <div class="solidline">
-        <div class="span6" style="margin-top: 20px; border-radius: 10px">
+      <div class="span12">
+        <div class="big-cta">
+          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Agenda dari <strong>APP Surabaya</strong></h4>
+          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+            <div class="bar bar-info bar35"></div>
+            <div class="bar bar-success bar30"></div>
+            <div class="bar bar-warning bar20"></div>
+            <div class="bar bar-danger bar15"></div>
+          </div>
+        </div>
+      </div>
+        <div class="span3" style="margin-top: 20px; border-radius: 10px">
           <div class="col-md-9">
             <div class="white-box">
-              <div id="calendar"></div>
+              <!-- <div id="calendar"></div> -->
+              <iframe src="https://calendar.google.com/calendar/embed?src=loladata.sby%40gmail.com&ctz=Asia%2FJakarta" style="border: 0;" width="700" height="550" frameborder="0" scrolling="no"></iframe>
             </div>
           </div>
         </div>
-        <div class="span4" style="width: 400px; float: right; margin-top: 105px;">
+        <div class="span4" style="width: 400px; float: right; margin-top: 75px;">
           <div class="pricing-box-alt special">
             <div class="pricing-heading" style="padding: 5px 0 1px 0;">
               <h3>Happy Birthday <strong>to ...</strong></h3>
@@ -295,18 +302,27 @@
     </div>
 <!-- end--kalender -->
 
-<!-- garis pembatas -->        
-    <div class="row">
+<!-- Ebook -->
+    <div class="row" >
       <div class="span12">
-        <div class="solidline"></div>
+        <div class="big-cta">
+          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
+          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+            <div class="bar bar-info bar35"></div>
+            <div class="bar bar-success bar30"></div>
+            <div class="bar bar-warning bar20"></div>
+            <div class="bar bar-danger bar15"></div>
+          </div>
+        </div>
+      </div>
+      <div class="span10">
+        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="114%" height="400px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/> 
       </div>
     </div>
-<!-- end garis pembatas -->
-
+<!-- end - ebook -->
   </div>
 </section>
 @endsection
-
 
 @section('kategori')
 <div class="widget">
