@@ -12,13 +12,13 @@ use App\Http\Requests;
 use Illuminate\Database\Query\Builder;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-
+use Spatie\GoogleCalendar\Event;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $post = Post::orderBy('id','asc')->paginate(4);
+        $post = Post::orderBy('id','asc')->paginate(8);
         $post2 = Post::orderBy('id','asc')->get();
 
         $slide = Slide::get();
@@ -34,37 +34,5 @@ class IndexController extends Controller
                      ->get();
         $target = DB::table('post')->select('judul_post','isi_post','image_post')->where('kategori_post','Target')->get();
         return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'ultah' => $ultah, 'kategori' => $kategori, 'target' => $target]);
-    }
-
-
-    public function editSlider($id_slide)
-    {
-        $slide = Slide::find($id_slide);
-        return view('edit-slider', compact('slide'));
-    }
-
-    public function setSlider(Request $request, $id_slide)
-    {
-        $this->validate($request, [
-            'image_slide' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'judul_slide' => 'required',
-            'isi_slide' => 'required',
-        ]);
-        $slide = Slide::find($id_slide);
-        $slide->judul_slide = $request->input('judul_slide');
-        $slide->isi_slide = $request->input('isi_slide');
-        if ($request->hasFile('image_slide')) {    
-            $image_slide = $request->file('image_slide');
-            $image_slide_name = time() . '.' .$image_slide->getClientOriginalExtension();
-            Image::make($image_slide)->resize(1850, 1250)->save( public_path('/image_slide/' . $image_slide_name ));
-            $slide->image_slide = $image_slide_name;
-        }
-        //dd($slide);
-        $slide->save();
-        
-        //dd($slide);
-
-        //Post::updated($post);
-        return redirect()->back();
     }
 }

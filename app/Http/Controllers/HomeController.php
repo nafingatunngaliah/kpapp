@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $post = Post::orderBy('id','asc')->paginate(4);
+        $post = Post::orderBy('id','asc')->paginate(8);
         $post2 = Post::orderBy('id','asc')->get();
 
         $slide = Slide::get();
