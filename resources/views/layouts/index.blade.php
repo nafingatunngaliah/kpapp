@@ -310,47 +310,19 @@
     @yield('editpost')
     @yield('slider-new')
     @yield('manage-ultah')
-
-
-    <section id="bottom">
-      <div class="container">
-        <div class="row">
-           
-          <div class="span12">
-            <div class="aligncenter">
-              <div id="twitter-wrapper">
-                <div id="twitter">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- 
+    
     <footer>
       <div class="container">
         <div class="row">
-
           <div class="span3">
             @yield('kategori')
           </div>
           <div class="span6">
             <div class="widget">
               <h5 class="widgetheading" style="text-align: center">Our Location</h5>
-              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white;opacity: 1"></div>
+              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white; "></div>
             </div>
           </div>
-          <!-- <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear">
-              </div>
-            </div>
-          </div> -->
           <div class="span3">
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
@@ -419,16 +391,16 @@
   <script src="{{ asset('flattern/js/jquery.cslider.js')}}"></script>  
   <script src="{{ asset('flattern/js/animate.js')}}"></script>
   <!-- Calendar JavaScript -->
-    <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/moment/moment.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
+  <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/moment/moment.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
   <!-- google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_QRkSebrTMlwTo872afIbMoQ8cSbLyDI"></script>
-    <!-- Template Custom JavaScript File -->  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_QRkSebrTMlwTo872afIbMoQ8cSbLyDI"></script>
+  <!-- Template Custom JavaScript File -->  
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
-<!-- js upload file -->
+  <!-- js upload file -->
   <script src="{{asset('ample/plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
   <script src="{{asset('ample/plugins/bower_components/tinymce/tinymce.min.js')}}"></script>
     <script>
@@ -469,11 +441,6 @@
         });
     
     </script>
-
-    <!-- google maps api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
-    <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
 
    <!--  CKEditor -->
 

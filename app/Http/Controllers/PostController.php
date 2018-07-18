@@ -11,14 +11,12 @@ use Auth;
 use App\Http\Requests;
 use Illuminate\Database\Query\Builder;
 use App\Http\Controllers\Controller;
-
-
 class PostController extends Controller
 {
-    public function viewPost()
+    public function viewPost(Request $request)
     {
-        $post =Post::orderBy('judul_post', 'desc')->paginate(3);
-        $post2 =Post::orderBy('created_at', 'desc')->paginate(8);
+        $post =Post::orderBy('judul_post', 'desc')->paginate(2);
+        $post2 =Post::orderBy('created_at', 'desc')->take(6)->get();
         $kategori = DB::table('post')
                      ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
                      ->groupBy('kategori_post')
