@@ -3,10 +3,10 @@
 a:active, footer a.text-link:hover, strike, footer ul.link-list li a:hover, .post-meta span a:hover, footer a.text-link, 
 ul.meta-post li a:hover, ul.cat li a:hover, ul.recent li h6 a:hover, ul.portfolio-categ li.active a, ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.related-post li h4 a:hover, span.highlight,article .post-heading h3 a:hover,
 .navbar .nav > .active > a,.navbar .nav > .active > a:hover,.navbar .nav > li > a:hover,.navbar .nav > li > a:focus,.navbar .nav > .active > a:focus, .validation  { 
-	color:#00ccff;
+	color:#00A2B9;
 }
 a,a:hover,a:focus{
-	color:#009FDF;
+	color:#035B71;
 }
 /* === background color === */
 .navbar .nav > .active.dropdown > a.dropdown-toggle,
@@ -101,8 +101,8 @@ ul.clients li:hover {
 }
 
 .btn-theme {
-  border:1px solid #00ccff;
-  background: linear-gradient(to bottom right, #00ccff 0%, #006666 44%);
+  border:1px solid #00A2B9;
+  background: linear-gradient(to right, #035B71 , #00A2B9);/*linear-gradient(to bottom right, #00ccff 0%, #006666 44%);*/
 }
 
 /* modal styled */
@@ -131,7 +131,7 @@ ul.clients li:hover {
 /* pricing box */
 
 .pricing-box-alt.special .pricing-heading {
-	background: #F03C02;
+	background: linear-gradient(to left, #035B71 , #00A2B9);
 }
 
 
@@ -143,12 +143,12 @@ ul.clients li:hover {
 
 /* pagination */
 #pagination a:hover {
-    background: #F03C02;
+    background: #035B71;
 }
 
 /* pricing box */
 .pricing-box.special .pricing-offer{
-	background: #F03C02;
+	background: linear-gradient(to right, #035B71 , #00A2B9);
 }
 
 
@@ -156,11 +156,11 @@ ul.clients li:hover {
 .icon-square:hover,
 .icon-rounded:hover,
 .icon-circled:hover {
-    background-color: #006666;
+    background-color: #035B71;
 }
 [class^="icon-"].active,
 [class*=" icon-"].active {
-    background-color: #006666;
+    background-color: #035B71;
 }
 
 /* fancybox */

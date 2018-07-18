@@ -244,10 +244,10 @@
                       <a href="{{route('home')}}">HOME <i class="icon-angle-down"></i></a>
                       @endguest
                       <ul class="dropdown-menu">
-                        <li><a href="10.91.60.10">APP BALI</a></li>
-                        <li><a href="10.91.30.20">APP MALANG</a></li>
-                        <li><a href="10.91.50.10">APP MADIUN</a></li>
-                        <li><a href="10.91.40.20">APP PROBOLINGGO</a></li>
+                        <li><a href="http://10.91.60.10">APP BALI</a></li>
+                        <li><a href="http://10.91.30.20">APP MALANG</a></li>
+                        <li><a href="http://10.91.50.10">APP MADIUN</a></li>
+                        <li><a href="http://10.91.40.20">APP PROBOLINGGO</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -256,19 +256,19 @@
                         
                         <li class="dropdown"><a href="#">ENJINIRING <i class="icon-angle-right"></i></a>
                           <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="10.6.100.121">CBM</a></li>
-                            <li><a href="10.6.1.155/srintami-v3-tjbtb">SRINTAMI</a></li>
-                            <li><a href="10.6.212.21/~jalurapp_tjbtb">JALUR</a></li>
-                            <li><a href="10.91.1.20/working_permit">WP-ONLINE</a></li>
+                            <li><a href="http://10.6.100.121">CBM</a></li>
+                            <li><a href="http://10.6.1.155/srintami-v3-tjbtb">SRINTAMI</a></li>
+                            <li><a href="http://10.6.212.21/~jalurapp_tjbtb/">JALUR</a></li><!-- gabisa diakses -->
+                            <li><a href="http://10.91.1.20/working_permit">WP-ONLINE</a></li>
                           </ul>
                         </li>
                         <li class="dropdown"><a href="#">SDM <i class="icon-angle-right"></i></a>
                           <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="amor.pln.co.id">AMOR</a></li>
-                            <li><a href="10.1.8.107/utjbtb">AMS</a></li>
-                            <li><a href="erpappw1.pusat.corp.pln.co.id/irj/portal">ESS</a></li>
-                            <li><a href="budaya.pln.co.id">KOMANDO</a></li>
-                            <li><a href="10.1.18.41/~simkpnas">SIMKPNAS</a></li>
+                            <li><a href="https://amor.pln.co.id">AMOR</a></li>
+                            <li><a href="http://10.1.8.107/utjbtb">AMS</a></li>
+                            <li><a href="http://erpappw1.pusat.corp.pln.co.id/irj/portal">ESS</a></li>
+                            <li><a href="https://budaya.pln.co.id">KOMANDO</a></li>
+                            <li><a href="http://10.1.18.41/~simkpnas">SIMKPNAS</a></li>
                           </ul>
                         </li>
 
@@ -381,7 +381,7 @@
                     Licensing information: https://bootstrapmade.com/license/
                     Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flattern
                   -->
-                  Powered by <a href="https://bootstrapmade.com/">Intern Student's of Informatics ITS</a>
+                  Powered by <a href="https://if.its.ac.id/">Intern Student's of Informatics ITS</a>
                 </div>
               </div>
             </div>
