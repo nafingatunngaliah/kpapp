@@ -7,6 +7,7 @@
   </div>
 
 <!-- slider awal -->
+  
   <div id="slider" class="sl-slider-wrapper demo-2">
     <div class="sl-slider">
       @foreach($slide as $s)
@@ -21,7 +22,7 @@
                 <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
               @endauth
             </div>
-            <h2><strong>{{ $s->judul_slide }}</strong></h2>
+            <h2 style="color:#00a2b9 "><strong>{{ $s->judul_slide }}</strong></h2>
             <blockquote>
               <p>{{ $s->isi_slide }}</p>
             </blockquote>
@@ -29,61 +30,6 @@
         </div>
       @endforeach
       
-      @foreach($slide as $s)
-        <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-          <div class="sl-slide-inner">
-            <div class="bg-img bg-img-2">
-              <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px"> 
-            </div>
-            <h2><strong>{{ $s->judul_slide }}</strong></h2>
-            <blockquote>
-              <p>{{ $s->isi_slide }}</p>
-            </blockquote>
-          </div>
-        </div>
-      @endforeach
-      
-      @foreach($slide as $s)
-        <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-          <div class="sl-slide-inner">
-            <div class="bg-img bg-img-3">
-              <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
-            </div>
-            <h2><strong>{{ $s->judul_slide }}</strong></h2>
-            <blockquote>
-              <p>{{ $s->isi_slide }}</p>
-            </blockquote>
-          </div>
-        </div>
-      @endforeach
-      
-      @foreach($slide as $s)
-        <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-          <div class="sl-slide-inner">
-            <div class="bg-img bg-img-4">
-              <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
-            </div>
-            <h2><strong>{{ $s->judul_slide }}</strong></h2>
-            <blockquote>
-              <p>{{ $s->isi_slide }}</p>
-            </blockquote>
-          </div>
-        </div>
-      @endforeach
-      
-      @foreach($slide as $s)
-        <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-          <div class="sl-slide-inner">
-            <div class="bg-img bg-img-5">
-              <img class="card-img-top" src="{{asset('image_slide/'. $s->image_slide)}}" alt="{{ $s->image_slide }}" width="100%" height="180px">
-            </div>
-            <h2><strong>{{ $s->judul_slide }}</strong></h2>
-            <blockquote>
-              <p>{{ $s->isi_slide }}</p>
-            </blockquote>
-          </div>
-        </div>
-      @endforeach
     </div>
     <nav id="nav-dots" class="nav-dots">
       <span class="nav-dot-current"></span>
@@ -93,6 +39,7 @@
       <span></span>
     </nav>
   </div>
+      
 <!-- end slider awal -->
       
 <!-- Sign in Modal -->
@@ -170,7 +117,7 @@
 <section id="featured" style="width: 100%;">
   <!-- start slider -->
     <div id="da-slider" class="da-slider"> 
-      <img src="{{asset('flattern/img/slides/parallax/bg1.jpg')}}">
+      <img src="{{asset('flattern/img/slides/parallax/bg4.png')}}">
       @foreach($target as $t)
         <div class="da-slide">
         @auth
@@ -208,14 +155,84 @@
 <section id="content">
   <div class="container">
 <!-- Post -->
+    <div class="row">
+      <div class="span12">
+        <div class="big-cta">
+          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Terkini dari <strong>APP Surabaya</strong></h4>
+          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+            <div class="bar bar-info bar35"></div>
+            <div class="bar bar-success bar30"></div>
+            <div class="bar bar-warning bar20"></div>
+            <div class="bar bar-danger bar15"></div>
+          </div>
+        </div>
+      </div>
+      <article>
+        <div class="span8" style="width: 50%;margin-left: 60px; margin-top: 50px">
+        @auth
+          <ul class="nav topnav" style="margin-bottom: 0px">
+            <li class="dropdown"  style="margin-left: 750px;">
+              <i class="icon-rounded icon-angle-down icon-32 "></i>
+              <ul class="dropdown-menu">
+                <li><a href="{{ url('post-edit', array($post3->id_post)) }}">Edit</a></li>
+                <li><a href="{{ url('post-delete', array($post3->id_post)) }}">Delete</a></li>
+              </ul>
+            </li>
+          </ul>
+        @else
+        @endauth
+          <div class="post-image" style="margin-bottom: 0px">
+            <img class="card-img-top" src="{{asset('image_post/'. $post3->image_post)}}" alt="{{ $post3->judul_post }}" style="max-width: 1000px; max-height: 400px ; margin-left: 0px">
+            <ul class="meta-post" style="margin-top: 20px">
+              <li><i class="icon-calendar"></i><a href="#"> {{ date('d/m/Y', strtotime($post3->created_at)) }}</a></li>
+              <li><i class="icon-folder-open"></i><a href="#"> {{ $post3->kategori_post }}</a></li>
+            </ul>
+
+            <div class="post-heading" style="margin-top: 50px" >
+              <p style="font-size: 20px;line-height: 1em; margin-bottom:5px"><a href="{{ url('post-detail', array($post3->id_post)) }}" ><strong>{{ $post3->judul_post }}</strong></a></p>
+            </div>
+          </div>
+          <div >
+            <p>
+            {!! str_limit($post3->isi_post,500) !!}<a href="{{ url('post-detail', array($post3->id_post)) }}" class="pull-right">Selengkapnya <i class="icon-angle-right"></i></a>
+            </p>
+          </div>
+          {{csrf_field()}}
+        </div>
+
+            <div class="span4" style="margin-top:30px; ">
+              <aside class="right-sidebar" style=" width: 450px;">
+                @foreach($post2 as $p2)
+                <div class="widget">
+                  <ul class="recent">
+                    <li>
+                      <img src="{{asset('image_post/'. $p2->image_post)}}" class="pull-left" alt="" style="max-width: 50%; height: auto; margin: 0px 10px 0px 0px"/>
+                      <ul class="meta-post" style="margin-bottom: 0px; margin-right: 10px">
+                        <li><i class="icon-calendar"></i><a href="#"> {{ date('d/m/Y', strtotime($p2->created_at)) }}</a></li>
+                        <li><i class="icon-folder-open"></i><a href="#"> {{ $p2->kategori_post }}</a></li>
+                      </ul>
+
+                      <p style="line-height: 1em; margin-top: 20px; font-size: 14px; color:black"><a href="{{ url('post-detail', array($p2->id_post)) }}" ><strong>{{ $p2->judul_post }}</strong></a></p>
+                      <p style="line-height: 0.7em">{!! str_limit($p2->isi_post,150) !!} <a href="{{ url('post-detail', array($p2->id_post)) }}" class="pull-right">Selengkapnya <i class="icon-angle-right"></i></a></p>
+                    </li>
+                  </ul>
+                
+              </div>
+              @endforeach
+            </aside>
+          </div>
+  </div>
+<!--End Post -->
+
+<!-- Galeri -->
     <div class="row" style="margin-bottom: 5px; margin-top: 50px">
       <div class="span12" style="margin-left: 30px;">
-      	<div class="callaction">
+        <div class="callaction">
           <div class="container">
             <div class="row">
               <div class="span12">
                 <div class="big-cta">
-                  <h4 class="heading" style="text-align: center; margin-bottom: 10px;">Terkini dari <strong>APP Surabaya</strong></h4>
+                  <h4 class="heading" style="text-align: center; margin-bottom: 10px;">Galeri <strong>APP Surabaya</strong></h4>
                   <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
                     <div class="bar bar-info bar35"></div>
                     <div class="bar bar-success bar30"></div>
@@ -227,17 +244,17 @@
             </div>
           </div>
         </div>
-          	
+            
         <div class="row">
           <section id="projects">
             <ul id="thumbs" class="portfolio" >
-            @foreach($post as $p)
-              @if(isset($p))
+            @foreach($galeri as $g)
+              @if(isset($g))
                 <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $p->judul_post }}" href="{{asset('image_post/'. $p->image_post)}}">
+                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ $g->nama_album }}" href="{{asset('image_galeri/'. $g->image_galeri)}}">
                   <span class="overlay-img"></span>
                   <span class="overlay-img-thumb font-icon-plus"></span></a>
-                  <img class="card-img-top" src="{{asset('image_post/'. $p->image_post)}}" alt="" width="100%" height="180px" style="max-width: 100%; height: auto; margin-left: 0px;">
+                  <img class="card-img-top" src="{{asset('image_galeri/'. $g->image_galeri)}}" alt="" width="100%" height="180px" style="max-width: 100%; height: auto; margin-left: 0px;">
                    {{csrf_field()}}
                 </li>
               @endif
@@ -246,11 +263,11 @@
           </section>
         </div>
         <div class="cta floatright" style="margin-bottom: 50px">
-          <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}">Selengkapnya...  <i class="icon-chevron-right"></i></a>
+          <a class="btn btn-large btn-theme btn-rounded" href="{{route ('manage-galeri')}}">Lihat Lainnya...  <i class="icon-chevron-right"></i></a>
         </div>
       </div>
     </div>
-<!--End Post -->
+<!--End Galeri -->
 
 
 <!-- Kalender -->
@@ -258,7 +275,7 @@
       <div class="solidline">
       <div class="span12">
         <div class="big-cta">
-          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Agenda dari <strong>APP Surabaya</strong></h4>
+          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Agenda <strong>APP Surabaya</strong></h4>
           <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
             <div class="bar bar-info bar35"></div>
             <div class="bar bar-success bar30"></div>
@@ -271,7 +288,7 @@
           <div class="col-md-9">
             <div class="white-box">
               <!-- <div id="calendar"></div> -->
-              <iframe src="https://calendar.google.com/calendar/embed?src=loladata.sby%40gmail.com&ctz=Asia%2FJakarta" style="border: 0;" width="700" height="550" frameborder="0" scrolling="no"></iframe>
+              <iframe src="https://calendar.google.com/calendar/embed?src=loladata.sby%40gmail.com&ctz=Asia%2FJakarta" style="border: 0;" width="500" height="400" frameborder="0" scrolling="no"></iframe>
             </div>
           </div>
         </div>
@@ -326,7 +343,7 @@
 
 @section('kategori')
 <div class="widget">
-  <h5 class="widgetheading">Categories</h5>
+  <h5 class="widgetheading">Kategori Post</h5>
   @if($post->count())
     @foreach($kategori as $k)
       <ul class="link-list">
@@ -335,7 +352,6 @@
     @endforeach
   @endif 
 </div>
-
 @endsection
 
 
