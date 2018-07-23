@@ -53,9 +53,12 @@
         <div class="row">
           <div class="span12">
             <ul class="portfolio-categ filter">
-              <li class="all active"><a href="#">All</a></li>
+              <li class="all active"><a href="#" class="btn btn-theme">All</a></li>
               @foreach($album1 as $a)
-              <li class="{{ $a->nama_album}}"><a href="#" title="">{{ $a->nama_album}}</a></li>
+              <li class="{{ $a->nama_album}}"><a href="#" title="" class="btn">{{ $a->nama_album}}</a></li>
+              @auth
+              <li><a href="{{ url('galeri-tambah', array($a->id_album)) }}"><span class="icon-plus"></span></a></li>
+              @endauth
               @endforeach
             </ul>
             <div class="clearfix">
@@ -76,12 +79,25 @@
                       <span class="overlay-img-thumb font-icon-plus"></span>
                       </a>
                     <!-- Thumb Image and Description -->
-                    <img src="{{asset('image_galeri/'. $g->image_galeri)}}" alt="{{ $g->nama }}" style="max-width: 100%;
-    margin-left: 0px;"> 
+                    <img src="{{asset('image_galeri/'. $g->image_galeri)}}" alt="{{ $g->nama }}" style="max-width: 100%;    margin-left: 0px;"> 
                   </li>
+
                   @endif
-            @endforeach 
+                  @endforeach
+                  @if(is_null($a))
+                  <li class="item-thumbs span3 design" data-id="id-0" data-type="{{ $g->nama_album}}">
+                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="{{ url('galeri-tambah', array($g->id_album)) }}">
+                      <span class="overlay-img"></span>
+                      <span class="overlay-img-thumb font-icon-plus"></span>
+                    </a>
+                    <!-- Thumb Image and Description -->
+                    <img src="{{asset('flattern/img/add.png')}}" alt="Tambahkan foto di album ini" style="max-width: 100%;    margin-left: 0px;">
+                  </li>
+                  @endif 
                   <!-- End Item Project -->
+
+                  
                 </ul> 
                             
               </section>

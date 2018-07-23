@@ -17,7 +17,7 @@ class GaleriController extends Controller
     public function index(Request $request)
     {
         $album1 = DB::table('album')
-                ->select('nama_album')
+                ->select('id_album','nama_album')
                 ->get();
         $galeri = DB::table('album')
                 ->select('album.nama_album','galeri.image_galeri', 'galeri.nama','album.id_album')
