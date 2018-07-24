@@ -29,7 +29,7 @@ $_CONFIG = array(
     'types' => array(
 
     // (F)CKEditor types
-        'files'   =>  "",
+        'files'   =>  "doc pdf zip",
         'flash'   =>  "swf",
         'images'  =>  "*img",
 

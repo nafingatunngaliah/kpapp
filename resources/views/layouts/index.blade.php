@@ -310,7 +310,9 @@
     @yield('editpost')
     @yield('slider-new')
     @yield('manage-ultah')
-
+    @yield('formbuletin')
+    @yield('editbuletin')
+    @yield('bacafull')
 
     <section id="bottom">
       <div class="container">

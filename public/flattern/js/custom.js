@@ -240,6 +240,9 @@ jQuery(document).ready(function($) {
 
   Page.init();
 
-  
+  /*buat thumbnail*/
+
+
+
 
 });

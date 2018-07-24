@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Slide;
 use App\Ultah;
+use App\Buletin;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Database\Query\Builder;
@@ -35,6 +36,7 @@ class HomeController extends Controller
         $post2 = Post::orderBy('id','asc')->get();
 
         $slide = Slide::get();
+        $buletin = Buletin::get();
         $ultah = Ultah::whereRaw("DATE_FORMAT(tgl_bd, '%m-%d') = DATE_FORMAT(now(),'%m-%d')")
                 ->orWhereRaw("DATE_FORMAT(tgl_bd,'%m-%d') = '02-29' and DATE_FORMAT(tgl_bd, '%m') = '02' AND 
         LAST_DAY(NOW()) = DATE(NOW())")
@@ -46,7 +48,7 @@ class HomeController extends Controller
                      ->orderBy('jumlah')
                      ->get();
         $target = DB::table('post')->select('judul_post','isi_post','image_post')->where('kategori_post','Target')->get();
-        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'ultah' => $ultah, 'kategori' => $kategori, 'target' => $target]);
+        return view('index',['post' => $post, 'slide' => $slide, 'post2' => $post2, 'ultah' => $ultah, 'kategori' => $kategori, 'target' => $target, 'buletin' => $buletin]);
     }
 
     public function editSlider($id_slide)

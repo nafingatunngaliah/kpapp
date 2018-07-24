@@ -170,18 +170,18 @@
 <section id="featured" style="width: 100%;">
   <!-- start slider -->
     <div id="da-slider" class="da-slider"> 
-      <img src="{{asset('flattern/img/slides/parallax/bg1.jpg')}}">
+      <img src="{{asset('flattern/img/slides/parallax/bg4.png')}}" style="width: 100%; height: auto;">
       @foreach($target as $t)
         <div class="da-slide">
         @auth
           <a href="{{ url('/post-tambah') }}"> 
-          <h2>{{ $t->judul_post }}</h2></a>
+         <h2> <strong>{{ $t->judul_post }}</strong></h2></a>
           <p>{!! str_limit ($t->isi_post,100) !!} </p>
           <div class="da-img">
             <img src="{{asset('image_post/'. $t->image_post)}}" alt="{{ $t->image_post }}"> 
           </div>
         @else
-          <h2>{{ $t->judul_post }}</h2>
+          <h2><strong>{{ $t->judul_post }}</strong></h2>
           <p>{{ $t->isi_post }} </p>
           <div class="da-img">
             <img src="{{asset('image_post/'. $t->image_post)}}" alt="{{ $t->image_post }}">
@@ -304,7 +304,7 @@
 
 <!-- Ebook -->
     <div class="row" >
-      <div class="span12">
+      <!-- <div class="span12">
         <div class="big-cta">
           <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
           <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
@@ -314,10 +314,39 @@
             <div class="bar bar-danger bar15"></div>
           </div>
         </div>
-      </div>
+      </div> -->
+     <!--  @foreach($buletin as $b)
       <div class="span10">
-        <embed src="{{asset ('ebook/Ketintang 09 edisi 4.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="114%" height="400px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/> 
+        <embed src="{{asset ('file-majalah/Ketintang 09 edisi 2.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="114%" height="400px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/> 
       </div>
+      @endforeach -->
+      <div class="row">
+       
+          <div class="span12">
+            <div class="big-cta">
+           <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
+            <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+            <div class="bar bar-info bar35"></div>
+            <div class="bar bar-success bar30"></div>
+            <div class="bar bar-warning bar20"></div>
+            <div class="bar bar-danger bar15"></div>
+          </div>
+            
+            <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
+              @foreach($buletin as $bul)
+              <li> 
+                
+                <a href="{{url('buletin-view',array($bul->file_buletin))}} ">
+          <img src="{{asset ('file-majalah/'. $bul->cover_buletin)}}" class="client-logo" alt="{{ $bul->judul_buletin }}" />
+          </a>
+              </li>
+               @endforeach
+            </ul>
+
+             </div>
+          </div>
+         
+        </div>
     </div>
 <!-- end - ebook -->
   </div>

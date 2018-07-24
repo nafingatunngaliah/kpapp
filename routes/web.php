@@ -35,6 +35,14 @@ Route::get('/post-edit/{id_post}', 'PostController@editFormTambahPost')->name('p
 Route::post('/post-update/{id_post}', 'PostController@updateFormTambahPost')->name('post-update');
 Route::get('/post-delete/{id_post}', 'PostController@deletePost');
 
+//Fitur Buletin
+Route::get('/buletin-tambah', 'BuletinController@getFormBuletin')->name('buletin-tambah');
+Route::post('/buletin-tambah', 'BuletinController@setFormBuletin')->name('buletin-tambah');
+Route::get('/buletin-edit/{id_buletin}', 'BuletinController@editFormBuletin')->name('buletin-edit');
+Route::post('/buletin-update/{id_buletin}', 'BuletinController@updateFormBuletin')->name('buletin-update');
+Route::get('/buletin-delete/{id_buletin}', 'BuletinController@deleteBuletin');
+Route::get('/buletin-view/{file_buletin}', 'BuletinController@index')->name('buletin-view');
+
 // Fitur Comment Post
 Route::get('/post-detail/{id_post}', 'CommentController@viewDetailPost')->name('post-detail');
 Route::post('/post-detail/{id_post}', 'CommentController@addComment')->name('post-detail/{id_post}');
