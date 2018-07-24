@@ -1,12 +1,12 @@
 @extends('layouts.index')
 @section('manage-ultah')
 <div id="wrapper">
-      <section id="inner-headline">
+    <section id="inner-headline">
       <div class="container">
         <div class="row">
           <div class="span6">
             <div class="inner-heading">
-              <h2>Tambahkan <strong> Hari Spesialmu</h2>
+              <h2>Ubah <strong> Data Pegawai</h2>
             </div>
           </div>
         </div>

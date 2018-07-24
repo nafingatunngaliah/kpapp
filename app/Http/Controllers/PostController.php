@@ -25,6 +25,18 @@ class PostController extends Controller
         //dd($kategori);
         return view ('user.post.view', ['post' => $post, 'post2' => $post2, 'kategori' => $kategori]);
     }
+    public function viewPostKategori(Request $request, $kategori_post)
+    {
+        $post = Post::where('kategori_post','=', $kategori_post)->orderBy('created_at','desc')->paginate(2);
+        $post2 =Post::orderBy('created_at', 'desc')->take(6)->get();
+        $kategori = DB::table('post')
+                     ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
+                     ->groupBy('kategori_post')
+                     ->orderBy('jumlah')
+                     ->get();
+        //dd($kategori);
+        return view ('user.post.kategori-post', ['post' => $post, 'post2' => $post2, 'kategori' => $kategori]);
+    }
 
     // add post
     public function getFormTambahPost()

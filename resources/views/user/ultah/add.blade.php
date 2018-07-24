@@ -7,7 +7,7 @@
         <div class="row">
           <div class="span6">
             <div class="inner-heading">
-              <h2>Tambahkan <strong> Hari Spesialmu</h2>
+              <h2>Tambahkan <strong> Data Pegawai</h2>
             </div>
           </div>
         </div>

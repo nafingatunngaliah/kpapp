@@ -29,6 +29,7 @@ Route::get('/ultah-delete/{id_bd}', 'UltahController@delete');
 
 // Fitur Post
 Route::get('/viewpost', 'PostController@viewPost')->name('viewpost');
+Route::get('/lihat-post/{kategori_post}', 'PostController@viewPostKategori');
 Route::get('/post-tambah', 'PostController@getFormTambahPost')->name('post-tambah');
 Route::post('/post-tambah', 'PostController@setFormTambahPost')->name('post-tambah');
 Route::get('/post-edit/{id_post}', 'PostController@editFormTambahPost')->name('post-edit');

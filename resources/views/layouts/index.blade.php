@@ -470,7 +470,8 @@
 
    <!--  CKEditor -->
 
-   <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
+  <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
+  <script src="{{asset('ckeditor/ckeditor/plugins/justify/plugin.js')}}"> </script>
   <script>
   CKEDITOR.replace( 'summary-ckeditor' );
   </script>

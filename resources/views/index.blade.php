@@ -221,6 +221,9 @@
               @endforeach
             </aside>
           </div>
+          <div class="cta floatright" style="margin-bottom: 50px">
+          <a class="btn btn-large btn-theme btn-rounded" href="{{route ('viewpost')}}">Lihat Lainnya...  <i class="icon-chevron-right"></i></a>
+        </div>
   </div>
 <!--End Post -->
 
@@ -273,26 +276,29 @@
 <!-- Kalender -->
     <div class="row">
       <div class="solidline">
-      <div class="span12">
-        <div class="big-cta">
-          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Agenda <strong>APP Surabaya</strong></h4>
-          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
-            <div class="bar bar-info bar35"></div>
-            <div class="bar bar-success bar30"></div>
-            <div class="bar bar-warning bar20"></div>
-            <div class="bar bar-danger bar15"></div>
-          </div>
-        </div>
-      </div>
-        <div class="span3" style="margin-top: 20px; border-radius: 10px">
-          <div class="col-md-9">
-            <div class="white-box">
-              <!-- <div id="calendar"></div> -->
-              <iframe src="https://calendar.google.com/calendar/embed?src=loladata.sby%40gmail.com&ctz=Asia%2FJakarta" style="border: 0;" width="500" height="400" frameborder="0" scrolling="no"></iframe>
+        <div class="span12">
+          <div class="big-cta">
+            <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Agenda <strong>APP Surabaya</strong></h4>
+            <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
+              <div class="bar bar-info bar35"></div>
+              <div class="bar bar-success bar30"></div>
+              <div class="bar bar-warning bar20"></div>
+              <div class="bar bar-danger bar15"></div>
             </div>
           </div>
         </div>
-        <div class="span4" style="width: 400px; float: right; margin-top: 75px;">
+        <div class="span3" style="margin-top: 20px; border-radius: 10px; margin-left: 130px">
+          <div class="col-md-9">
+            <div class="white-box">
+              <iframe src="https://calendar.google.com/calendar/embed?src=loladata.sby%40gmail.com&ctz=Asia%2FJakarta" style="border: 0;" width="1000" height="450" frameborder="0" scrolling="no"></iframe>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+    <div class="span4" style="width: 800px; float: left; margin-left: 190px">
           <div class="pricing-box-alt special">
             <div class="pricing-heading" style="padding: 5px 0 1px 0;">
               <h3>Happy Birthday <strong>to ...</strong></h3>
@@ -315,12 +321,9 @@
             @endauth
           </div>
         </div>
-      </div>
-    </div>
 <!-- end--kalender -->
 
 <!-- Ebook -->
-    <div class="row" >
       <!-- <div class="span12">
         <div class="big-cta">
           <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
@@ -366,7 +369,6 @@
         </div>
     </div>
 <!-- end - ebook -->
-  </div>
 </section>
 @endsection
 
@@ -376,7 +378,7 @@
   @if($post->count())
     @foreach($kategori as $k)
       <ul class="link-list">
-        <li><a href="#">{{ $k->kategori_post }}</a></li>
+        <li><a href="{{ url('lihat-post', array($k->kategori_post)) }}"><b>{{ $k->kategori_post }}</b></a></li>
       </ul>
     @endforeach
   @endif 

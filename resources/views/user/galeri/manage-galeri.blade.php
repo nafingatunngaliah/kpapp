@@ -14,7 +14,7 @@
   </section>
 </div>
 @auth
-<a href="#myAlbum" data-toggle="modal"><i class="icon-plus icon-square icon-32 active"></i></a>
+<a href="#myAlbum" data-toggle="modal"><i class="icon-plus icon-square icon-32 active"></i>Tambah Album</a>
 
 <!-- Sign in Modal -->
             <div id="myAlbum" class="modal styled hide fade" tabindex="-1" role="dialog" aria-labelledby="mySigninModalLabel" aria-hidden="true">
@@ -55,9 +55,9 @@
             <ul class="portfolio-categ filter">
               <li class="all active"><a href="#" class="btn btn-theme">All</a></li>
               @foreach($album1 as $a)
-              <li class="{{ $a->nama_album}}"><a href="#" title="" class="btn">{{ $a->nama_album}}</a></li>
+              <li class="{{ $a->nama_album}}" style="margin-right: 0px; padding-right: 0px"><a href="#" title="" class="btn btn-theme">{{ $a->nama_album}}</a></li>
               @auth
-              <li><a href="{{ url('galeri-tambah', array($a->id_album)) }}"><span class="icon-plus"></span></a></li>
+              <li><a href="{{ url('galeri-tambah', array($a->id_album)) }}" class="btn" style="margin-left: 0px; padding-left: 1px; padding-right: 1px"><span class="icon-plus"></span></a></li>
               @endauth
               @endforeach
             </ul>
