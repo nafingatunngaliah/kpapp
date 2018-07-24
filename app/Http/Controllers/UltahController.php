@@ -14,7 +14,8 @@ class UltahController extends Controller
 {
     public function index()
     {
-        $ultah = Ultah::get();
+        //$ultah = Ultah::get();
+        $ultah = DB::select("SELECT round(DATEDIFF(CURRENT_DATE, STR_TO_DATE(tgl_bd, '%Y-%m-%d'))/365) as age, id_bd, nama, deskripsi, tgl_bd FROM `birthday`");
         return view('user.ultah.manage', compact('ultah'));
     }
 
