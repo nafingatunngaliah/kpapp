@@ -238,14 +238,15 @@ img.img-polaroid {
 /* --- header -- */
 
 header {
-  background: #fff;
+  background: #fff transparent;
+ /* background: url('../img/hmirror.png');*/
   margin: 0;
   padding: 0;
   position: relative;
 }
 
 header .logo {
-  margin: -10px 0 0 0;
+  margin: 10px 0 0 0;
   float: left;
 }
 
@@ -262,7 +263,7 @@ header .logo h1 {
 
 .headnav {
   float: right;
-  margin: 35px 0 0 0;
+  margin: 0 0 0 0;
   border-bottom: 1px dotted #e6e6e6;
 }
 
