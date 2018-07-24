@@ -5,8 +5,8 @@
       <div class="container">
         <div class="row">
           <div class="span4">
-            <div class="inner-heading">
-              <h2>List Post</h2>
+            <div class="inner-heading" style=" width: 900px;">
+              <h2>Terkini dari <strong>APP Surabaya</strong></h2>
             </div>
           </div>
           <div class="span8">
@@ -28,6 +28,19 @@
             <article>
               <div class="row">
                 <div class="span8">
+                  @auth
+                  <ul class="nav topnav" style="margin-bottom: 0px">
+                    <li class="dropdown"  style="margin-left: 750px;">
+                      <i class="icon-rounded icon-angle-down icon-32 "></i>
+                      <ul class="dropdown-menu">
+                          <li><a href="{{ url('post-edit', array($p->id_post)) }}">Edit</a></li>
+                          <li><a href="{{ url('post-delete', array($p->id_post)) }}">Delete</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  @else
+                    
+                  @endauth
                   <div class="post-image">
                     <div class="post-heading">
                       <h3><a href="{{ url('post-detail', array($p->id_post)) }}">{{ $p->judul_post }}</a></h3>
@@ -39,51 +52,42 @@
                       {!! str_limit($p->isi_post,400) !!}
                     </p>
                   </div>
-
                   <div class="bottom-article">
-                    @auth
                     <ul class="meta-post">
-                      <li><i class="icon-calendar"></i><a href="#"> {{ $p->kategori_post }}</a></li>
-                      <a href="{{ url('post-edit', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse" style="display: inline-flex; left: 5%;  position: relative;margin: 2px auto;"><i class="icon-pencil"></i>Edit Post</a>
-                      <a href="{{ url('post-delete', array($p->id_post)) }}" class="btn btn-theme btn-medium e_pulse floatright" style="display: inline-flex; right: -20%; position: relative; margin:  2px auto;"><i class="icon-trash"></i>Delete Post</a>
+                      <li><i class="icon-calendar"></i><a href="#"> {{ date('d/m/Y', strtotime($p->created_at)) }}</a></li>
+                      <li><i class="icon-user"></i><a href="#"> {{ $p->users->name }}</a></li>
+                      <li><i class="icon-folder-open"></i><a href="#"> {{ $p->kategori_post }}</a></li>
                     </ul>
-                    @else
-                    
-                    @endauth
                     <a href="{{ url('post-detail', array($p->id_post)) }}" class="pull-right">Continue Reading <i class="icon-angle-right"></i></a>
-                    {{csrf_field()}}
                   </div>
+                  {{csrf_field()}}
+                  
                 </div>
               </div>
             </article>
             @endforeach
             @endif
-            <div id="pagination">
-              <span class="all">Page 1 of</span>
-              {!! $post->render() !!}
-            </div>
+            
           </div>
           <div class="span4">
             <aside class="right-sidebar">
               <div class="widget">
-                <form class="form-search">
+                <!-- <form class="form-search">
                   <input placeholder="Type something" type="text" class="input-medium search-query">
                   <button type="submit" class="btn btn-square btn-theme">Search</button>
-                </form>
+                </form> -->
               </div>
               <div class="widget">
                 <h5 class="widgetheading">Categories</h5>
-                @if($post->count())
                 @foreach($kategori as $k)
                 <ul class="cat">
                   <li><i class="icon-angle-right"></i><a href="#">{{ $k->kategori_post }}</a><span> ({{ $k->jumlah }})</span></li>
                 </ul>
                 @endforeach
-                @endif
               </div>
               <div class="widget">
                 <h5 class="widgetheading">Latest posts</h5>
-                @if($post->count())
+
                 @foreach($post2 as $p2)
                 <ul class="recent">
                   <li>
@@ -95,23 +99,15 @@
                   </li>
                 </ul>
                 @endforeach
-                @endif
               </div>
               <div class="widget">
-                <h5 class="widgetheading">Popular tags</h5>
-                <ul class="tags">
-                  <li><a href="#">Web design</a></li>
-                  <li><a href="#">Trends</a></li>
-                  <li><a href="#">Technology</a></li>
-                  <li><a href="#">Internet</a></li>
-                  <li><a href="#">Tutorial</a></li>
-                  <li><a href="#">Development</a></li>
-                </ul>
+                <h5 class="widgetheading"></h5>
+                <ul class="tags"></ul>
               </div>
             </aside>
           </div>
-          
         </div>
+        <div class="pagination">{!! $post->render() !!}</div>
       </div>
     </section>
    

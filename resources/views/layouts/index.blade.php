@@ -29,6 +29,8 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('flattern/ico/apple-touch-icon-72-precomposed.png')}}">  
   <link rel="apple-touch-icon-precomposed" href="{{ asset('flattern/ico/apple-touch-icon-57-precomposed.png')}}">  
  
+
+
  <!-- ample upload file -->
   <link rel="stylesheet" href="{{asset('ample/plugins/bower_components/dropify/dist/css/dropify.min.css')}}">
 
@@ -68,6 +70,8 @@
     <!-- end toggle top area -->
     <!-- start header -->
     <header>
+
+    
       <div class="container">
         <!-- hidden top area toggle link -->
         <div id="header-hidden-link">
@@ -156,7 +160,6 @@
               <div class="modal-body">
 
                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-
                   @csrf
                   <div class="control-group">
                     <label class="control-label" for="inputText">Email</label>
@@ -226,9 +229,9 @@
         </div>
         <div class="row">
           <div class="span4">
+
             <div class="logo">
               <a href="{{url('/')}}"><img src="{{ asset('flattern/img/pln.png') }}" alt="" class="logo" /></a>
-              
               <h1>Area Pelaksana Pemeliharaan</h1>
             </div>
           </div>
@@ -243,7 +246,7 @@
                       @else
                       <a href="{{route('home')}}">HOME <i class="icon-angle-down"></i></a>
                       @endguest
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu" >
                         <li><a href="http://10.91.60.10">APP BALI</a></li>
                         <li><a href="http://10.91.30.20">APP MALANG</a></li>
                         <li><a href="http://10.91.50.10">APP MADIUN</a></li>
@@ -310,6 +313,7 @@
     @yield('editpost')
     @yield('slider-new')
     @yield('manage-ultah')
+<<<<<<< HEAD
     @yield('formbuletin')
     @yield('editbuletin')
     @yield('bacafull')
@@ -331,28 +335,24 @@
     </section>
  
     <footer>
+=======
+    @yield('error')
+    @yield('addgaleri') 
+    @yield('manage-galeri') 
+    
+    <footer style="background: linear-gradient(to right, #035B71 , #00A2B9);">
+>>>>>>> eba473f4e462822c81144210ffdb31376a3caa33
       <div class="container">
         <div class="row">
-
           <div class="span3">
             @yield('kategori')
           </div>
           <div class="span6">
             <div class="widget">
               <h5 class="widgetheading" style="text-align: center">Our Location</h5>
-              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white;opacity: 1"></div>
+              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white; "></div>
             </div>
           </div>
-          <!-- <div class="span3">
-            <div class="widget">
-              <h5 class="widgetheading">Flickr photostream</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear">
-              </div>
-            </div>
-          </div> -->
           <div class="span3">
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
@@ -368,7 +368,7 @@
           </div>
         </div>
       </div>
-      <div id="sub-footer">
+      <div id="sub-footer" style="background: #004252">
         <div class="container">
           <div class="row">
             <div class="span6">
@@ -421,16 +421,16 @@
   <script src="{{ asset('flattern/js/jquery.cslider.js')}}"></script>  
   <script src="{{ asset('flattern/js/animate.js')}}"></script>
   <!-- Calendar JavaScript -->
-    <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/moment/moment.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
+  <script src="{{asset('ample/plugins/bower_components/calendar/jquery-ui.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/moment/moment.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/fullcalendar.min.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/jquery.fullcalendar.js')}}"></script>
+  <script src="{{asset('ample/plugins/bower_components/calendar/dist/cal-init.js')}}"></script>  
   <!-- google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_QRkSebrTMlwTo872afIbMoQ8cSbLyDI"></script>
-    <!-- Template Custom JavaScript File -->  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_QRkSebrTMlwTo872afIbMoQ8cSbLyDI"></script>
+  <!-- Template Custom JavaScript File -->  
   <script src="{{ asset('flattern/js/custom.js')}}"></script>
-<!-- js upload file -->
+  <!-- js upload file -->
   <script src="{{asset('ample/plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
   <script src="{{asset('ample/plugins/bower_components/tinymce/tinymce.min.js')}}"></script>
     <script>
@@ -471,11 +471,6 @@
         });
     
     </script>
-
-    <!-- google maps api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
-    <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
 
    <!--  CKEditor -->
 

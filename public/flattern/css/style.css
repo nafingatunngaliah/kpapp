@@ -468,8 +468,8 @@ select.selectmenu {
 .nivoSlider, .nivo-slider {
   position: relative;
   width: 100%;
-  height: auto;
-  overflow: hidden;
+  height: 80%;
+  /*overflow: hidden;*/
   margin: 0;
 }
 
@@ -2001,7 +2001,7 @@ ul.time-post li.time {
 ================================ */
 
 footer {
-  background: #111;
+  background: linear-gradient(to right, #035B71 , #00A2B9);
   padding: 50px 0 0 0;
   color: #bbb;
 }

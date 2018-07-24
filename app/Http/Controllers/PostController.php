@@ -11,14 +11,12 @@ use Auth;
 use App\Http\Requests;
 use Illuminate\Database\Query\Builder;
 use App\Http\Controllers\Controller;
-
-
 class PostController extends Controller
 {
-    public function viewPost()
+    public function viewPost(Request $request)
     {
-        $post =Post::orderBy('judul_post', 'desc')->paginate(3);
-        $post2 =Post::orderBy('created_at', 'desc')->paginate(8);
+        $post =Post::orderBy('judul_post', 'desc')->paginate(2);
+        $post2 =Post::orderBy('created_at', 'desc')->take(6)->get();
         $kategori = DB::table('post')
                      ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
                      ->groupBy('kategori_post')
@@ -51,7 +49,7 @@ class PostController extends Controller
         if ($request->hasFile('image_post')) {
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1850, 1350)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(2000, 1350)->save( public_path('/image_post/' . $image_post_name ));
             $input['image_post'] = $image_post_name;
            // $input->save();
         }
@@ -83,7 +81,7 @@ class PostController extends Controller
         if ($request->hasFile('image_post')) {    
             $image_post = $request->file('image_post');
             $image_post_name = time() . '.' .$image_post->getClientOriginalExtension();
-            Image::make($image_post)->resize(1850, 1350)->save( public_path('/image_post/' . $image_post_name ));
+            Image::make($image_post)->resize(2000, 1350)->save( public_path('/image_post/' . $image_post_name ));
             $post->image_post = $image_post_name;
         }
         $post->save();

@@ -15,10 +15,10 @@
     <section id="content">
       <div class="container">
         <div class="row">
-          <div class="span8" style="margin-left: 120px">
+          <div class="span8" style="margin-left: 0px">
             <article>
               <div class="row" action="{{url('post-detail',array($post->id_post))}}">
-                <div class="span8" style="width:1000px">
+                <div class="span8" style="width:770px">
                   <div class="post-image">
                     <div class="post-heading">
                       <h3><a href="#">{{ $post->judul_post }}</a></h3>
@@ -30,9 +30,11 @@
                   </p>
                   <div class="bottom-article">
                     <ul class="meta-post">
+                      <li><i class="icon-calendar"></i><a href="#"> {{ date('d/m/Y', strtotime($post->created_at)) }}</a></li>
                       <li><i class="icon-user"></i><a href="#"> {{ $post->users->name }}</a></li>
-                      <li><i class="icon-tags"></i><a href="#">{{ $post->created_at }}</a></li>
+                      <li><i class="icon-folder-open"></i><a href="#"> {{ $post->kategori_post }}</a></li>
                     </ul>
+                    <a href="{{ url('post-detail', array($post->id_post)) }}" class="pull-right">Continue Reading <i class="icon-angle-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -55,6 +57,7 @@
 
             @endforeach
           @endif
+          @Auth
               <h4>Leave your comment</h4>
               <form method="post" role="form" class="contactForm" action="{{url('post-detail/'.$post->id_post)}}" enctype="multipart/form-data"> 
                 {{ csrf_field() }}
@@ -64,13 +67,57 @@
                       <textarea rows="12" class="input-block-level" placeholder="*Your comment here" required="" name="komentar"></textarea>
                     </p>
                     <p>
+                      
                       <button class="btn btn-theme margintop10" type="submit">Submit comment</button>
+                      
                     </p>
                   </div>
                 </div>
               </form>
+          @else
+
+          @endauth
             </div>
           </div>
+
+          <div class="span4">
+            <aside class="right-sidebar">
+              <div class="widget">
+                <!-- <form class="form-search">
+                  <input placeholder="Type something" type="text" class="input-medium search-query">
+                  <button type="submit" class="btn btn-square btn-theme">Search</button>
+                </form> -->
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Categories</h5>
+                @foreach($kategori as $k)
+                <ul class="cat">
+                  <li><i class="icon-angle-right"></i><a href="#">{{ $k->kategori_post }}</a><span> ({{ $k->jumlah }})</span></li>
+                </ul>
+                @endforeach
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Latest posts</h5>
+
+                @foreach($post2 as $p2)
+                <ul class="recent">
+                  <li>
+                    <img src="{{asset('image_post/'. $p2->image_post)}}" class="pull-left" alt="" style="max-width: 30%; height: auto; margin: 0px 10px 0px 0px"/>
+                    <h6 style="line-height: 0.7em"><a href="{{ url('post-detail', array($p2->id_post)) }}" ><strong>{{ $p2->judul_post }}</strong></a></h6>
+                    <p style="line-height: 0.7em">
+                      {!! str_limit($p2->isi_post,100) !!}
+                    </p>
+                  </li>
+                </ul>
+                @endforeach
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading"></h5>
+                <ul class="tags"></ul>
+              </div>
+            </aside>
+          </div>
+
         </div>
       </div>
     </section>

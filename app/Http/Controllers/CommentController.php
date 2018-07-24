@@ -15,8 +15,14 @@ class CommentController extends Controller
     public function viewDetailPost($id_post)
     {
         $post = Post::find($id_post);
+        $post2 =Post::orderBy('created_at', 'desc')->take(6)->get();
         $komen = Comment::where('id_post','=',$id_post)->get();
-        return view('user.comment.view', ['post' => $post, 'komen' => $komen]);
+        $kategori = DB::table('post')
+                     ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
+                     ->groupBy('kategori_post')
+                     ->orderBy('jumlah')
+                     ->get();
+        return view('user.comment.view', ['post' => $post, 'komen' => $komen, 'post2' => $post2, 'kategori' => $kategori]);
     }
 
     public function addComment(Request $request, $id_post)

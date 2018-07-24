@@ -47,3 +47,12 @@ Route::get('/buletin-view/{file_buletin}', 'BuletinController@index')->name('bul
 Route::get('/post-detail/{id_post}', 'CommentController@viewDetailPost')->name('post-detail');
 Route::post('/post-detail/{id_post}', 'CommentController@addComment')->name('post-detail/{id_post}');
 
+// Fitur Galeri
+Route::get('/galeri', 'GaleriController@index')->name('manage-galeri');
+Route::post('/album-tambah', 'GaleriController@setFormTambahAlbum')->name('album-tambah');
+Route::get('/galeri-tambah/{id_album}', 'GaleriController@getFormTambah')->name('galeri-tambah/{id_album}');
+Route::post('/galeri-tambah/{id_album}', 'GaleriController@setFormTambah')->name('galeri-tambah/{id_album}');
+Route::get('/galeri-delete/{id_galeri}', 'GaleriController@delete');
+
+// Error Page
+Route::get('/error', 'IndexController@error')->name('error');
