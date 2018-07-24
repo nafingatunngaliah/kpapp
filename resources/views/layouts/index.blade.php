@@ -313,10 +313,12 @@
     @yield('editpost')
     @yield('slider-new')
     @yield('manage-ultah')
-<<<<<<< HEAD
     @yield('formbuletin')
     @yield('editbuletin')
     @yield('bacafull')
+    @yield('error')
+    @yield('addgaleri') 
+    @yield('manage-galeri')
 
     <section id="bottom">
       <div class="container">
@@ -333,15 +335,9 @@
         </div>
       </div>
     </section>
- 
-    <footer>
-=======
-    @yield('error')
-    @yield('addgaleri') 
-    @yield('manage-galeri') 
+     
     
     <footer style="background: linear-gradient(to right, #035B71 , #00A2B9);">
->>>>>>> eba473f4e462822c81144210ffdb31376a3caa33
       <div class="container">
         <div class="row">
           <div class="span3">

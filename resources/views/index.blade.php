@@ -117,11 +117,7 @@
 <section id="featured" style="width: 100%;">
   <!-- start slider -->
     <div id="da-slider" class="da-slider"> 
-<<<<<<< HEAD
       <img src="{{asset('flattern/img/slides/parallax/bg4.png')}}" style="width: 100%; height: auto;">
-=======
-      <img src="{{asset('flattern/img/slides/parallax/bg4.png')}}">
->>>>>>> eba473f4e462822c81144210ffdb31376a3caa33
       @foreach($target as $t)
         <div class="da-slide">
         @auth

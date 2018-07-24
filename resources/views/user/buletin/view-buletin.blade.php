@@ -3,6 +3,14 @@
 @section ('bacafull')
 <div class="container">
 	<div class="row">
+    @auth   
+        <div class="cta floatright" style="margin-left:10px">
+            <a class="btn btn-medium btn-theme btn-rounded" href="{{route ('buletin-tambah')}}"><i class="icon-plus"></i> Tambah Majalah </a>
+        </div>
+        <div class="cta floatright">
+            <a class="btn btn-medium btn-theme btn-rounded" href="{{route ('buletin-tambah')}}"><i class="icon-trash"></i> Delete Majalah </a>
+        </div>
+      @endauth
 		<div class="span12">
         	<div class="big-cta">
         		<h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
@@ -22,11 +30,7 @@
         	</div> 
         
         </div>
-        @auth		
-        <div class="cta floatright">
-            <a class="btn btn-medium btn-theme btn-rounded" href="{{route ('buletin-tambah')}}"><i class="icon-plus"></i> Tambah Majalah </a>
-      </div>
-      @endauth
+        
 	</div>
 </div>
 @endsection
