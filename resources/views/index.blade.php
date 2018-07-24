@@ -324,22 +324,6 @@
 <!-- end--kalender -->
 
 <!-- Ebook -->
-      <!-- <div class="span12">
-        <div class="big-cta">
-          <h4 class="heading" style="text-align: center; margin-bottom: 10px; margin-top: 50px">Majalah <strong>APP Surabaya</strong></h4>
-          <div class="progress progress-striped active" style="height: 6px; width: 70%; margin-left: 200px;">
-            <div class="bar bar-info bar35"></div>
-            <div class="bar bar-success bar30"></div>
-            <div class="bar bar-warning bar20"></div>
-            <div class="bar bar-danger bar15"></div>
-          </div>
-        </div>
-      </div> -->
-     <!--  @foreach($buletin as $b)
-      <div class="span10">
-        <embed src="{{asset ('file-majalah/Ketintang 09 edisi 2.pdf')}}#toolbar=1&navpanes=1&scrollbar=0" type="application/pdf" width="114%" height="400px" style="border-width: 1px; margin-left: 5%; margin-bottom: 5px;"/> 
-      </div>
-      @endforeach -->
       <div class="row">
        
           <div class="span12">
@@ -377,8 +361,8 @@
   <h5 class="widgetheading">Kategori Post</h5>
   @if($post->count())
     @foreach($kategori as $k)
-      <ul class="link-list">
-        <li><a href="{{ url('lihat-post', array($k->kategori_post)) }}"><b>{{ $k->kategori_post }}</b></a></li>
+      <ul class="link-list" style="color:white">
+        <li style="color:white"><a href="{{ url('lihat-post', array($k->kategori_post)) }}" style="color:white"><b>{{ $k->kategori_post }}</b></a></li>
       </ul>
     @endforeach
   @endif 

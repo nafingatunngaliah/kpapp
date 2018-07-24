@@ -228,10 +228,10 @@
             <!-- end reset modal -->
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom: 3px;">
           <div class="span4">
 
-            <div class="logo">
+            <div class="logo" style="margin: 0 0 0 0px">
               <a href="{{url('/')}}"><img src="{{ asset('flattern/img/pln3.png') }}" alt="" class="logo" /></a>
               <!-- <h1>Area Pelaksana Pemeliharaan</h1> -->
             </div>
@@ -340,7 +340,7 @@
     
     <footer style="background: linear-gradient(to right, #035B71 , #00A2B9);">
       <div class="container">
-        <div class="row">
+        <div class="row" style="color: white;">
           <div class="span3">
             @yield('kategori')
           </div>
