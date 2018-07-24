@@ -23,6 +23,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Tanggal Ulang Tahun</th>
+                                    <th>Usia</th>
                                     <th>Deskripsi</th>
                                     <th>Action</th>
                                 </tr>
@@ -32,7 +33,9 @@
                                 <tr class="info">
                                     <td>{{ $u->id_bd }}</td>
                                     <td>{{ $u->nama }}</td>
+
                                     <td>{{ date('m-d-Y', strtotime($u->tgl_bd)) }}</td>
+                                    <td>{{ $u->age }}</td>
                                     <td>{{ $u->deskripsi }}</td>
                                     <td>
                                         <a class="btn btn-large btn-theme btn-rounded" href="{{url('ultah-edit', array($u->id_bd))}}">Edit</a>

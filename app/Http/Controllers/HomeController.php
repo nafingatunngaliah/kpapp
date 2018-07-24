@@ -38,11 +38,11 @@ class HomeController extends Controller
         $post3 = Post::orderBy('created_at', 'desc')->first();
         $slide = Slide::get();
         $buletin = Buletin::get();
-        $ultah = Ultah::whereRaw("DATE_FORMAT(tgl_bd, '%m-%d') = DATE_FORMAT(now(),'%m-%d')")
-        ->orWhereRaw("DATE_FORMAT(tgl_bd,'%m-%d') = '02-29' and DATE_FORMAT(tgl_bd, '%m') = '02' AND 
-        LAST_DAY(NOW()) = DATE(NOW())")
-        ->selectRaw('nama, tgl_bd')
-        ->get();
+         $ultah = Ultah::whereRaw("DATE_FORMAT(tgl_bd, '%m-%d') = DATE_FORMAT(now(),'%m-%d')")
+                ->orWhereRaw("DATE_FORMAT(tgl_bd,'%m-%d') = '02-29' and DATE_FORMAT(tgl_bd, '%m') = '02' AND 
+                LAST_DAY(NOW()) = DATE(NOW())")
+                ->selectRaw("nama, tgl_bd, (ROUND(DATEDIFF(CURRENT_DATE, STR_TO_DATE(tgl_bd, '%Y-%m-%d'))/365)) as age")
+                ->get();
         $kategori = DB::table('post')
                      ->select(DB::raw('count(id_post) as jumlah, kategori_post'))
                      ->groupBy('kategori_post')

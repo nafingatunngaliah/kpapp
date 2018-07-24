@@ -309,7 +309,7 @@
             <div class="pricing-content">
               <ul>
               @foreach($ultah as $u)
-                <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> {{ $u->nama }} </li>
+                <li style="padding: 8px 0 8px 0;"><i class="icon-ok"></i> {{ $u->nama }} <strong> {{ $u->age }}</strong>tahun</li>
               @endforeach
               </ul>
             </div>
