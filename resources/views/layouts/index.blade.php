@@ -71,16 +71,17 @@
     <!-- start header -->
     <header>
 
-    
-      <div class="container">
-        <!-- hidden top area toggle link -->
+    <img src="{{asset('flattern/img/hmirror3.png')}}" style="margin-bottom: 0px auto; background-position: relative;">
+      <div class="container" style="margin-top: -20px;">
+   <!-- hidden top area toggle link -->
         <div id="header-hidden-link">
-          <a href="#" class="toggle-link" title="Click me you'll get a surprise" data-target=".hidden-top"><i></i>Open</a>
+          <a href="#" class="toggle-link" title="Click me you'll get a surprise" data-target=".hidden-top" style="
+          margin-top: -80px;"><i></i>Open</a>
         </div>
         <!-- end toggle link -->
         <div class="row nomargin">
           <div class="span12">
-            <div class="headnav">
+            <div class="headnav" style="margin-top: -45px;">
 @guest
               <ul>
 
@@ -231,8 +232,8 @@
           <div class="span4">
 
             <div class="logo">
-              <a href="{{url('/')}}"><img src="{{ asset('flattern/img/pln.png') }}" alt="" class="logo" /></a>
-              <h1>Area Pelaksana Pemeliharaan</h1>
+              <a href="{{url('/')}}"><img src="{{ asset('flattern/img/pln3.png') }}" alt="" class="logo" /></a>
+              <!-- <h1>Area Pelaksana Pemeliharaan</h1> -->
             </div>
           </div>
           <div class="span8">
@@ -346,7 +347,7 @@
           <div class="span6">
             <div class="widget">
               <h5 class="widgetheading" style="text-align: center">Our Location</h5>
-              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white; "></div>
+              <div id="google-map" data-latitude="-7.318764674698101" data-longitude="112.72798240184784" style="background-color: white;opacity: 1; "></div>
             </div>
           </div>
           <div class="span3">
@@ -474,6 +475,11 @@
   <script>
   CKEDITOR.replace( 'summary-ckeditor' );
   </script>
+
+  <!-- google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
+    <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
+    <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
 
     <!-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script>

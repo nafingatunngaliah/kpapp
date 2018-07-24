@@ -129,7 +129,7 @@
           </div>
         @else
           <h2><strong>{{ $t->judul_post }}</strong></h2>
-          <p>{{ $t->isi_post }} </p>
+          <p>{!! str_limit($t->isi_post,100) !!} </p>
           <div class="da-img">
             <img src="{{asset('image_post/'. $t->image_post)}}" alt="{{ $t->image_post }}">
           <!-- <a href="#" class="da-link">Read more</a> -->

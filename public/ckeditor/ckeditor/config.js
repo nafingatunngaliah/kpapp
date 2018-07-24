@@ -20,12 +20,12 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'others' },
 		'/',
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'justify' ] },
 		{ name: 'styles' },
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
-
+	CKEDITOR.config.extraPlugins = 'justify';
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
