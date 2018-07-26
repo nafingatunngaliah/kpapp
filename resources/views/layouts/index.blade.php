@@ -474,7 +474,7 @@
     
     </script>
 
-<<<<<<< HEAD
+
    <!--  CKEditor -->
 
  <!--  <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
@@ -487,10 +487,7 @@
     CKEDITOR.replace( 'summary-ckeditor' );
     </script>
 
-  <!-- google maps api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
-    <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
-    <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
+  
 
     <!-- <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
     <script>
@@ -499,8 +496,6 @@
     <script src="{{ asset('codesnippet/lib/highlight/highlight.pack.js') }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-=======
->>>>>>> benerin
     
     <!-- date picker -->
     <!-- Clock Plugin JavaScript -->
@@ -584,9 +579,7 @@
             }
         });
     </script>
-
-
-    <!-- DATA TABEL -->
+<!-- DATA TABEL -->
     <script src="{{asset('ample/js/custom.min.js')}}"></script>
     <script src="{{asset('ample/plugins/bower_components/datatables/jquery.dataTables.min.js')}}"></script>
     <!-- start - This is for export functionality only -->
@@ -648,10 +641,13 @@
     </script>
     <!--Style Switcher -->
     <script src="{{asset('ample/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
+    
     <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
     <script src="{{asset ('ample/plugins/bower_components/gmaps/gmaps.min.js')}}"></script>
     <script src="{{asset('ample/plugins/bower_components/gmaps/jquery.gmaps.js')}}"></script>
+
 
   
 </body>
