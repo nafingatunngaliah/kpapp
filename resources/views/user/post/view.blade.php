@@ -40,8 +40,6 @@
                       </ul>
                     </li>
                   </ul>
-                  @else
-                    
                   @endauth
                   <div class="post-image">
                     <div class="post-heading">
