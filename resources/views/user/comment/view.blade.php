@@ -19,6 +19,17 @@
             <article>
               <div class="row" action="{{url('post-detail',array($post->id_post))}}">
                 <div class="span8" style="width:770px">
+                  @auth
+                  <ul class="nav topnav" style="margin-bottom: 0px">
+                    <li class="dropdown"  style="margin-left: 750px;">
+                      <i class="icon-rounded icon-angle-down icon-32 "></i>
+                      <ul class="dropdown-menu">
+                          <li><a href="{{ url('post-edit', array($post->id_post)) }}">Edit</a></li>
+                          <li><a href="{{ url('post-delete', array($post->id_post)) }}">Delete</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  @endauth
                   <div class="post-image">
                     <div class="post-heading">
                       <h3><a href="#">{{ $post->judul_post }}</a></h3>
