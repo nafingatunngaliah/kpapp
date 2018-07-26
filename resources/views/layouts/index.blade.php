@@ -471,11 +471,15 @@
 
    <!--  CKEditor -->
 
-  <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
+ <!--  <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"> </script>
   <script src="{{asset('ckeditor/ckeditor/plugins/justify/plugin.js')}}"> </script>
   <script>
   CKEDITOR.replace( 'summary-ckeditor' );
-  </script>
+  </script> -->
+  <script src="{{ asset('ckeditor/ckeditor/ckeditor.js') }}"></script>
+    <script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+    </script>
 
   <!-- google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbVhGRFIuk0EHdi7WE08ZhTLN_va-Wq84&callback=myMap"></script>
